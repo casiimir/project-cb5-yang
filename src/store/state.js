@@ -4,9 +4,22 @@ const initialState = {
   login: [
     {
       username: "dario",
-      password: "provadario",
+      password: "password",
+      logged: false,
     },
-    { username: "simone", password: "provasimone" },
+    { username: "simone", password: "passwordsimone", logged: false },
+  ],
+  eccolo: [],
+};
+
+const loginState = {
+  login: [
+    {
+      username: "dario",
+      password: "password",
+      logged: false,
+    },
+    { username: "simone", password: "passwordsimone", logged: false },
   ],
 };
 

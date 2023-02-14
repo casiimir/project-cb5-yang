@@ -1,9 +1,25 @@
-import Head from 'next/head'
-import Login from '@/Login/Login'
-import styles from '@/styles/Home.module.scss'
-import { applicationContext } from "@/store/state";
+import Head from "next/head";
+import Login from "@/Login/Login";
+import { applicationContext, initialState } from "@/store/state";
+import { useReducer } from "react";
+import { loginReducer } from "@/store/loginReducer";
+
+import styles from "@/styles/Home.module.scss";
+import Prova from "@/components/Prova";
 
 export default function Home() {
+  const [state, dispatch] = useReducer(loginReducer, initialState);
+
+  for (let i = 0; i < state.login.length; i++) {
+    if (state.login[i].logged === false) {
+      return (
+        <applicationContext.Provider value={{ state, dispatch }}>
+          <Login />
+        </applicationContext.Provider>
+      );
+    }
+  }
+
   return (
     <>
       <Head>
@@ -14,8 +30,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Login />
-        <applicationContext.Provider></applicationContext.Provider>
+        <applicationContext.Provider value={{ state, dispatch }}>
+          <Prova />
+        </applicationContext.Provider>
       </main>
     </>
   );
