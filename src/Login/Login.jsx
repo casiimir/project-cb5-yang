@@ -13,9 +13,9 @@ const Login = () => {
             />
             <h1>YANG<span>IFY</span></h1>
             <form className={styles.loginForm}>
-                <input type="text" placeholder="username" required/>
-                <input type="password" placeholder="password" required/>
-                <input type="submit" value="Login" />
+                <input type="text" placeholder="Username" required/>
+                <input type="password" placeholder="Password" required/>
+                <input className={styles.login} type="submit" value="LOGIN" />
             </form>
         </div>
 
