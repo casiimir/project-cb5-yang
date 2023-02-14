@@ -1,5 +1,6 @@
-import Head from "next/head";
-import styles from "@/styles/Home.module.scss";
+import Head from 'next/head'
+import Login from '@/Login/Login'
+import styles from '@/styles/Home.module.scss'
 import { applicationContext } from "@/store/state";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <Login />
         <applicationContext.Provider></applicationContext.Provider>
       </main>
     </>
