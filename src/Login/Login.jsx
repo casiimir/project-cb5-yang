@@ -13,7 +13,7 @@ const Login = () => {
             />
             <h1>YANG<span>IFY</span></h1>
             <form className={styles.loginForm}>
-                <input type="text" placeholder="Username" required/>
+            <input type="text" placeholder="Username" required/>
                 <input type="password" placeholder="Password" required/>
                 <input className={styles.login} type="submit" value="LOGIN" />
             </form>
