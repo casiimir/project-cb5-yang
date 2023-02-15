@@ -1,5 +1,5 @@
 .TopArtist{
-    width: 100%;
+    width: 85%;
     height: 450px;
     display: flex;
     flex-direction: column;
@@ -38,14 +38,19 @@
 
 @media only screen and (min-width: 768px) {
     .TopArtist{
-        height: 70vh;
         width: 85%;
         flex-direction: row;
         flex-wrap: wrap;
-        margin-left: 170px;
         overflow-x: scroll;
         gap: 50px;
         align-items: center;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        margin-left: 70px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         
 
         .container_Content{
@@ -60,5 +65,11 @@
             }
             
         }
+
+       
+    }
+
+    .TopArtist::-webkit-scrollbar { 
+        display: none; 
     }
   }

@@ -7,8 +7,10 @@ import Image from "next/image";
 import { BsPlayCircle } from "react-icons/bs";
 import Navbar from "../components/Navbar/Navbar";
 import Login from "@/Login/Login";
+import Header from "@/components/Header";
 
 import styles from "@/styles/Home.module.scss";
+
 
 export default function Home({ dataArtist, dataTracks, dataAlbums }) {
   const [state, dispatch] = useReducer(loginReducer, initialState);
@@ -31,6 +33,8 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      < Header />
 
       <main className={styles.main}>
         <applicationContext.Provider value={{ state, dispatch }}>
@@ -102,8 +106,10 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
             </section>
           </div>
         </applicationContext.Provider>
-        <Navbar />
+       
       </main>
+
+      <Navbar />
     </>
   );
 }
