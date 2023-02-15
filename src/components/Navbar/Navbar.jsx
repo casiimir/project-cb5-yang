@@ -32,7 +32,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link href={`/search`} className={styles.MenuItem}>
+          <Link href={`/search_page?q=track`} className={styles.MenuItem}>
             <BsSearch />
             <div className={styles.MenuTitle}>Search</div>
           </Link>

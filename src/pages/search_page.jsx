@@ -2,7 +2,7 @@ import SingleTrack from "@/components/singleTrack/SingleTrack";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-import styles from "../styles/searchPage.module.scss";
+import styles from "../pages/search_page/styles.module.scss";
 
 export default function SearchPage({ data }) {
   const router = useRouter();
@@ -12,7 +12,7 @@ export default function SearchPage({ data }) {
   const onHandleSubmit = (e) => {
     e.preventDefault();
 
-    router.push(`/searchPage?q=${searchTitle}`);
+    router.push(`/search_page?q=${searchTitle}`);
   };
 
   const onHandleChange = (e) => {
