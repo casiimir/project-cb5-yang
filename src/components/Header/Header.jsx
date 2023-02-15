@@ -9,9 +9,9 @@ const Header = () => {
   const onHandleClick = () => {};
 
   return (
-    <header>
+    <header className={styles.Header}>
       <Image src={"/deezerlogo.png"} alt="logo.png" width={20} height={20} />
-      <div>{state.login.logged.username}</div>
+      <div className={styles.User}>{state?.login?.logged?.username}</div>
       <Image
         src={"/logo.png"}
         alt="logo.png"

@@ -105,22 +105,24 @@
 
     .main {
         display: flex;
-        height: 100vh;
         width: 100%;
-        flex-direction: row-reverse;
         align-items: center;
         justify-content: center;
-        gap: 170px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .Homepage {
+        padding-left: 70px;
 
       .topArtist,
       .topTracks,
       .topAlbums {
 
         .container_Content {
-            gap: 30px;
+            gap: 40px;
         }
 
         img {
