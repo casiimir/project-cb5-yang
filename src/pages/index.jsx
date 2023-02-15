@@ -6,9 +6,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { BsPlayCircle } from "react-icons/bs";
 import Navbar from "../components/Navbar/Navbar";
+import SearchPage from "./searchPage";
+
 
 import Login from "@/Login/Login";
 import styles from "@/styles/Home.module.scss";
+
+
 
 
 export default function Home({dataArtist, dataTracks, dataAlbums}) {
@@ -19,6 +23,7 @@ export default function Home({dataArtist, dataTracks, dataAlbums}) {
       return (
         <applicationContext.Provider value={{ state, dispatch }}>
           <Login />
+          <SearchPage />
         </applicationContext.Provider>
       );
     }
