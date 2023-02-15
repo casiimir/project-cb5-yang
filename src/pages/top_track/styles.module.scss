@@ -1,0 +1,87 @@
+.Back {
+    color: white;
+    padding: 20px;
+}
+
+.TopTrack {
+    width: 85%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: scroll;
+    color: white;
+    margin: 20px;
+    position: absolute;
+    bottom: 90px;
+
+    .container_Content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .track {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .infoTrack {
+                line-height: 30px;
+            }
+        }
+
+        h2 {
+            font-size: 1rem;
+        }
+
+        h3 {
+            font-size: 1rem;
+            color: #939393;
+            font-weight: 100;
+        }
+
+        a {
+            color: white;
+            cursor: pointer;
+            font-size: 2rem;
+        }
+    }
+
+    img {
+        width: 75px;
+        height:75px;
+        border-radius: 26px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .TopTrack {
+        width: 85%;
+        height: fit-content;
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow-x: scroll;
+        gap: 50px;
+        align-items: center;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        margin-left: 70px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .container_Content{
+            width: 250px;
+            align-items: center;
+            justify-content: flex-start;
+
+            img {
+                width: 116px;
+                height:116px;
+                border-radius: 26px;
+            }
+        }
+    }
+}
