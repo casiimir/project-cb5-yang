@@ -11,7 +11,6 @@ import Header from "@/components/Header";
 
 import styles from "@/styles/Home.module.scss";
 
-
 export default function Home({ dataArtist, dataTracks, dataAlbums }) {
   const [state, dispatch] = useReducer(loginReducer, initialState);
 
@@ -34,7 +33,9 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      < Header />
+      <applicationContext.Provider value={{ state }}>
+        <Header />
+      </applicationContext.Provider>
 
       <main className={styles.main}>
         <applicationContext.Provider value={{ state, dispatch }}>
@@ -108,7 +109,6 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
             </section>
           </div>
         </applicationContext.Provider>
-       
       </main>
 
       <Navbar />
