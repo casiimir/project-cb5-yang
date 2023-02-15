@@ -2,11 +2,16 @@ import Link from "next/link"
 import Image from "next/image"
 import { MdArrowBackIos } from 'react-icons/md';
 import styles from "./top_album/styles.module.scss"
+import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 
 const Top_Album = ({data}) => {
   return (
+    <>
+    < Header />
+    <Link className={styles.Back} href={"/"}><MdArrowBackIos /> ALL ALBUMS</Link>
     <div className={styles.TopAlbum}>
-        <Link href={"/"}><MdArrowBackIos /> ALL ALBUMS</Link>
+       
         {data?.data
         .map((album) => (
             <div className={styles.container_Content}>
@@ -23,10 +28,12 @@ const Top_Album = ({data}) => {
                         <span>Position: {album.position}</span>
                     </div>
                 </div>
-                <Link href={"/"}><span className={styles.seeAll}>See Details</span></Link>
+                <Link className={styles.seeAll} href={"/"}><span>See Details</span></Link>
             </div>
           ))}
     </div>
+    < Navbar />
+    </>
   )
 }
 
