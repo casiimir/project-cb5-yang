@@ -1,0 +1,12 @@
+.TopArtist{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .container_Content{
+        display: flex;
+        gap: 1rem;
+    }
+}
