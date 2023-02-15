@@ -9,5 +9,6 @@
 
 body{
   font-family: 'Montserrat', sans-serif;
-
+  height: 100vh;
+  background: linear-gradient(197.56deg,#100f0f 6.06%, #2B1B33 97.9%); 
 }
