@@ -64,7 +64,7 @@ const Login = () => {
             value={password}
             required
           />
-          <input type="submit" value="Login" />
+          <input type="submit" value="Login" className={styles.login}/>
         </form>
       </div>
 
