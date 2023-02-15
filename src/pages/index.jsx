@@ -85,11 +85,13 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
             <section className={styles.topAlbums}>
               <div className={styles.header}>
                 <h2>Top Albums</h2>
-                <span>See all</span>
+                <Link href={"/top_album"}>
+                  <span>See all</span>
+                </Link>
               </div>
               <div className={styles.container_Content}>
                 {dataAlbums?.data.slice(0, 5).map((artist) => (
-                  <Link href={"/"}>
+                  <Link href={"/top_album"}>
                     <Image
                       src={artist.cover_medium}
                       width={200}
