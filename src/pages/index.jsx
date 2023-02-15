@@ -4,7 +4,8 @@ import { useReducer } from "react";
 import { loginReducer } from "@/store/loginReducer";
 import Link from "next/link";
 import Image from "next/image";
-import { BsCollectionPlay } from "react-icons/bs";
+import { BsPlayCircle } from "react-icons/bs";
+import Navbar from "../components/Navbar/Navbar";
 
 import Login from "@/Login/Login";
 import styles from "@/styles/Home.module.scss";
@@ -75,7 +76,7 @@ export default function Home({dataArtist, dataTracks, dataAlbums}) {
                   alt={track.title}
                   />
                 </Link>
-                <Link href={"/"} className={styles.btnPlay}><BsCollectionPlay /></Link>
+                <Link href={"/"} className={styles.btnPlay}><BsPlayCircle /></Link>
               </div>
                 ))}
 
@@ -105,7 +106,9 @@ export default function Home({dataArtist, dataTracks, dataAlbums}) {
 
         </div>
         </applicationContext.Provider>
+        < Navbar />
       </main>
+
     </>
   );
 }
