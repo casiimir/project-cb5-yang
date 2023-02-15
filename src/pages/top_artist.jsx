@@ -1,8 +1,10 @@
+import Navbar from "@/components/Navbar"
 import Image from "next/image"
 import styles from "./top_artist/styles.module.scss"
 
 const Top_Artist = ({data}) => {
   return (
+    <>
     <div className={styles.TopArtist}>
       {data?.data
       .map((artist) => (
@@ -20,7 +22,10 @@ const Top_Artist = ({data}) => {
           </div>
         </div>
           ))}
+          
     </div>
+    < Navbar />
+    </>
   )
 }
 
