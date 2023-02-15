@@ -61,14 +61,14 @@ export default function Home({dataArtist, dataTracks, dataAlbums}) {
           <section className={styles.topTracks}>
             <div className={styles.header}>
               <h2>Top Tracks</h2>
-              <span>See all</span>
+              <Link href={"/top_track"}><span>See all</span></Link>
             </div>
             <div className={styles.container_Content}>
             {dataTracks?.data
             .slice(0,5)
             .map((track) => (
               <div className={styles.content}>
-                <Link href={"/"}>
+                <Link href={"/top_track"}>
                   <Image 
                   src={track.artist.picture_medium}
                   width={200}
@@ -76,7 +76,7 @@ export default function Home({dataArtist, dataTracks, dataAlbums}) {
                   alt={track.title}
                   />
                 </Link>
-                <Link href={"/"} className={styles.btnPlay}><BsPlayCircle /></Link>
+                <Link href={"/top_track"} className={styles.btnPlay}><BsPlayCircle /></Link>
               </div>
                 ))}
 
