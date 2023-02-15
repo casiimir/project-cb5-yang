@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import Login from "@/Login/Login";
 import { applicationContext, initialState } from "@/store/state";
 import { useReducer } from "react";
