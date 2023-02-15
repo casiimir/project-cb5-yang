@@ -1,10 +1,12 @@
 import Link from "next/link"
 import Image from "next/image"
+import { MdArrowBackIos } from 'react-icons/md';
 import styles from "./top_album/styles.module.scss"
 
 const Top_Album = ({data}) => {
   return (
     <div className={styles.TopAlbum}>
+        <Link href={"/"}><MdArrowBackIos /> ALL ALBUMS</Link>
         {data?.data
         .map((album) => (
             <div className={styles.container_Content}>

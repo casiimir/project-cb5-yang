@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { BsPlayCircle } from "react-icons/bs";
+import { MdArrowBackIos } from 'react-icons/md';
 import styles from "./top_track/styles.module.scss"
 
 const Top_Track = ({data}) => {
   return (
     <div className={styles.TopTrack}>
+    <Link href={"/"}><MdArrowBackIos /> ALL ALBUMS</Link>
     {data?.data
     .map((track) => (
       <div className={styles.container_Content}>
