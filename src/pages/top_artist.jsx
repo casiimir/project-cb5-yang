@@ -1,5 +1,5 @@
 import Image from "next/image"
-import styles from "./top_albums/styles.module.scss"
+import styles from "./top_artist/styles.module.scss"
 
 const Top_Artist = ({data}) => {
   return (
