@@ -6,6 +6,7 @@ import { loginReducer } from "@/store/loginReducer";
 
 import styles from "@/styles/Home.module.scss";
 import Prova from "@/components/Prova";
+import SearchPage from "./searchPage";
 
 export default function Home() {
   const [state, dispatch] = useReducer(loginReducer, initialState);
@@ -15,6 +16,7 @@ export default function Home() {
       return (
         <applicationContext.Provider value={{ state, dispatch }}>
           <Login />
+          <SearchPage />
         </applicationContext.Provider>
       );
     }
