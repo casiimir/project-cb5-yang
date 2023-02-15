@@ -1,0 +1,145 @@
+.Homepage{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    color: white;
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 1rem;
+    }
+
+    a {
+        text-decoration: none;
+    }
+        span {
+            text-transform: uppercase;
+            color: #939393;
+            font-size: .8rem;
+            cursor: pointer;
+        }
+    
+        span:hover {
+            font-weight: bold;
+        }
+        
+    .header,
+    .header,
+    .header{
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 0;
+    }
+
+    .container_Content{
+        display: flex;
+        gap: 1rem;
+        overflow-x: hidden;
+        overflow-x: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        .content{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .container_Content::-webkit-scrollbar { 
+        display: none; 
+    }
+
+    .topArtist {
+
+        img {
+            width: 75px;
+            height: 75px;
+            border-radius: 100%;
+        }
+    }
+
+    .topTracks {
+
+        .content {
+            background: linear-gradient(180deg, rgba(252, 247, 255, 0.08) 0%, rgba(252, 247, 255, 0) 100%);
+            border-radius: 36px;
+            height: 130px;
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        img {
+            width: 75px;
+            height: 75px;
+            border-radius: 16px;
+        }
+
+        .btnPlay {
+            position: absolute;
+            bottom: 0;
+            right: -5px;
+            color: white;
+            font-size: 1.6rem;
+        }
+
+        .btnPlay:hover {
+            color:  #DB00FF;
+            filter: drop-shadow(0px 0px 15px #DB00FF);
+        }
+    }
+
+    .topAlbums {
+
+        margin-top: -15px;
+        img {
+            width: 75px;
+            height: 75px;
+            border-radius: 16px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+
+    .main {
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 170px;
+    }
+
+    .Homepage {
+
+      .topArtist,
+      .topTracks,
+      .topAlbums {
+
+        .container_Content {
+            gap: 30px;
+        }
+
+        img {
+            width: 116px;
+            height: 116px;
+        }
+      }  
+
+      .topTracks {
+          .content{
+              height: 180px;
+          }
+        
+        .btnPlay {
+            font-size: 2rem;
+        }
+      }
+       
+    }
+
+    }
+
