@@ -6,13 +6,11 @@ import styles from "../styles/searchPage.module.scss";
 
 export default function SearchPage({ data }) {
   const router = useRouter();
-  console.log(router);
 
   const [searchTitle, setSearchTitle] = useState("");
 
   const onHandleSubmit = (e) => {
     e.preventDefault();
-    console.log(searchTitle);
 
     router.push(`/searchPage?q=${searchTitle}`);
   };
@@ -40,7 +38,7 @@ export default function SearchPage({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  console.log(context);
+  // console.log(context);
   const res = await fetch(`https://api.deezer.com/search?q=${context.query.q}`);
   const data = await res.json();
 
