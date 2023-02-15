@@ -3,8 +3,17 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: relative;
 
     .User {
+        position: absolute;
+        left: 60px;
         color: white;
+        font-size: 1.2rem;
+
+        span {
+            font-weight: 700;
+            text-transform: capitalize;
+        }
     }
 }

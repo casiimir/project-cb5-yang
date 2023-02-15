@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <header className={styles.Header}>
       <Image src={"/deezerlogo.png"} alt="logo.png" width={20} height={20} />
-      <div className={styles.User}>{state?.login?.logged?.username}</div>
+      <div className={styles.User}>Ciao, <span>{state?.login?.logged?.username}</span></div>
       <Image
         src={"/logo.png"}
         alt="logo.png"
