@@ -1,8 +1,11 @@
 import SingleTrack from "@/components/singleTrack/SingleTrack";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 
 import styles from "../pages/search_page/styles.module.scss";
+
 
 export default function SearchPage({ data }) {
   const router = useRouter();
@@ -21,19 +24,24 @@ export default function SearchPage({ data }) {
   };
 
   return (
+    <>
+    < Header />
     <div className={styles.main}>
       <form onSubmit={onHandleSubmit}>
         <input
+          className={styles.SearchSubmit}
           onChange={onHandleChange}
           type="text"
-          placeholder="Search title"
+          placeholder="Track title"
           value={searchTitle}
           required
         />
-        <input type="submit" value="Search" onSubmit={onHandleSubmit} />
+        <input  type="submit" value="search" onSubmit={onHandleSubmit} />
       </form>
       <SingleTrack data={data} className={styles.singleTrack} />
     </div>
+    < Navbar />
+    </>
   );
 }
 
