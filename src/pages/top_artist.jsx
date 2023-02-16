@@ -27,7 +27,6 @@ const Top_Artist = ({data}) => {
           </div>
         </div>
           ))}
-          
     </div>
     < Navbar />
     </>

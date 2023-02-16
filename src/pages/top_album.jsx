@@ -12,7 +12,6 @@ const Top_Album = ({data}) => {
     < Header />
     <Link className={styles.Back} href={"/"}><MdArrowBackIos /> ALL ALBUMS</Link>
     <div className={styles.TopAlbum}>
-       
         {data?.data
         .map((album) => (
             <div className={styles.container_Content}>
