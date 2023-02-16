@@ -17,6 +17,7 @@
     "react-css-modules": "^4.7.11",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
-    "sass": "^1.58.0"
+    "sass": "^1.58.0",
+    "transition-style": "^0.1.3"
   }
 }
