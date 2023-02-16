@@ -22,7 +22,7 @@
     .container_Content{
         display: flex;
         align-items: center;
-        gap: 1rem;
+        justify-content: space-between;
 
         .seeAll {
 
@@ -39,6 +39,8 @@
         }
 
         .infoAlbum {
+            width: 120px;
+            line-height: 20px;
 
             h2 {
                 font-size: .8rem;
@@ -61,7 +63,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         overflow-x: scroll;
-        gap: 100px;
+        gap: 40px;
         align-items: center;
         -ms-overflow-style: none;
         scrollbar-width: none;
@@ -73,10 +75,12 @@
         height: 600px;
 
         .container_Content{
-            width: 250px;
+            width: 350px;
             align-items: center;
             justify-content: flex-start;
+            gap: 20px;
         }
+        
     }
 
 }

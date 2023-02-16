@@ -1,3 +1,5 @@
+import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
 import { MdArrowBackIos } from 'react-icons/md';
@@ -9,11 +11,14 @@ export default function SigleAlbum({ albumData }) {
    console.log(albumData.tracks.data[0].title_short)
   
     return (
-      <div className={styles.Album}>
-        <Link className={styles.linkAlbum} href={"/top_album"}>
+      <>
+      < Header/>
+      <Link className={styles.Back} href={"/top_album"}>
           <MdArrowBackIos /> ALBUM
         </Link>
-        <div className={styles.containerAlbum}>
+      <div className={styles.Album}>
+        
+        {/* <div className={styles.containerAlbum}>
           <Image src={albumData.cover_medium} width={250} height={250} alt={albumData.title} />
           <h1>{albumData.title}</h1>
           <h5>{albumData.artist.name}</h5>
@@ -29,7 +34,8 @@ export default function SigleAlbum({ albumData }) {
                 )
             }
           </div>
-        </div>
+        </div> */}
+        <div className={styles.divIframe}>
         <iframe id={`deezer-widget-${albumData.id}`} 
           src={`https://widget.deezer.com/widget/dark/album/${albumData.id}?app_id=457142&autoplay=false&radius=true&tracklist=true`} 
           width="690" height="710" 
@@ -37,7 +43,10 @@ export default function SigleAlbum({ albumData }) {
           allowfullscreen="true" 
           allow="encrypted-media">
         </iframe>
+        </div>
       </div>
+      < Navbar/>
+      </>
     );
   }
   
