@@ -22,7 +22,7 @@ export default function SigleAlbum({ albumData }) {
                 albumData?.tracks?.data?.map(track => 
                 <div className={styles.singleTrack}>
                   <span>{track.title_short}</span>
-                  
+
                   <audio controls>
                     <source src={track.preview} type="audio/mp3" />
                   </audio>
