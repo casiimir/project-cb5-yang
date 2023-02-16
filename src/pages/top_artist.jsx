@@ -22,7 +22,7 @@ const Top_Artist = ({data}) => {
           />
           <div className={styles.infoArtist}>
             <h2>{artist.name}</h2>
-            <h3>{artist.position}</h3>
+            <h3>Posizione: {artist.position}</h3>
             <h4>{artist.type}</h4>
           </div>
         </div>

@@ -23,9 +23,9 @@ const Top_Album = ({data}) => {
                 alt={album.name}
                 />
                 <div className={styles.infoAlbum}>
-                    <h2>{album.title}</h2>
+                    <h2>{album.title.length > 10 ? `${album.title.substring(0, 10)}...` : album.title}</h2>
                     <div className={styles.subInfoAlbum}>
-                        <span>{album.artist.name}</span>
+                        <h5>{album.artist.name}</h5>
                         <span>Position: {album.position}</span>
                     </div>
                 </div>
