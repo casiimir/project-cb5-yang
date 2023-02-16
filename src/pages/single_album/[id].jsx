@@ -22,16 +22,21 @@ export default function SigleAlbum({ albumData }) {
                 albumData?.tracks?.data?.map(track => 
                 <div className={styles.singleTrack}>
                   <span>{track.title_short}</span>
-
                   <audio controls>
                     <source src={track.preview} type="audio/mp3" />
                   </audio>
-                  
                 </div>
                 )
             }
           </div>
         </div>
+        <iframe id={`deezer-widget-${albumData.id}`} 
+          src={`https://widget.deezer.com/widget/dark/album/${albumData.id}?app_id=457142&autoplay=false&radius=true&tracklist=true`} 
+          width="690" height="710" 
+          allowtransparency="true" 
+          allowfullscreen="true" 
+          allow="encrypted-media">
+        </iframe>
       </div>
     );
   }
@@ -52,5 +57,10 @@ export default function SigleAlbum({ albumData }) {
     const res = await fetch(`https://api.deezer.com/album/${params.id}`);
     const albumData = await res.json();
 
-    return { props: { albumData } };
+    return { 
+      props: 
+      { 
+        albumData, 
+      } 
+    };
   }
