@@ -1,3 +1,14 @@
+.Back {
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    text-transform: uppercase;
+    align-self: flex-start;
+}
+
 .main {
     width: 85%;
     height: 450px;
@@ -11,12 +22,11 @@
     bottom: 90px;
 
     form {
-
         background: rgba(0, 0, 0, 0.42);
         box-shadow: inset 0px 4px 4px 2px #000000;
         border-radius: 16px;
         border: none;
-        width: fit-content;
+        width: 100%;
     
         input {
             padding: 20px;
@@ -74,8 +84,10 @@
             position: absolute;
             top: 0px;
             left: 0;
+            width: fit-content;
 
         }
+
 
         audio {
             width: 150px;
@@ -89,5 +101,9 @@
             display: none;
           }
         
+    }
+
+    .main::-webkit-scrollbar { 
+        display: none; 
     }
 }

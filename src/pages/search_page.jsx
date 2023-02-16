@@ -31,8 +31,8 @@ export default function SearchPage({ data }) {
   return (
     <>
     < Header />
+    <Link className={styles.Back} href={"/"}><MdArrowBackIos /> SEARCH</Link>
     <div className={styles.main}>
-      <Link className={styles.Back} href={"/"}><MdArrowBackIos /> SEARCH</Link>
       <form onSubmit={onHandleSubmit}>
         <input
           className={styles.SearchSubmit}
