@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./styles.module.scss";
+import 'transition-style';
+import { IoIosCloseCircle} from 'react-icons/io';
 
 const ModalMenu = ({ onHandleModal }) => {
   const onHandleLogout = () => {
@@ -12,8 +14,8 @@ const ModalMenu = ({ onHandleModal }) => {
   return (
     <div className={styles.MenuOverlay}>
       <div className={styles.MenuATendina}>
-        <div className={styles.CloseBtn} onClick={onHandleModal}>
-          x
+        <div className={styles.divCloseBtn} onClick={onHandleModal}>
+          < IoIosCloseCircle className={styles.CloseBtn} />
         </div>
         <ul className={styles.MenuLista}>
           <li>
@@ -47,7 +49,7 @@ const ModalMenu = ({ onHandleModal }) => {
             </Link>
           </li>
         </ul>
-        <button onClick={onHandleLogout} className={styles.MenuItem}>
+        <button onClick={onHandleLogout} className={styles.Logout}>
           Logout
         </button>
         <Image src={"/deezerlogo.png"} alt="logo.png" width={20} height={20} />
