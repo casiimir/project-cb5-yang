@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useContext } from "react";
 import styles from "./styles.module.scss";
+import credentials from "@/utils/credentials";
 
 const Login = () => {
   const { dispatch, state } = useContext(applicationContext);
@@ -19,19 +20,17 @@ const Login = () => {
   const [credential, setCredential] = useState();
 
   const onHandleSubmit = (e) => {
-    e.preventDefault();
     setCredential({ username, password });
     console.log(state.login);
   };
-  for (let i = 0; i < state.login.length; i++) {
+  for (let i = 0; i < credentials.login.length; i++) {
     if (
-      state.login[i].username === credential?.username &&
-      state.login[i].password === credential?.password
+      credentials.login[i].username === credential?.username &&
+      credentials.login[i].password === credential?.password
     ) {
-      dispatch({
-        type: "LOGIN",
-        payload: { username, password, logged: true },
-      });
+      if (typeof window !== "undefined") {
+        localStorage.setItem("logged", true);
+      }
       console.log(state);
     }
   }
@@ -64,7 +63,7 @@ const Login = () => {
             value={password}
             required
           />
-          <input type="submit" value="Login" className={styles.login}/>
+          <input type="submit" value="Login" className={styles.login} />
         </form>
       </div>
 
