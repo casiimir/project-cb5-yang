@@ -5,11 +5,13 @@ import { MdArrowBackIos } from 'react-icons/md';
 import styles from "./styles.module.scss"
 
 export default function SigleAlbum({ albumData }) {
+
+   console.log(albumData.tracks.data[0].title_short)
   
     return (
       <div className={styles.Album}>
         <Link className={styles.linkAlbum} href={"/top_album"}>
-          <MdArrowBackIos /> ALL ALBUMS
+          <MdArrowBackIos /> ALBUM
         </Link>
         <div className={styles.containerAlbum}>
           <Image src={albumData.cover_medium} width={250} height={250} alt={albumData.title} />
@@ -28,6 +30,13 @@ export default function SigleAlbum({ albumData }) {
             }
           </div>
         </div>
+        <iframe id={`deezer-widget-${albumData.id}`} 
+          src={`https://widget.deezer.com/widget/dark/album/${albumData.id}?app_id=457142&autoplay=false&radius=true&tracklist=true`} 
+          width="690" height="710" 
+          allowtransparency="true" 
+          allowfullscreen="true" 
+          allow="encrypted-media">
+        </iframe>
       </div>
     );
   }
@@ -48,5 +57,10 @@ export default function SigleAlbum({ albumData }) {
     const res = await fetch(`https://api.deezer.com/album/${params.id}`);
     const albumData = await res.json();
 
-    return { props: { albumData } };
+    return { 
+      props: 
+      { 
+        albumData, 
+      } 
+    };
   }
