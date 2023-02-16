@@ -49,6 +49,11 @@
             cursor: pointer;
             font-size: 2rem;
         }
+
+        a:hover {
+            color:  #DB00FF;
+            filter: drop-shadow(0px 0px 15px #DB00FF);
+        }
     }
 
     img {
@@ -66,7 +71,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         overflow-x: scroll;
-        gap: 50px;
+        gap: 40px;
         align-items: center;
         -ms-overflow-style: none;
         scrollbar-width: none;
@@ -77,14 +82,18 @@
         transform: translate(-50%, -50%);
 
         .container_Content{
-            width: 250px;
+            width: 270px;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: space-between;          
 
             img {
                 width: 116px;
                 height:116px;
                 border-radius: 26px;
+            }
+
+            h2, h3{
+                font-size: .8rem;
             }
         }
     }
