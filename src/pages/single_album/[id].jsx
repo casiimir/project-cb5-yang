@@ -5,11 +5,13 @@ import { MdArrowBackIos } from 'react-icons/md';
 import styles from "./styles.module.scss"
 
 export default function SigleAlbum({ albumData }) {
+
+   console.log(albumData.tracks.data[0].title_short)
   
     return (
       <div className={styles.Album}>
         <Link className={styles.linkAlbum} href={"/top_album"}>
-          <MdArrowBackIos /> ALL ALBUMS
+          <MdArrowBackIos /> ALBUM
         </Link>
         <div className={styles.containerAlbum}>
           <Image src={albumData.cover_medium} width={250} height={250} alt={albumData.title} />
@@ -20,9 +22,11 @@ export default function SigleAlbum({ albumData }) {
                 albumData?.tracks?.data?.map(track => 
                 <div className={styles.singleTrack}>
                   <span>{track.title_short}</span>
-                  <audio controls id="my-audio">
+                  
+                  <audio controls>
                     <source src={track.preview} type="audio/mp3" />
                   </audio>
+                  
                 </div>
                 )
             }
