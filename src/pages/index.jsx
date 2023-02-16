@@ -24,7 +24,7 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
     }
   }
 
-  return (
+    return (
     <>
       <Head>
         <title>project-cb5-yang</title>
@@ -34,7 +34,7 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
       </Head>
 
       <applicationContext.Provider value={{ state }}>
-        <Header />
+        <Header/>
       </applicationContext.Provider>
 
       <main className={styles.main}>
