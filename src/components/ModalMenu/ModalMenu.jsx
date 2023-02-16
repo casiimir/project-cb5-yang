@@ -41,6 +41,7 @@ const ModalMenu = ({ onHandleModal }) => {
             </Link>
           </li>
         </ul>
+        <button className={styles.MenuItem}>Logout</button>
         <Image src={"/deezerlogo.png"} alt="logo.png" width={20} height={20} />
       </div>
     </div>
