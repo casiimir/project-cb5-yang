@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 
 const Top_Album = ({data}) => {
+
   return (
     <>
     < Header />
@@ -28,7 +29,7 @@ const Top_Album = ({data}) => {
                         <span>Position: {album.position}</span>
                     </div>
                 </div>
-                <Link className={styles.seeAll} href={"/"}><span>See Details</span></Link>
+                <Link className={styles.seeAll} href={`/single_album/${album.id}`} as={`/single_album/${album.id}`}><span>See Details</span></Link>
             </div>
           ))}
     </div>
