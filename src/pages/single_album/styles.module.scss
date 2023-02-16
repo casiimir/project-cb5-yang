@@ -1,4 +1,4 @@
-.Back {
+.linkAlbum {
     color: white;
     padding: 20px;
     text-decoration: none;
@@ -65,6 +65,11 @@
     //     }
 
     // }
+
+    .containerAlbum {
+        display: none;
+    }
+
 
     .divIframe {
         display: flex;
