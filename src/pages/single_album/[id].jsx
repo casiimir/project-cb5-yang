@@ -1,3 +1,5 @@
+import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
 import { MdArrowBackIos } from "react-icons/md";
@@ -5,6 +7,7 @@ import { MdArrowBackIos } from "react-icons/md";
 import styles from "./styles.module.scss";
 
 export default function SigleAlbum({ albumData }) {
+
   return (
     <div className={styles.Album}>
       <Link className={styles.linkAlbum} href={"/top_album"}>
@@ -34,6 +37,9 @@ export default function SigleAlbum({ albumData }) {
   );
 }
 
+
+  
+
 export async function getStaticPaths() {
   const res = await fetch("https://api.deezer.com/chart/0/albums");
   const data = await res.json();
@@ -41,6 +47,7 @@ export async function getStaticPaths() {
   const paths = data.data.map((album) => ({
     params: { id: album.id.toString() },
   }));
+
 
   return { paths, fallback: true };
 }
@@ -51,3 +58,12 @@ export async function getStaticProps({ params }) {
 
   return { props: { albumData } };
 }
+
+    return { 
+      props: 
+      { 
+        albumData, 
+      } 
+    };
+  }
+

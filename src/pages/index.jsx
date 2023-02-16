@@ -48,6 +48,7 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
             <Header />
           </applicationContext.Provider>
 
+
           <main className={styles.main}>
             <applicationContext.Provider value={{ state, dispatch }}>
               <div className={styles.Homepage}>
@@ -75,6 +76,9 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
                 <section className={styles.topTracks}>
                   <div className={styles.header}>
                     <h2>Top Tracks</h2>
+
+     
+
                     <Link href={"/top_track"}>
                       <span>See all</span>
                     </Link>
@@ -98,6 +102,7 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
                   </div>
                 </section>
 
+
                 <section className={styles.topAlbums}>
                   <div className={styles.header}>
                     <h2>Top Albums</h2>
@@ -118,6 +123,8 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
                     ))}
                   </div>
                 </section>
+
+       
               </div>
             </applicationContext.Provider>
           </main>

@@ -1,0 +1,109 @@
+.Back {
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    text-transform: uppercase;
+    align-self: flex-start;
+}
+
+.main {
+    width: 85%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow: scroll;
+    color: white;
+    margin: 20px;
+    position: absolute;
+    bottom: 90px;
+
+    form {
+        background: rgba(0, 0, 0, 0.42);
+        box-shadow: inset 0px 4px 4px 2px #000000;
+        border-radius: 16px;
+        border: none;
+        width: 100%;
+    
+        input {
+            padding: 20px;
+            background-color: transparent;
+            border: none;
+            color: #000000;
+            text-transform: uppercase;
+        }
+
+        .SearchSubmit{
+            color: #939393;
+        }
+        
+    }
+
+    .singleTrack {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+            font-size: .9rem;
+            color: white;
+            width: 180px;
+        }
+
+        p {
+            font-size: .9rem;
+            color: #939393;
+            width: 150px;
+        }
+     
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .main {
+        width: 85%;
+        flex-direction: column;
+        flex-wrap: wrap;
+        overflow-x: scroll;
+        gap: 50px;
+        align-items: center;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        margin-left: 70px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding-top: 80px;
+
+        form {
+            position: absolute;
+            top: 0px;
+            left: 0;
+            width: fit-content;
+
+        }
+
+
+        audio {
+            width: 150px;
+        }
+
+        audio::-webkit-media-controls-current-time-display {
+            display: none;
+          }
+
+          audio::-webkit-media-controls-time-remaining-display{
+            display: none;
+          }
+        
+    }
+
+    .main::-webkit-scrollbar { 
+        display: none; 
+    }
+}
