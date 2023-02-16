@@ -1,8 +1,13 @@
 import SingleTrack from "@/components/singleTrack/SingleTrack";
 import { useState } from "react";
 import { useRouter } from "next/router";
+
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
+
+import Link from "next/link";
+import { MdArrowBackIos } from 'react-icons/md';
+
 
 import styles from "../pages/search_page/styles.module.scss";
 
@@ -27,6 +32,7 @@ export default function SearchPage({ data }) {
     <>
     < Header />
     <div className={styles.main}>
+      <Link className={styles.Back} href={"/"}><MdArrowBackIos /> SEARCH</Link>
       <form onSubmit={onHandleSubmit}>
         <input
           className={styles.SearchSubmit}
