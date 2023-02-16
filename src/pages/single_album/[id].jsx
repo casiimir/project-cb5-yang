@@ -1,5 +1,3 @@
-import Header from "@/components/Header";
-import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
 import { MdArrowBackIos } from "react-icons/md";
@@ -9,7 +7,6 @@ import styles from "./styles.module.scss";
 export default function SigleAlbum({ albumData }) {
   return (
     <>
-      <Header />
       <Link className={styles.linkAlbum} href={"/top_album"}>
         <MdArrowBackIos /> ALL ALBUMS
       </Link>
@@ -46,7 +43,6 @@ export default function SigleAlbum({ albumData }) {
           ></iframe>
         </div>
       </div>
-      <Navbar />
     </>
   );
 }
