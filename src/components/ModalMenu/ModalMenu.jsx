@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import 'transition-style';
-import { IoIosCloseCircle} from 'react-icons/io';
+import { IoIosCloseCircle } from 'react-icons/io';
 
 const ModalMenu = ({ onHandleModal }) => {
   const onHandleLogout = () => {
@@ -11,6 +11,7 @@ const ModalMenu = ({ onHandleModal }) => {
       location.reload();
     }
   };
+  
   return (
     <div className={styles.MenuOverlay}>
       <div className={styles.MenuATendina}>

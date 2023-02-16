@@ -5,6 +5,10 @@
     padding: 20px;
     position: relative;
 
+    img:hover {
+        cursor: pointer;
+    }
+
     .User {
         position: absolute;
         left: 60px;
