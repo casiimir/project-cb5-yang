@@ -3,6 +3,12 @@ import Image from "next/image";
 import styles from "./styles.module.scss";
 
 const ModalMenu = ({ onHandleModal }) => {
+  const onHandleLogout = () => {
+    if (typeof window !== "undefined") {
+      localStorage.clear();
+      location.reload();
+    }
+  };
   return (
     <div className={styles.MenuOverlay}>
       <div className={styles.MenuATendina}>
@@ -41,7 +47,9 @@ const ModalMenu = ({ onHandleModal }) => {
             </Link>
           </li>
         </ul>
-        <button className={styles.MenuItem}>Logout</button>
+        <button onClick={onHandleLogout} className={styles.MenuItem}>
+          Logout
+        </button>
         <Image src={"/deezerlogo.png"} alt="logo.png" width={20} height={20} />
       </div>
     </div>

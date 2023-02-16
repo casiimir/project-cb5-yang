@@ -7,51 +7,49 @@ import { MdArrowBackIos } from "react-icons/md";
 import styles from "./styles.module.scss";
 
 export default function SigleAlbum({ albumData }) {
-
   return (
     <>
-    < Header/>
-    <Link className={styles.linkAlbum} href={"/top_album"}>
+      <Header />
+      <Link className={styles.linkAlbum} href={"/top_album"}>
         <MdArrowBackIos /> ALL ALBUMS
-    </Link>
-    <div className={styles.Album}>
-      <div className={styles.containerAlbum}>
-        <Image
-          src={albumData.cover_medium}
-          width={250}
-          height={250}
-          alt={albumData.title}
-        />
-        <h1>{albumData.title}</h1>
-        <h5>{albumData.artist.name}</h5>
-        <div className={styles.Tracks}>
-          {albumData?.tracks?.data?.map((track) => (
-            <div className={styles.singleTrack}>
-              <span>{track.title_short}</span>
-              <audio controls id="my-audio">
-                <source src={track.preview} type="audio/mp3" />
-              </audio>
-            </div>
-          ))}
+      </Link>
+      <div className={styles.Album}>
+        <div className={styles.containerAlbum}>
+          <Image
+            src={albumData.cover_medium}
+            width={250}
+            height={250}
+            alt={albumData.title}
+          />
+          <h1>{albumData.title}</h1>
+          <h5>{albumData.artist.name}</h5>
+          <div className={styles.Tracks}>
+            {albumData?.tracks?.data?.map((track) => (
+              <div className={styles.singleTrack}>
+                <span>{track.title_short}</span>
+                <audio controls id="my-audio">
+                  <source src={track.preview} type="audio/mp3" />
+                </audio>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className={styles.divIframe}>
+          <iframe
+            id={`deezer-widget-${albumData.id}`}
+            src={`https://widget.deezer.com/widget/dark/album/${albumData.id}?app_id=457142&autoplay=false&radius=true&tracklist=true`}
+            width="690"
+            height="710"
+            allowtransparency="true"
+            allowfullscreen="true"
+            allow="encrypted-media"
+          ></iframe>
         </div>
       </div>
-      <div className={styles.divIframe}>
-        <iframe id={`deezer-widget-${albumData.id}`} 
-          src={`https://widget.deezer.com/widget/dark/album/${albumData.id}?app_id=457142&autoplay=false&radius=true&tracklist=true`} 
-          width="690" height="710" 
-          allowtransparency="true" 
-          allowfullscreen="true" 
-          allow="encrypted-media">
-        </iframe>
-        </div>
-    </div>
-    < Navbar/>
+      <Navbar />
     </>
   );
 }
-
-
-  
 
 export async function getStaticPaths() {
   const res = await fetch("https://api.deezer.com/chart/0/albums");
@@ -60,7 +58,6 @@ export async function getStaticPaths() {
   const paths = data.data.map((album) => ({
     params: { id: album.id.toString() },
   }));
-
 
   return { paths, fallback: true };
 }
