@@ -79,18 +79,22 @@
 @media only screen and (min-width: 768px) {
 
     .Album { 
+        position: absolute;
+            top: 50%;
+            left: 0%;
+            transform: translate(-0%, -50%);
+            margin-left: 70px;
+            justify-content: center;
+            align-items: center;
+
     .containerAlbum {
         display: none;
     }
 
     .divIframe {
-        display: block;
+        display: flex;
        
         iframe {
-            position: absolute;
-            top: 25%;
-            left: 50%;
-            transform: translate(-50%, -25%);
             height: 400px;
         }
     }
