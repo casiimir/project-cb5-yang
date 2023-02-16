@@ -60,7 +60,7 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
                     </Link>
                   </div>
                   <div className={styles.container_Content}>
-                    {dataArtist?.data.slice(0, 5).map((artist) => (
+                    {dataArtist?.data.map((artist) => (
                       <Link href={"/top_artist"}>
                         <Image
                           src={artist.picture_medium}
@@ -84,7 +84,7 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
                     </Link>
                   </div>
                   <div className={styles.container_Content}>
-                    {dataTracks?.data.slice(0, 5).map((track) => (
+                    {dataTracks?.data.map((track) => (
                       <div className={styles.content}>
                         <Link href={"/top_track"}>
                           <Image
@@ -111,7 +111,7 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
                     </Link>
                   </div>
                   <div className={styles.container_Content}>
-                    {dataAlbums?.data.slice(0, 5).map((artist) => (
+                    {dataAlbums?.data.map((artist) => (
                       <Link href={"/top_album"}>
                         <Image
                           src={artist.cover_medium}
