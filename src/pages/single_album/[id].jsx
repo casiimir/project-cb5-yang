@@ -35,7 +35,7 @@ export default function SigleAlbum({ albumData }) {
           <iframe
             id={`deezer-widget-${albumData.id}`}
             src={`https://widget.deezer.com/widget/dark/album/${albumData.id}?app_id=457142&autoplay=false&radius=true&tracklist=true`}
-            width="690"
+            width="790"
             height="710"
             allowtransparency="true"
             allowfullscreen="true"
