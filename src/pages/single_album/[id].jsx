@@ -9,10 +9,12 @@ import styles from "./styles.module.scss";
 export default function SigleAlbum({ albumData }) {
 
   return (
-    <div className={styles.Album}>
-      <Link className={styles.linkAlbum} href={"/top_album"}>
+    <>
+    < Header/>
+    <Link className={styles.linkAlbum} href={"/top_album"}>
         <MdArrowBackIos /> ALL ALBUMS
-      </Link>
+    </Link>
+    <div className={styles.Album}>
       <div className={styles.containerAlbum}>
         <Image
           src={albumData.cover_medium}
@@ -33,7 +35,18 @@ export default function SigleAlbum({ albumData }) {
           ))}
         </div>
       </div>
+      <div className={styles.divIframe}>
+        <iframe id={`deezer-widget-${albumData.id}`} 
+          src={`https://widget.deezer.com/widget/dark/album/${albumData.id}?app_id=457142&autoplay=false&radius=true&tracklist=true`} 
+          width="690" height="710" 
+          allowtransparency="true" 
+          allowfullscreen="true" 
+          allow="encrypted-media">
+        </iframe>
+        </div>
     </div>
+    < Navbar/>
+    </>
   );
 }
 
@@ -58,12 +71,3 @@ export async function getStaticProps({ params }) {
 
   return { props: { albumData } };
 }
-
-    return { 
-      props: 
-      { 
-        albumData, 
-      } 
-    };
-  }
-
