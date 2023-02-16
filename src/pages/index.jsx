@@ -5,10 +5,9 @@ import { loginReducer } from "@/store/loginReducer";
 import Link from "next/link";
 import Image from "next/image";
 import { BsPlayCircle } from "react-icons/bs";
-import Navbar from "../components/Navbar/Navbar";
 import Login from "@/Login/Login";
-import Header from "@/components/Header";
 import { useEffect, useState } from "react";
+import MainLayouts from "@/layouts/MainLayouts";
 
 import styles from "@/styles/Home.module.scss";
 
@@ -26,7 +25,7 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
 
     if (logged === false) {
       return (
-        <applicationContext.Provider value={{ state, dispatch }}>
+        <applicationContext.Provider value={{ state }}>
           <Login />
         </applicationContext.Provider>
       );
@@ -44,92 +43,86 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
             <link rel="icon" href="/favicon.ico" />
           </Head>
 
-          <applicationContext.Provider value={{ state }}>
-            <Header />
-          </applicationContext.Provider>
+          <MainLayouts>
+            <applicationContext.Provider
+              value={{ state }}
+            ></applicationContext.Provider>
 
-
-          <main className={styles.main}>
-            <applicationContext.Provider value={{ state, dispatch }}>
-              <div className={styles.Homepage}>
-                <section className={styles.topArtist}>
-                  <div className={styles.header}>
-                    <h2>Top Artists</h2>
-                    <Link href={"/top_artist"}>
-                      <span>See all</span>
-                    </Link>
-                  </div>
-                  <div className={styles.container_Content}>
-                    {dataArtist?.data.map((artist) => (
+            <main className={styles.main}>
+              <applicationContext.Provider value={{ state, dispatch }}>
+                <div className={styles.Homepage}>
+                  <section className={styles.topArtist}>
+                    <div className={styles.header}>
+                      <h2>Top Artists</h2>
                       <Link href={"/top_artist"}>
-                        <Image
-                          src={artist.picture_medium}
-                          width={200}
-                          height={200}
-                          alt={artist.name}
-                        />
+                        <span>See all</span>
                       </Link>
-                    ))}
-                  </div>
-                </section>
-
-                <section className={styles.topTracks}>
-                  <div className={styles.header}>
-                    <h2>Top Tracks</h2>
-
-     
-
-                    <Link href={"/top_track"}>
-                      <span>See all</span>
-                    </Link>
-                  </div>
-                  <div className={styles.container_Content}>
-                    {dataTracks?.data.map((track) => (
-                      <div className={styles.content}>
-                        <Link href={"/top_track"}>
+                    </div>
+                    <div className={styles.container_Content}>
+                      {dataArtist?.data.map((artist) => (
+                        <Link href={"/top_artist"}>
                           <Image
-                            src={track.artist.picture_medium}
+                            src={artist.picture_medium}
                             width={200}
                             height={200}
-                            alt={track.title}
+                            alt={artist.name}
                           />
                         </Link>
-                        <Link href={"/top_track"} className={styles.btnPlay}>
-                          <BsPlayCircle />
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                </section>
+                      ))}
+                    </div>
+                  </section>
 
+                  <section className={styles.topTracks}>
+                    <div className={styles.header}>
+                      <h2>Top Tracks</h2>
 
-                <section className={styles.topAlbums}>
-                  <div className={styles.header}>
-                    <h2>Top Albums</h2>
-                    <Link href={"/top_album"}>
-                      <span>See all</span>
-                    </Link>
-                  </div>
-                  <div className={styles.container_Content}>
-                    {dataAlbums?.data.map((artist) => (
-                      <Link href={"/top_album"}>
-                        <Image
-                          src={artist.cover_medium}
-                          width={200}
-                          height={200}
-                          alt={artist.name}
-                        />
+                      <Link href={"/top_track"}>
+                        <span>See all</span>
                       </Link>
-                    ))}
-                  </div>
-                </section>
+                    </div>
+                    <div className={styles.container_Content}>
+                      {dataTracks?.data.map((track) => (
+                        <div className={styles.content}>
+                          <Link href={"/top_track"}>
+                            <Image
+                              src={track.artist.picture_medium}
+                              width={200}
+                              height={200}
+                              alt={track.title}
+                            />
+                          </Link>
+                          <Link href={"/top_track"} className={styles.btnPlay}>
+                            <BsPlayCircle />
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
 
-       
-              </div>
-            </applicationContext.Provider>
-          </main>
-
-          <Navbar />
+                  <section className={styles.topAlbums}>
+                    <div className={styles.header}>
+                      <h2>Top Albums</h2>
+                      <Link href={"/top_album"}>
+                        <span>See all</span>
+                      </Link>
+                    </div>
+                    <div className={styles.container_Content}>
+                      {dataAlbums?.data.map((artist) => (
+                        <Link href={"/top_album"}>
+                          <Image
+                            src={artist.cover_medium}
+                            width={200}
+                            height={200}
+                            alt={artist.name}
+                          />
+                        </Link>
+                      ))}
+                    </div>
+                  </section>
+                </div>
+              </applicationContext.Provider>
+            </main>
+          </MainLayouts>
         </>
       );
     }

@@ -2,15 +2,10 @@ import SingleTrack from "@/components/singleTrack/SingleTrack";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-import Header from "@/components/Header";
-import Navbar from "@/components/Navbar";
-
 import Link from "next/link";
-import { MdArrowBackIos } from 'react-icons/md';
-
+import { MdArrowBackIos } from "react-icons/md";
 
 import styles from "../pages/search_page/styles.module.scss";
-
 
 export default function SearchPage({ data }) {
   const router = useRouter();
@@ -30,23 +25,23 @@ export default function SearchPage({ data }) {
 
   return (
     <>
-    < Header />
-    <Link className={styles.Back} href={"/"}><MdArrowBackIos /> SEARCH</Link>
-    <div className={styles.main}>
-      <form onSubmit={onHandleSubmit}>
-        <input
-          className={styles.SearchSubmit}
-          onChange={onHandleChange}
-          type="text"
-          placeholder="Track title"
-          value={searchTitle}
-          required
-        />
-        <input  type="submit" value="search" onSubmit={onHandleSubmit} />
-      </form>
-      <SingleTrack data={data} className={styles.singleTrack} />
-    </div>
-    < Navbar />
+      <Link className={styles.Back} href={"/"}>
+        <MdArrowBackIos /> SEARCH
+      </Link>
+      <div className={styles.main}>
+        <form onSubmit={onHandleSubmit}>
+          <input
+            className={styles.SearchSubmit}
+            onChange={onHandleChange}
+            type="text"
+            placeholder="Track title"
+            value={searchTitle}
+            required
+          />
+          <input type="submit" value="search" onSubmit={onHandleSubmit} />
+        </form>
+        <SingleTrack data={data} className={styles.singleTrack} />
+      </div>
     </>
   );
 }
