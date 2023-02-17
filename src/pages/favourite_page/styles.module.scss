@@ -1,0 +1,91 @@
+.Back {
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+}
+
+.FavouritePage {
+    width: 89%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    overflow: scroll;
+    color: white;
+    margin: 20px;
+    position: absolute;
+    bottom: 90px;
+
+    .Content{
+
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1rem;
+        background-color: rgba(0, 0, 0, 0.276);
+        padding: 1rem;
+        border-radius: 26px;
+
+        h2 {
+            font-size: 1.1rem;
+        }
+        
+        h3, h4 {
+            font-size: 1rem;
+            color: #939393;
+            font-weight: 100;
+        }
+
+    }
+
+    .Heart {
+        cursor: pointer;
+        font-size: 1.5rem ;
+        position: absolute;
+        right: 16px;
+        top: 30px;
+        color:  #DB00FF;
+        filter: drop-shadow(0px 0px 5px #DB00FF);
+    }
+
+    audio {
+        align-self: center;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+   
+    .FavouritePage {
+        width: 85%;
+        flex-wrap: wrap;
+        overflow-x: scroll;
+        gap: 50px;
+        align-items: flex-start;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        margin-left: 70px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .Content{
+            width: 350px;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+
+        .Heart {
+            
+            top: 16px;
+        }
+    }
+}
