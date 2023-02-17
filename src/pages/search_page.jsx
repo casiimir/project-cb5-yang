@@ -1,8 +1,6 @@
 import SingleTrack from "@/components/singleTrack/SingleTrack";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import Header from "@/components/Header";
-import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import { MdArrowBackIos } from "react-icons/md";
 
@@ -48,7 +46,6 @@ export default function SearchPage({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  // console.log(context);
   const res = await fetch(`https://api.deezer.com/search?q=${context.query.q}`);
   const data = await res.json();
 
