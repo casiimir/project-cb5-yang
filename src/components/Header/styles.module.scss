@@ -7,7 +7,19 @@
 
     img:hover {
         cursor: pointer;
+        animation: shadow-pulse 1s infinite;
+        border-radius: 100%;
     }
+
+    @keyframes shadow-pulse
+{
+  0% {
+    box-shadow: 0 0 0 0px #d900ff39;
+  }
+  100% {
+    box-shadow: 0 0 0 16px #ff00ee0b;
+  }
+}
 
     .User {
         position: absolute;
