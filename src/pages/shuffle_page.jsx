@@ -1,18 +1,38 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import { MdArrowBackIos } from "react-icons/md";
+import { BsPlayCircle, BsPauseCircleFill } from "react-icons/bs";
 
 import styles from "./shuffle_page/styles.module.scss"
 
 const ShufflePage = ({data}) => {
+
+  const [currentTrack, setCurrentTrack] = useState(false);
+  const [playingTrackIndex, setPlayingTrackIndex] = useState(null);
+
+  const playTrack = (trackUrl, index) => {
+    if (currentTrack) {
+      currentTrack.pause();
+      if (playingTrackIndex === index) {
+        setPlayingTrackIndex(null);
+        return;
+      }
+    }
+    const audio = new Audio(trackUrl);
+    audio.play();
+    setCurrentTrack(audio);
+    setPlayingTrackIndex(index);
+  }
+
   return (
     <>
     <Link className={styles.Back} href={"/"}>
         <MdArrowBackIos /> SHUFFLE
     </Link>
     <div className={styles.Shuffle}>
-    {data?.data.map((shuffle) => (
-          <div className={styles.container_Content}>
+    {data?.data.map((shuffle, index) => (
+          <div className={styles.container_Content} key={index}>
             <Image
               src={shuffle.album.cover_medium}
               width={200}
@@ -23,27 +43,34 @@ const ShufflePage = ({data}) => {
                 <h2>{shuffle.title_short}</h2>
                 <h3>{shuffle.artist.name}</h3>
                 <h4>{shuffle.album.type}</h4>
-                <audio className={styles.audioDesk} src={shuffle.preview} controls />
+                <button>
+                  {playingTrackIndex === index ? 
+                    <BsPauseCircleFill onClick={() => playTrack(shuffle.preview, index)}/> : 
+                    <BsPlayCircle onClick={() => playTrack(shuffle.preview, index)}/>}
+                </button>
             </div>
-            <audio src={shuffle.preview} controls />
+            <button>
+                  {playingTrackIndex === index ? 
+                    <BsPauseCircleFill onClick={() => playTrack(shuffle.preview, index)}/> : 
+                    <BsPlayCircle onClick={() => playTrack(shuffle.preview, index)}/>}
+                </button>
           </div>
         ))}
     </div>
     </>
-    )
+  )
 }
 
 export default ShufflePage
 
 export async function getServerSideProps() {
-    const res = await fetch("https://api.deezer.com/user/5277344544/flow");
-  
-    const data = await res.json();
-  
-    return {
-      props: {
-        data,
-      },
-    };
-  }
-  
+  const res = await fetch("https://api.deezer.com/user/5277344544/flow");
+
+  const data = await res.json();
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
