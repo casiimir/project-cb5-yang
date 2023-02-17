@@ -19,10 +19,11 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [credential, setCredential] = useState();
 
-  const onHandleSubmit = (e) => {
+  const onHandleSubmit = () => {
     setCredential({ username, password });
     console.log(state.login);
   };
+
   for (let i = 0; i < credentials.login.length; i++) {
     if (
       credentials.login[i].username === credential?.username &&
@@ -30,6 +31,8 @@ const Login = () => {
     ) {
       if (typeof window !== "undefined") {
         localStorage.setItem("logged", true);
+        localStorage.setItem("user", [credential.username]);
+        localStorage.setItem("pass", [credential.password]);
       }
       console.log(state);
     }
