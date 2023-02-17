@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { HiOutlineHome, HiOutlineHeart } from "react-icons/hi";
 import { BsMusicNoteList, BsCollectionPlay, BsSearch } from "react-icons/bs";
+
 import styles from "./styles.module.scss";
 
 const Navbar = () => {

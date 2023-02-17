@@ -6,8 +6,6 @@ import styles from "./styles.module.scss";
 import credentials from "@/utils/credentials";
 
 const Login = () => {
-  const { dispatch, state } = useContext(applicationContext);
-
   const onHandleUsername = (e) => {
     setUsername(e.target.value);
   };
@@ -34,7 +32,6 @@ const Login = () => {
         localStorage.setItem("user", [credential.username]);
         localStorage.setItem("pass", [credential.password]);
       }
-      console.log(state);
     }
   }
 

@@ -2,24 +2,28 @@ import Link from "next/link";
 import Image from "next/image";
 import { MdArrowBackIos } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
-import { useContext, useReducer } from "react";
+import { useContext } from "react";
 import { applicationContext } from "@/store/state";
+import { useEffect } from "react";
 
 import styles from "./styles.module.scss";
 
 export default function SingleTrack({ trackData }) {
-  const context = useContext(applicationContext);
-  console.log(context);
-  const { dispatch } = context;
+  const { state, dispatch } = useContext(applicationContext);
 
   const onHandleFavorite = () => {
-    console.log("favorito");
-    dispatch({
-      type: "FAVORITE",
-      payload: {
+    console.log(state);
+    const favoriteTrack = [
+      {
+        titleTrack: trackData.title,
         artistName: trackData.artist.name,
+        artistImage: trackData.album.cover_medium,
+        trackPreview: trackData.preview,
       },
-    });
+    ];
+    const favoriteTrackJSON = JSON.stringify(favoriteTrack);
+    console.log(favoriteTrackJSON);
+    localStorage.setItem("favorite", favoriteTrackJSON);
   };
 
   return (
