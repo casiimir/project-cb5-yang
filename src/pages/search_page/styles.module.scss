@@ -34,6 +34,7 @@
             border: none;
             color: #000000;
             text-transform: uppercase;
+            outline: none;
         }
 
         .SearchSubmit{
@@ -42,31 +43,13 @@
         
     }
 
-    .singleTrack {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        h2 {
-            font-size: .9rem;
-            color: white;
-            width: 180px;
-        }
-
-        p {
-            font-size: .9rem;
-            color: #939393;
-            width: 150px;
-        }
-     
-    }
 }
 
 @media only screen and (min-width: 768px) {
 
     .main {
         width: 85%;
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: wrap;
         overflow-x: scroll;
         gap: 50px;
@@ -88,18 +71,6 @@
 
         }
 
-
-        audio {
-            width: 150px;
-        }
-
-        audio::-webkit-media-controls-current-time-display {
-            display: none;
-          }
-
-          audio::-webkit-media-controls-time-remaining-display{
-            display: none;
-          }
         
     }
 
