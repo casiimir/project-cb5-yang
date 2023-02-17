@@ -1,8 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MdArrowBackIos } from "react-icons/md";
 import { BsPlayCircle } from "react-icons/bs";
 
 import styles from "./categories_page/styles.module.scss"
+
 
 export default function GenreList({ data }){
 
@@ -17,6 +19,11 @@ export default function GenreList({ data }){
             .slice(1, data.length)
             .map((genre) => (
             <div className={styles.Content}>
+                <Image 
+                src={genre.picture_medium}
+                width={250}
+                height={250}
+                alt={genre.name}/>
                 <h2>{genre.name}</h2>
                 <BsPlayCircle />
             </div>
