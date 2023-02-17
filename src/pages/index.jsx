@@ -43,7 +43,7 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
             <link rel="icon" href="/favicon.ico" />
           </Head>
 
-          <MainLayouts>
+
             <applicationContext.Provider
               value={{ state }}
             ></applicationContext.Provider>
@@ -122,7 +122,7 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
                 </div>
               </applicationContext.Provider>
             </main>
-          </MainLayouts>
+
         </>
       );
     }
