@@ -9,10 +9,11 @@ const FavouritePage = () => {
   const [testo, setTesto] = useState("");
 
   useEffect(() => {
-    console.log(JSON.parse(localStorage.getItem("favorite")));
-    const x = JSON.parse(localStorage.getItem("favorite"));
-    x.map((item) => setTesto(item.titleTrack));
+    console.log(JSON.parse(localStorage.getItem("favoriteTracks")));
+    const x = localStorage.getItem("favoriteTracks");
+    setTesto(x);
   }, []);
+  console.log(testo);
 
   return (
     <>
@@ -20,12 +21,14 @@ const FavouritePage = () => {
         <MdArrowBackIos /> FAVOURITE
       </Link>
       <div className={styles.FavouritePage}>
-        <div className={styles.Content}>
-          <FaHeart className={styles.Heart} />
-          <h2>{testo}</h2>
-          <h3>Artist name</h3>
-          <audio src="" controls />
-        </div>
+        {testo.map((item) => (
+          <div className={styles.Content}>
+            <FaHeart className={styles.Heart} />
+            <h2>{item.titleTrack}</h2>
+            <h3>{item.artistName}</h3>
+            <audio src={item.trackPreview} controls />
+          </div>
+        ))}
       </div>
     </>
   );
