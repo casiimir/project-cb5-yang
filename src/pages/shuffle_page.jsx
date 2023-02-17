@@ -43,16 +43,11 @@ const ShufflePage = ({data}) => {
                 <h2>{shuffle.title_short}</h2>
                 <h3>{shuffle.artist.name}</h3>
                 <h4>{shuffle.album.type}</h4>
-                <button>
-                  {playingTrackIndex === index ? 
-                    <BsPauseCircleFill onClick={() => playTrack(shuffle.preview, index)}/> : 
-                    <BsPlayCircle onClick={() => playTrack(shuffle.preview, index)}/>}
-                </button>
             </div>
             <button>
                   {playingTrackIndex === index ? 
-                    <BsPauseCircleFill onClick={() => playTrack(shuffle.preview, index)}/> : 
-                    <BsPlayCircle onClick={() => playTrack(shuffle.preview, index)}/>}
+                    <BsPauseCircleFill className={styles.btnPause} onClick={() => playTrack(shuffle.preview, index)}/> : 
+                    <BsPlayCircle className={styles.btnPlay} onClick={() => playTrack(shuffle.preview, index)}/>}
                 </button>
           </div>
         ))}

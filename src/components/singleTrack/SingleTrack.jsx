@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BsPlayCircle, BsPauseCircleFill } from "react-icons/bs";
+import styles from "./styles.module.scss";
 
 const SingleTrack = ({ data, className }) => {
 
@@ -21,15 +22,15 @@ const SingleTrack = ({ data, className }) => {
   }
 
   return data?.map((item, index) => (
-    <div className={className} key={index}>
+    <div className={styles.Track} key={index}>
       <span>
         <h2>{item.title}</h2>
         <p>{item.artist.name}</p>
       </span>
       <button>
         {playingTrackIndex === index ? 
-        <BsPauseCircleFill onClick={() => playTrack(item.preview, index)}/> : 
-        <BsPlayCircle onClick={() => playTrack(item.preview, index)}/>}
+        <BsPauseCircleFill className={styles.btnPause} onClick={() => playTrack(item.preview, index)}/> : 
+        <BsPlayCircle className={styles.btnPlay} onClick={() => playTrack(item.preview, index)}/>}
       </button>
     </div>
   ));
