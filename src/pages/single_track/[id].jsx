@@ -9,7 +9,6 @@ import { useEffect } from "react";
 import styles from "./styles.module.scss";
 
 export default function SingleTrack({ trackData }) {
-  const { state, dispatch } = useContext(applicationContext);
 
   const onHandleFavorite = () => {
     console.log("kug");
@@ -20,19 +19,15 @@ export default function SingleTrack({ trackData }) {
       trackPreview: trackData.preview,
     };
 
-    // Recupera l'array dei brani preferiti dal Local Storage
-
     const favoriteTrackJSON = localStorage.getItem("favoriteTrack");
     const favoriteTracks = favoriteTrackJSON
       ? JSON.parse(favoriteTrackJSON)
       : [];
-    // Aggiungi il nuovo brano preferito all'array
+
     favoriteTracks.push(favoriteTrack);
-    console.log(favoriteTracks);
-    // Serializza l'array dei brani preferiti in formato JSON
+    
     const updatedFavoriteTrackJSON = JSON.stringify(favoriteTracks);
 
-    // Salva l'array serializzato nel Local Storage con la chiave "favoriteTrack"
     localStorage.setItem("favoriteTrack", updatedFavoriteTrackJSON);
   };
 

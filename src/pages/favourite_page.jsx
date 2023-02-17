@@ -2,18 +2,22 @@ import Link from "next/link";
 import { MdArrowBackIos } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 import { useEffect, useState } from "react";
+Image
 
 import styles from "./favourite_page/styles.module.scss";
+import Image from "next/image";
 
 const FavouritePage = () => {
-  const [testo, setTesto] = useState("");
+  const [favoriteTracks, setFavoriteTracks] = useState([]);
 
   useEffect(() => {
-    console.log(JSON.parse(localStorage.getItem("favoriteTracks")));
-    const x = localStorage.getItem("favoriteTracks");
-    setTesto(x);
+    const favoriteTrackJSON = localStorage.getItem("favoriteTrack");
+    const favoriteTracks = favoriteTrackJSON
+      ? JSON.parse(favoriteTrackJSON)
+      : [];
+
+    setFavoriteTracks(favoriteTracks);
   }, []);
-  console.log(testo);
 
   return (
     <>
@@ -21,13 +25,26 @@ const FavouritePage = () => {
         <MdArrowBackIos /> FAVOURITE
       </Link>
       <div className={styles.FavouritePage}>
-        {testo.map((item) => (
+
+        {favoriteTracks.map((item) => (
+                  <>
           <div className={styles.Content}>
+          <Image
+             src={item.artistImage}
+             width={50}
+             height={50}
+             alt={item.titleTrack}
+            />
+            <div className={styles.infoTrack}>
+              <h2>{item.titleTrack}</h2>
+              <h3>{item.artistName}</h3>
+            </div>
             <FaHeart className={styles.Heart} />
-            <h2>{item.titleTrack}</h2>
-            <h3>{item.artistName}</h3>
             <audio src={item.trackPreview} controls />
           </div>
+
+          </>
+          
         ))}
       </div>
     </>
