@@ -36,11 +36,24 @@
             height: 109px; 
             cursor: pointer;   
             transition: all .35s;
+            position: relative;
+            gap: 16px;
+
+            .Picture {
+                width: 100%;
+                height: 60px;
+                border-radius: 26px 26px 0 0;
+                position: absolute;
+                top: 0;
+                z-index: 0;
+                object-fit: cover;
+            }
 
             h2 {
                 font-size: .8rem;
                 text-transform: uppercase;
                 color: #ccc;
+                z-index: 1;
             }
 
             .Play {
@@ -60,6 +73,7 @@
 
             h2 {
                 color: white;
+                text-shadow: 0 0 2px black;
             }
         }
     }
