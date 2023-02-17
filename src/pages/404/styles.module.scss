@@ -1,0 +1,90 @@
+.ErrorContainer {
+    color: white;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+
+.Error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .N4{
+        font-size: 7rem;
+        animation: wiggle 1.5s infinite ; 
+    }
+
+    @keyframes wiggle {
+        0% { transform: rotate(0deg); }
+       80% { transform: rotate(0deg); }
+       85% { transform: rotate(8deg); }
+       95% { transform: rotate(-8deg); }
+      100% { transform: rotate(8deg); }
+    }
+
+    .logo{
+        width: 116px;
+        height: 116px;
+        -webkit-animation: rotating 2s linear infinite;
+        -moz-animation: rotating 2s linear infinite;
+        -ms-animation: rotating 2s linear infinite;
+        -o-animation: rotating 2s linear infinite;
+        animation: rotating 2s linear infinite;
+    }
+
+    @keyframes rotating {
+        from {
+          -ms-transform: rotate(0deg);
+          -moz-transform: rotate(0deg);
+          -webkit-transform: rotate(0deg);
+          -o-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        to {
+          -ms-transform: rotate(360deg);
+          -moz-transform: rotate(360deg);
+          -webkit-transform: rotate(360deg);
+          -o-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+}
+
+@media only screen and (min-width: 768px) {
+
+
+    .ErrorContainer{
+        width: 75%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5rem;
+
+        .Error{
+
+            .N4{
+                font-size: 8rem;
+            }
+
+            .logo {
+                width: 124px;
+                height: 124px;
+            }
+        }
+
+    }
+
+}
