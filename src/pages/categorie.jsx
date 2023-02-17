@@ -18,7 +18,7 @@ export default function GenreList({ data }){
             .map((genre) => (
             <div className={styles.Content}>
                 <h2>{genre.name}</h2>
-                <BsPlayCircle />
+                <BsPlayCircle  className={styles.Play} />
             </div>
             ))}
       </ul>
