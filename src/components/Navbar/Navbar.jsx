@@ -20,7 +20,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link href={`/playlist`} className={styles.MenuItem}>
+          <Link href={`/shuffle_page`} className={styles.MenuItem}>
             <BsMusicNoteList />
             <div className={styles.MenuTitle}>Playlist</div>
           </Link>
