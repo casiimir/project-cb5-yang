@@ -1,21 +1,6 @@
 import { createContext } from "react";
 
-const initialState = {
-  favorite: [
-    {
-      artistName: "",
-      artistImage: "",
-      trackName: "",
-      albumName: "",
-    },
-    {
-      artistName: "",
-      artistImage: "",
-      trackName: "",
-      albumName: "",
-    },
-  ],
-};
+const initialState = "alfio";
 
 const applicationContext = createContext(initialState);
 

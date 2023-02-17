@@ -2,24 +2,38 @@ import Link from "next/link";
 import Image from "next/image";
 import { MdArrowBackIos } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
-import { useContext, useReducer } from "react";
+import { useContext } from "react";
 import { applicationContext } from "@/store/state";
+import { useEffect } from "react";
 
 import styles from "./styles.module.scss";
 
 export default function SingleTrack({ trackData }) {
-  const context = useContext(applicationContext);
-  console.log(context);
-  const { dispatch } = context;
+  const { state, dispatch } = useContext(applicationContext);
 
   const onHandleFavorite = () => {
-    console.log("favorito");
-    dispatch({
-      type: "FAVORITE",
-      payload: {
-        artistName: trackData.artist.name,
-      },
-    });
+    console.log("kug");
+    const favoriteTrack = {
+      titleTrack: trackData.title,
+      artistName: trackData.artist.name,
+      artistImage: trackData.album.cover_medium,
+      trackPreview: trackData.preview,
+    };
+
+    // Recupera l'array dei brani preferiti dal Local Storage
+
+    const favoriteTrackJSON = localStorage.getItem("favoriteTrack");
+    const favoriteTracks = favoriteTrackJSON
+      ? JSON.parse(favoriteTrackJSON)
+      : [];
+    // Aggiungi il nuovo brano preferito all'array
+    favoriteTracks.push(favoriteTrack);
+    console.log(favoriteTracks);
+    // Serializza l'array dei brani preferiti in formato JSON
+    const updatedFavoriteTrackJSON = JSON.stringify(favoriteTracks);
+
+    // Salva l'array serializzato nel Local Storage con la chiave "favoriteTrack"
+    localStorage.setItem("favoriteTrack", updatedFavoriteTrackJSON);
   };
 
   return (
