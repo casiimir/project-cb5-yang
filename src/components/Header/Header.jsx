@@ -6,6 +6,7 @@ import ModalMenu from "../ModalMenu";
 
 const Header = () => {
   const { state } = useContext(applicationContext);
+  console.log(state)
 
   const [isModalEnabled, setModalEnabled] = useState(false);
 

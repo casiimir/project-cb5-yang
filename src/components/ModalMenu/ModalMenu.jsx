@@ -11,6 +11,10 @@ const ModalMenu = ({ onHandleModal }) => {
       location.reload();
     }
   };
+
+  const handleLinkClick = () => {
+    onHandleModal();
+  }; 
   
   return (
     <div className={styles.MenuOverlay}>
@@ -20,32 +24,32 @@ const ModalMenu = ({ onHandleModal }) => {
         </div>
         <ul className={styles.MenuLista}>
           <li>
-            <Link href={`/#`} className={styles.MenuItem}>
+            <Link href={`/`} className={styles.MenuItem} onClick={handleLinkClick}>
               <div className={styles.MenuTitle}>Home</div>
             </Link>
           </li>
           <li>
-            <Link href={`/preferiti`} className={styles.MenuItem}>
+            <Link href={`/preferiti`} className={styles.MenuItem} onClick={handleLinkClick}>
               <div className={styles.MenuTitle}>Preferiti</div>
             </Link>
           </li>
           <li>
-            <Link href={`/playlist`} className={styles.MenuItem}>
-              <div className={styles.MenuTitle}>Playlist</div>
+            <Link href={`/shuffle_page`} className={styles.MenuItem} onClick={handleLinkClick}>
+              <div className={styles.MenuTitle}>shuffle</div>
             </Link>
           </li>
           <li>
-            <Link href={`/categorie`} className={styles.MenuItem}>
+            <Link href={`/categorie`} className={styles.MenuItem} onClick={handleLinkClick}>
               <div className={styles.MenuTitle}>Categorie</div>
             </Link>
           </li>
           <li>
-            <Link href={`/search_page?q=track`} className={styles.MenuItem}>
+            <Link href={`/search_page?q=track`} className={styles.MenuItem} onClick={handleLinkClick}>
               <div className={styles.MenuTitle}>Search</div>
             </Link>
           </li>
           <li>
-            <Link href={`/about`} className={styles.MenuItem}>
+            <Link href={`/about`} className={styles.MenuItem} onClick={handleLinkClick}>
               <div className={styles.MenuTitle}>About</div>
             </Link>
           </li>
