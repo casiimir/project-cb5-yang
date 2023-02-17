@@ -1,0 +1,122 @@
+.Back {
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+}
+
+
+.About {
+    width: 90%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    color: white;
+    margin: 20px;
+    position: absolute;
+    bottom: 90px;
+    padding-bottom: 20px;
+    gap: 30px;
+
+    .Content {
+        display: flex;
+        align-items: center;
+        border-radius: 26px;
+        cursor: pointer;   
+        transition: all .35s;
+        gap: 20px;
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+        }
+
+        .infoDev {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 8px;
+
+            h2 {
+                font-size: 1rem;
+            }
+
+            a {
+                text-decoration: none;
+                color: #ccc;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer; 
+            }
+
+           
+
+        }
+    }
+
+    .Content:hover {
+
+        img {
+            cursor: pointer;
+            animation: shadow-pulse 1s infinite;
+            border-radius: 100%;
+        }
+    
+        @keyframes shadow-pulse
+    {
+      0% {
+        box-shadow: 0 0 0 0px #d900ff39;
+      }
+      100% {
+        box-shadow: 0 0 0 16px #ff00ee0b;
+      }
+    }
+
+        .infoDev {
+
+            a:hover {
+                color:  #DB00FF;
+                filter: drop-shadow(0px 0px 26px #DB00FF);
+            }
+        }
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .About{
+        width: 65%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        margin-left: 70px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 650px;
+        padding: 20px;
+        gap: 60px;
+
+        .Content{
+
+            img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        
+    }
+}

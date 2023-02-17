@@ -24,11 +24,11 @@ const About = ({data}) => {
             <div className={styles.infoDev}>
               <h2>{item.name}</h2>
               <a href={item.linkedin}>
-                <BsLinkedin />
+                <BsLinkedin className={styles.Logo} />
                 <span>{item.linkedin.substring(28, item.linkedin.length-1)}</span>
               </a>
               <a href={item.github}>
-                <BsGithub />
+                <BsGithub className={styles.Logo}/>
                 <span>{item.github.substring(0, 18)}</span>
               </a>
             </div>
