@@ -5,9 +5,9 @@ import styles from "./404/styles.module.scss";
 
 const ErrorPage404 = () => {
   return (
-    <>
+    <div className={styles.ErrorContainer}>
     <div className={styles.Error}>
-      <RiNumber4 />
+      <RiNumber4 className={styles.N4}/>
        <Image
           src={"/logo.png"}
           alt="logo.png"
@@ -15,10 +15,10 @@ const ErrorPage404 = () => {
           height={300}
           className={styles.logo}
        />
-      <RiNumber4 />
+      <RiNumber4 className={styles.N4}/>
     </div>
     <h2>Page not found</h2>
-    </>
+    </div>
   );
 };
 
