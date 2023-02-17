@@ -26,7 +26,6 @@ export default function SearchPage({ data }) {
 
   return (
     <>
-      <Header />
       <Link className={styles.Back} href={"/"}>
         <MdArrowBackIos /> SEARCH
       </Link>
@@ -44,7 +43,6 @@ export default function SearchPage({ data }) {
         </form>
         <SingleTrack data={data} className={styles.singleTrack} />
       </div>
-      <Navbar />
     </>
   );
 }
