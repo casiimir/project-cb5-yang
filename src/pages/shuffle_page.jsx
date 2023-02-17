@@ -23,6 +23,7 @@ const ShufflePage = ({data}) => {
                 <h2>{shuffle.title_short}</h2>
                 <h3>{shuffle.artist.name}</h3>
                 <h4>{shuffle.album.type}</h4>
+                <audio className={styles.audioDesk} src={shuffle.preview} controls />
             </div>
             <audio src={shuffle.preview} controls />
           </div>
