@@ -20,6 +20,7 @@ export default function GenreList({ data }){
             .map((genre) => (
             <div className={styles.Content}>
                 <Image 
+                className={styles.Picture}
                 src={genre.picture_medium}
                 width={250}
                 height={250}
