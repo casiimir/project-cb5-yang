@@ -2,9 +2,26 @@ import Link from "next/link";
 import Image from "next/image";
 import { MdArrowBackIos } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
+import { useContext, useReducer } from "react";
+import { applicationContext } from "@/store/state";
+
 import styles from "./styles.module.scss";
 
 export default function SingleTrack({ trackData }) {
+  const context = useContext(applicationContext);
+  console.log(context);
+  const { dispatch } = context;
+
+  const onHandleFavorite = () => {
+    console.log("favorito");
+    dispatch({
+      type: "FAVORITE",
+      payload: {
+        artistName: trackData.artist.name,
+      },
+    });
+  };
+
   return (
     <>
       <Link className={styles.Back} href={`/top_track`}>
@@ -23,7 +40,7 @@ export default function SingleTrack({ trackData }) {
         <div className={styles.containerSong}>
           <div>
             <h2>{trackData.title}</h2>
-            <FaRegHeart className={styles.Like} />
+            <FaRegHeart onClick={onHandleFavorite} className={styles.Like} />
           </div>
 
           <p>{trackData.artist.name}</p>

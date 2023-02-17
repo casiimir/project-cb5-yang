@@ -43,13 +43,9 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
             <link rel="icon" href="/favicon.ico" />
           </Head>
 
-          <MainLayouts>
-            <applicationContext.Provider
-              value={{ state }}
-            ></applicationContext.Provider>
-
-            <main className={styles.main}>
-              <applicationContext.Provider value={{ state, dispatch }}>
+          <applicationContext.Provider value={{ state, dispatch }}>
+            <MainLayouts>
+              <main className={styles.main}>
                 <div className={styles.Homepage}>
                   <section className={styles.topArtist}>
                     <div className={styles.header}>
@@ -120,9 +116,9 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
                     </div>
                   </section>
                 </div>
-              </applicationContext.Provider>
-            </main>
-          </MainLayouts>
+              </main>
+            </MainLayouts>
+          </applicationContext.Provider>
         </>
       );
     }

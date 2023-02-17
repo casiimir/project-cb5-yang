@@ -1,25 +1,19 @@
 import { createContext } from "react";
 
 const initialState = {
-  login: [
+  favorite: [
     {
-      username: "dario",
-      password: "password",
-      logged: false,
+      artistName: "",
+      artistImage: "",
+      trackName: "",
+      albumName: "",
     },
-    { username: "simone", password: "passwordsimone", logged: false },
-  ],
-  eccolo: [],
-};
-
-const loginState = {
-  login: [
     {
-      username: "dario",
-      password: "password",
-      logged: false,
+      artistName: "",
+      artistImage: "",
+      trackName: "",
+      albumName: "",
     },
-    { username: "simone", password: "passwordsimone", logged: false },
   ],
 };
 

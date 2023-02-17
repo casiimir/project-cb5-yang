@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { BsPlayCircle } from "react-icons/bs";
 import { MdArrowBackIos } from "react-icons/md";
+
 import styles from "./top_track/styles.module.scss";
 
 const Top_Track = ({ data }) => {

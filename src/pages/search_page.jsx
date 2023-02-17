@@ -1,7 +1,8 @@
 import SingleTrack from "@/components/singleTrack/SingleTrack";
 import { useState } from "react";
 import { useRouter } from "next/router";
-
+import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import { MdArrowBackIos } from "react-icons/md";
 
@@ -25,6 +26,7 @@ export default function SearchPage({ data }) {
 
   return (
     <>
+      <Header />
       <Link className={styles.Back} href={"/"}>
         <MdArrowBackIos /> SEARCH
       </Link>
@@ -42,6 +44,7 @@ export default function SearchPage({ data }) {
         </form>
         <SingleTrack data={data} className={styles.singleTrack} />
       </div>
+      <Navbar />
     </>
   );
 }
