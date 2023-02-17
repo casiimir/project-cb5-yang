@@ -14,7 +14,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link href={`/preferiti`} className={styles.MenuItem}>
+          <Link href={`/favourite_page`} className={styles.MenuItem}>
             <HiOutlineHeart />
             <div className={styles.MenuTitle}>Preferiti</div>
           </Link>
