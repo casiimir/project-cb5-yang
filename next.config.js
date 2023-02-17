@@ -1,8 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   images:{
-    domains: ['e-cdns-images.dzcdn.net', 'cdns-images.dzcdn.net'],
+    domains: [
+      'e-cdns-images.dzcdn.net', 
+      'cdns-images.dzcdn.net', 
+      "i.postimg.cc"
+    ],
   }
 };
 
