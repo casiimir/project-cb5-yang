@@ -11,12 +11,22 @@ const FavouritePage = () => {
         <MdArrowBackIos /> FAVOURITE
     </Link>
     <div className={styles.FavouritePage}>
-        <FaHeart />
         <div className={styles.Content}>
+        <FaHeart className={styles.Heart} />
             <h2>Track name</h2>
             <h3>Arist name</h3>
+            <audio src="" controls />
         </div>
-        <audio src="" controls />
+
+
+
+        <div className={styles.Content}>
+        <FaHeart className={styles.Heart} />
+            <h2>Track name</h2>
+            <h3>Arist name</h3>
+            <audio src="" controls />
+        </div>
+        
     </div>
     </>
 
