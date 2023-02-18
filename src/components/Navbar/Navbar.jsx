@@ -9,33 +9,28 @@ const Navbar = () => {
     <div className={styles.Navbar}>
       <ul>
         <li>
-          <Link href={`/#`} className={styles.MenuItem}>
+          <Link href={`/#`}>
             <HiOutlineHome />
-            <div className={styles.MenuTitle}>Home</div>
           </Link>
         </li>
         <li>
-          <Link href={`/favourite_page`} className={styles.MenuItem}>
+          <Link href={`/favourite_page`}>
             <HiOutlineHeart />
-            <div className={styles.MenuTitle}>Preferiti</div>
           </Link>
         </li>
         <li>
-          <Link href={`/shuffle_page`} className={styles.MenuItem}>
+          <Link href={`/shuffle_page`}>
             <BsMusicNoteList />
-            <div className={styles.MenuTitle}>Playlist</div>
           </Link>
         </li>
         <li>
-          <Link href={`/categorie`} className={styles.MenuItem}>
+          <Link href={`/categorie`}>
             <BsCollectionPlay />
-            <div className={styles.MenuTitle}>Categorie</div>
           </Link>
         </li>
         <li>
-          <Link href={`/search_page?q=track`} className={styles.MenuItem}>
+          <Link href={`/search_page?q=track`}>
             <BsSearch />
-            <div className={styles.MenuTitle}>Search</div>
           </Link>
         </li>
       </ul>
