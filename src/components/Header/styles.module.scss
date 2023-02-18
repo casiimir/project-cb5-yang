@@ -59,7 +59,6 @@
     padding: 1.5rem 0;
 
     .Logo_User{
-      gap: 1.75rem;
     }
   }
 }
@@ -67,8 +66,5 @@
 @media screen and (min-width: 1200px) {
   .Header{
     padding: 2rem 0;
-    .Logo_User{
-      gap: 2rem;
-    }
   }
 }
