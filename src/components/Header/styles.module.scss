@@ -1,35 +1,74 @@
 .Header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    position: relative;
-
-    img:hover {
-        cursor: pointer;
-        animation: shadow-pulse 1s infinite;
-        border-radius: 100%;
-    }
-
-    @keyframes shadow-pulse
-{
-  0% {
-    box-shadow: 0 0 0 0px #d900ff39;
+  width: 85%;
+  margin: auto;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  img:hover{
+    cursor: pointer;
+    animation: shadow-pulse 1s infinite;
+    border-radius: 100%;
   }
-  100% {
-    box-shadow: 0 0 0 16px #ff00ee0b;
+  
+  @keyframes shadow-pulse
+  {
+    0%{
+      box-shadow: 0 0 0 0px #d900ff39;
+    }
+    100%{
+      box-shadow: 0 0 0 16px #ff00ee0b;
+    }
   }
 }
 
-    .User {
-        position: absolute;
-        left: 60px;
-        color: white;
-        font-size: 1.2rem;
-
-        span {
-            font-weight: 700;
-            text-transform: capitalize;
-        }
+.Logo_User{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  
+  .User{
+    color: white;
+    font-size: 1.2rem;
+    
+    span{
+      font-weight: 700;
+      text-transform: capitalize;
     }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Header{
+    width: 95%;
+    margin: auto;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    .Logo_User{
+      gap: 1.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Header{
+    padding: 1.5rem 0;
+
+    .Logo_User{
+      gap: 1.75rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Header{
+    padding: 2rem 0;
+    .Logo_User{
+      gap: 2rem;
+    }
+  }
 }
