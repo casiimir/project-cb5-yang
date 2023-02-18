@@ -19,7 +19,6 @@ const Login = () => {
 
   const onHandleSubmit = () => {
     setCredential({ username, password });
-    console.log(state.login);
   };
 
   for (let i = 0; i < credentials.login.length; i++) {
