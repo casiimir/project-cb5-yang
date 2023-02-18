@@ -19,6 +19,20 @@ const FavouritePage = () => {
     setFavoriteTracks(favoriteTracks);
   }, []);
 
+  const removeFavourite = (index) => {
+    const favoriteTrackJSON = localStorage.getItem("favoriteTrack");
+    const favoriteTracks = favoriteTrackJSON
+      ? JSON.parse(favoriteTrackJSON)
+      : [];
+  
+    favoriteTracks.splice(index, 1); // rimuovi l'elemento dall'array
+  
+    const updatedFavoriteTrackJSON = JSON.stringify(favoriteTracks);
+    localStorage.setItem("favoriteTrack", updatedFavoriteTrackJSON);
+  
+    setFavoriteTracks(favoriteTracks); // aggiorna lo stato
+  }
+
   return (
     <>
       <Link className={styles.Back} href={"/"}>
@@ -39,7 +53,7 @@ const FavouritePage = () => {
               <h2>{item.titleTrack}</h2>
               <h3>{item.artistName}</h3>
             </div>
-            <FaHeart className={styles.Heart} />
+            <FaHeart className={styles.Heart} onClick={removeFavourite}/>
             <audio src={item.trackPreview} controls />
           </div>
 
