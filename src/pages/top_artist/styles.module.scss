@@ -1,87 +1,157 @@
 .Back {
     color: white;
-    padding: 20px;
     text-decoration: none;
     display: flex;
-    padding: 0 20px;
     align-items: center;
+    font-weight: 600;
+    position: absolute;
+    left: 8%;
 }
 
 .TopArtist{
     width: 85%;
-    height: 450px;
+    margin: auto;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     overflow: scroll;
     color: white;
-    margin: 20px;
-    position: absolute;
-    bottom: 90px;
+    margin-top: 2rem;
 
-    .container_Content{
+    .Content{
         display: flex;
+        flex-direction: column;
+        padding: 1rem 0;
         gap: 1rem;
+        height: 70vh;
 
-        img {
-            width: 75px;
-            height:75px;
-            border-radius: 26px;
-        }
+        .container_Content{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
 
-        .infoArtist {
-
-            h2 {
-                font-size: 1rem;
+            img{
+                width: 75px;
+                height: 75px;
+                border-radius: 26px;
             }
-            
-            h3, h4 {
-                font-size: 1rem;
-                color: #939393;
-                font-weight: 100;
+
+            .infoArtist{
+                display: flex;
+                flex-direction: column;
+                gap: .2rem;
+                
+                h2{
+                    font-size: 1rem;
+                }
+                
+                h3, 
+                h4{
+                    text-transform: capitalize;
+                    font-size: 1rem;
+                    color: whitesmoke;
+                    font-weight: 100;
+                }
             }
         }
-        
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 768px){
 
-   
+    .Back {
+        position: absolute;
+        left: 13.5%;
+    }
 
     .TopArtist{
-        width: 85%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        overflow-x: scroll;
-        gap: 50px;
-        align-items: center;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        margin-left: 70px;
         position: absolute;
         top: 50%;
-        left: 50%;
+        left: 56%;
         transform: translate(-50%, -50%);
-        
+        margin-top: 1rem;
 
-        .container_Content{
-            width: 250px;
-            align-items: center;
-            justify-content: flex-start;
+        .Content{
+            width: fit-content;
+            height: 65vh;
 
-            img {
-                width: 116px;
-                height:116px;
-                border-radius: 26px;
+            .container_Content{
+                img{
+                    width: 90px;
+                    height: 90px;
+                    border-radius: 1.8rem;
+                }
             }
-            
         }
-
-       
     }
+}
 
-    .TopArtist::-webkit-scrollbar { 
-        display: none; 
+@media screen and (min-width: 1024px){
+
+    .Back {
+        top: 15%;
+    }    
+
+    .TopArtist{
+        position: absolute;
+        top: 50%;
+        left: 56%;
+        transform: translate(-50%, -50%);
+        margin-top: 1rem;
+
+        .Content{
+            width: fit-content;
+            height: 66vh;
+            flex-wrap: wrap;
+
+            .container_Content{
+                img{
+                    width: 90px;
+                    height: 90px;
+                    border-radius: 1.8rem;
+                }
+            }
+        }
     }
-  }
+    
+    .TopArtist::-webkit-scrollbar{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1200px){
+
+    .TopArtist{
+        .Content{
+            height: 65vh;
+            flex-wrap: wrap;
+
+            .container_Content{
+                img{
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 1.8rem;
+                }
+
+                .infoArtist{
+                    display: flex;
+                    flex-direction: column;
+                    gap: .2rem;
+                    
+                    h2{
+                        font-size: 1.3rem;
+                    }
+                    
+                    h3, 
+                    h4{
+                        text-transform: capitalize;
+                        font-size: 1.2rem;
+                        color: whitesmoke;
+                        font-weight: 100;
+                    }
+                }
+            }
+        }
+    }
+}
