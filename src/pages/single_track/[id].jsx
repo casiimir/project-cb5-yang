@@ -1,18 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MdArrowBackIos } from "react-icons/md";
-import { FaRegHeart } from "react-icons/fa";
-import { useContext } from "react";
-import { applicationContext } from "@/store/state";
-import { useEffect } from "react";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { useState } from "react";
 
 import styles from "./styles.module.scss";
 
 export default function SingleTrack({ trackData }) {
-  const { state, dispatch } = useContext(applicationContext);
+
+  const [icon, setIcon] = useState(false)
 
   const onHandleFavorite = () => {
-    console.log("kug");
+ 
     const favoriteTrack = {
       titleTrack: trackData.title,
       artistName: trackData.artist.name,
@@ -20,20 +19,18 @@ export default function SingleTrack({ trackData }) {
       trackPreview: trackData.preview,
     };
 
-    // Recupera l'array dei brani preferiti dal Local Storage
-
     const favoriteTrackJSON = localStorage.getItem("favoriteTrack");
     const favoriteTracks = favoriteTrackJSON
       ? JSON.parse(favoriteTrackJSON)
       : [];
-    // Aggiungi il nuovo brano preferito all'array
+
     favoriteTracks.push(favoriteTrack);
-    console.log(favoriteTracks);
-    // Serializza l'array dei brani preferiti in formato JSON
+    
     const updatedFavoriteTrackJSON = JSON.stringify(favoriteTracks);
 
-    // Salva l'array serializzato nel Local Storage con la chiave "favoriteTrack"
     localStorage.setItem("favoriteTrack", updatedFavoriteTrackJSON);
+
+    setIcon(true)
   };
 
   return (
@@ -54,7 +51,11 @@ export default function SingleTrack({ trackData }) {
         <div className={styles.containerSong}>
           <div>
             <h2>{trackData.title}</h2>
-            <FaRegHeart onClick={onHandleFavorite} className={styles.Like} />
+            <button>
+              {icon === false ? 
+              <FaRegHeart onClick={onHandleFavorite} className={styles.Like} /> :
+              <FaHeart className={styles.Like} /> }
+            </button>
           </div>
 
           <p>{trackData.artist.name}</p>

@@ -2,18 +2,36 @@ import Link from "next/link";
 import { MdArrowBackIos } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 import { useEffect, useState } from "react";
+Image
 
 import styles from "./favourite_page/styles.module.scss";
+import Image from "next/image";
 
 const FavouritePage = () => {
-  const [testo, setTesto] = useState("");
+  const [favoriteTracks, setFavoriteTracks] = useState([]);
 
   useEffect(() => {
-    console.log(JSON.parse(localStorage.getItem("favoriteTracks")));
-    const x = localStorage.getItem("favoriteTracks");
-    setTesto(x);
+    const favoriteTrackJSON = localStorage.getItem("favoriteTrack");
+    const favoriteTracks = favoriteTrackJSON
+      ? JSON.parse(favoriteTrackJSON)
+      : [];
+
+    setFavoriteTracks(favoriteTracks);
   }, []);
-  console.log(testo);
+
+  const removeFavourite = (index) => {
+    const favoriteTrackJSON = localStorage.getItem("favoriteTrack");
+    const favoriteTracks = favoriteTrackJSON
+      ? JSON.parse(favoriteTrackJSON)
+      : [];
+  
+    favoriteTracks.splice(index, 1); // rimuovi l'elemento dall'array
+  
+    const updatedFavoriteTrackJSON = JSON.stringify(favoriteTracks);
+    localStorage.setItem("favoriteTrack", updatedFavoriteTrackJSON);
+  
+    setFavoriteTracks(favoriteTracks); // aggiorna lo stato
+  }
 
   return (
     <>
@@ -21,13 +39,26 @@ const FavouritePage = () => {
         <MdArrowBackIos /> FAVOURITE
       </Link>
       <div className={styles.FavouritePage}>
-        {testo.map((item) => (
+
+        {favoriteTracks.map((item) => (
+                  <>
           <div className={styles.Content}>
-            <FaHeart className={styles.Heart} />
-            <h2>{item.titleTrack}</h2>
-            <h3>{item.artistName}</h3>
+          <Image
+             src={item.artistImage}
+             width={50}
+             height={50}
+             alt={item.titleTrack}
+            />
+            <div className={styles.infoTrack}>
+              <h2>{item.titleTrack}</h2>
+              <h3>{item.artistName}</h3>
+            </div>
+            <FaHeart className={styles.Heart} onClick={removeFavourite}/>
             <audio src={item.trackPreview} controls />
           </div>
+
+          </>
+          
         ))}
       </div>
     </>
