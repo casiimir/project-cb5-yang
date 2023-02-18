@@ -2,9 +2,24 @@ const credentials = {
   login: [
     {
       username: "dario",
-      password: "password",
+      password: "dario",
     },
-    { username: "simone", password: "passwordsimone" },
+    { 
+      username: "simone", 
+      password: "simone" 
+    },
+    {
+      username: "jessica",
+      password: "jessica",
+    },
+    { 
+      username: "anastasia", 
+      password: "anastasia" 
+    },
+    {
+      username: "anna",
+      password: "anna",
+    }
   ],
 };
 
