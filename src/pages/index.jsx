@@ -4,10 +4,12 @@ import Image from "next/image";
 import { BsPlayCircle } from "react-icons/bs";
 import Login from "@/Login/Login";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 import styles from "@/styles/Home.module.scss";
 
 export default function Home({ dataArtist, dataTracks, dataAlbums }) {
+  const router = useRouter();
   const [logged, setLogged] = useState(false);
 
   {
@@ -36,7 +38,9 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
             <div className={styles.Homepage}>
               <section className={styles.topArtist}>
                 <div className={styles.header}>
-                  <h2>Top Artists</h2>
+                  <Link href={"/top_artist"}>
+                    <h2>Top Artists</h2>
+                  </Link>
                   <Link href={"/top_artist"}>
                     <span>See all</span>
                   </Link>
@@ -45,11 +49,12 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
                   {dataArtist?.data.map((artist) => (
                     <Link href={"/top_artist"}>
                       <Image
-                        src={artist.picture_medium}
+                        src={artist.picture_big}
                         width={200}
                         height={200}
                         alt={artist.name}
                       />
+                      <p>{artist.name}</p>
                     </Link>
                   ))}
                 </div>
@@ -57,10 +62,11 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
 
               <section className={styles.topTracks}>
                 <div className={styles.header}>
-                  <h2>Top Tracks</h2>
-
                   <Link href={"/top_track"}>
-                    <span>See all</span>
+                    <h2>Top Tracks</h2>
+                  </Link>
+                  <Link href={"/top_track"}>
+                    <span>See all</span>{" "}
                   </Link>
                 </div>
                 <div className={styles.container_Content}>
@@ -68,13 +74,16 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
                     <div className={styles.content}>
                       <Link href={"/top_track"}>
                         <Image
-                          src={track.artist.picture_medium}
+                          src={track.album.cover_medium}
                           width={200}
                           height={200}
                           alt={track.title}
                         />
                       </Link>
-                      <Link href={"/top_track"} className={styles.btnPlay}>
+                      <Link
+                        href={`/single_track/${track.id}`}
+                        className={styles.btnPlay}
+                      >
                         <BsPlayCircle />
                       </Link>
                     </div>
@@ -84,7 +93,9 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
 
               <section className={styles.topAlbums}>
                 <div className={styles.header}>
-                  <h2>Top Albums</h2>
+                  <Link href={"/top_album"}>
+                    <h2>Top Albums</h2>
+                  </Link>
                   <Link href={"/top_album"}>
                     <span>See all</span>
                   </Link>
