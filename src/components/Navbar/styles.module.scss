@@ -7,10 +7,10 @@
   bottom: 1.5rem;
 
     ul{
-      padding: 1rem 0;
+      padding: 1rem;
       border-radius: 1rem;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       text-decoration: none;
       background: linear-gradient(180deg, rgba(252, 247, 255, 0.08) 0%, rgba(252, 247, 255, 0) 100%);
 
@@ -35,15 +35,10 @@
 
   .Navbar{
     width: fit-content;
-    height: 100%;
-    position: absolute;
-    top: 32%;
-    left: 5.5%;
+    top: 15%;
+    left: 5%;
   
       ul{
-        padding: 1rem;
-        border-radius: 1rem;
-        display: flex;
         flex-direction: column;
         gap: 4.4rem;
       }
@@ -53,6 +48,9 @@
   @media screen and (min-width: 1024px) {
 
     .Navbar{
+      width: fit-content;
+      left: 5%;
+
         ul{
           gap: 4.5em;
         }
@@ -63,6 +61,7 @@
 
       .Navbar{
         width: fit-content;
+        top: 15%;
         left: 4%;
 
           ul{
