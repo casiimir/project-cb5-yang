@@ -1,22 +1,18 @@
-.Back {
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    position: absolute;
-    left: 8%;
-}
-
 .TopArtist{
     width: 85%;
     margin: auto;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    overflow: scroll;
     color: white;
-    margin-top: 2rem;
+
+    .Back {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        padding: 0.5rem 0;
+    }
 
     .Content{
         display: flex;
@@ -24,6 +20,7 @@
         padding: 1rem 0;
         gap: 1rem;
         height: 70vh;
+        overflow: scroll;
 
         .container_Content{
             display: flex;
@@ -46,8 +43,7 @@
                     font-size: 1rem;
                 }
                 
-                h3, 
-                h4{
+                h3{
                     text-transform: capitalize;
                     font-size: 1rem;
                     color: whitesmoke;
@@ -60,27 +56,31 @@
 
 @media screen and (min-width: 768px){
 
-    .Back {
-        position: absolute;
-        left: 13.5%;
-    }
-
     .TopArtist{
-        position: absolute;
-        top: 50%;
-        left: 56%;
-        transform: translate(-50%, -50%);
-        margin-top: 1rem;
+        margin-left: 6rem;
+        margin-top: -.5rem;
 
         .Content{
-            width: fit-content;
-            height: 65vh;
+            justify-content: space-between;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 2rem;
+            height: 75vh;
 
             .container_Content{
+                width: 30%;
+
                 img{
                     width: 90px;
                     height: 90px;
                     border-radius: 1.8rem;
+                }
+
+                .infoArtist{
+                    width: 50%;
+                    h2{
+                        width: 50%;
+                    }
                 }
             }
         }
@@ -89,20 +89,12 @@
 
 @media screen and (min-width: 1024px){
 
-    .Back {
-        top: 15%;
-    }    
-
     .TopArtist{
-        position: absolute;
-        top: 50%;
-        left: 56%;
-        transform: translate(-50%, -50%);
-        margin-top: 1rem;
+        margin-left: 7.5rem;
+        margin-top: .5rem;
 
         .Content{
             width: fit-content;
-            height: 66vh;
             flex-wrap: wrap;
 
             .container_Content{
@@ -115,7 +107,7 @@
         }
     }
     
-    .TopArtist::-webkit-scrollbar{
+    .Content::-webkit-scrollbar{
         display: none;
     }
 }
@@ -133,38 +125,20 @@
     }
 
     .TopArtist{
-        top: 50%;
-        left: 53%;
-        transform: translate(-50%, -50%);
-        margin-top: 1rem;
+        margin-left: 11rem;
+        margin-top: 1.75rem;
 
         .Content{
-            height: 65vh;
+            width: 70%;
             flex-wrap: wrap;
+            height: 60vh;
+            gap: 2rem;
 
             .container_Content{
                 img{
-                    width: 120px;
-                    height: 120px;
+                    width: 100px;
+                    height: 100px;
                     border-radius: 1.8rem;
-                }
-
-                .infoArtist{
-                    display: flex;
-                    flex-direction: column;
-                    gap: .2rem;
-                    
-                    h2{
-                        font-size: 1.3rem;
-                    }
-                    
-                    h3, 
-                    h4{
-                        text-transform: capitalize;
-                        font-size: 1.2rem;
-                        color: whitesmoke;
-                        font-weight: 100;
-                    }
                 }
             }
         }

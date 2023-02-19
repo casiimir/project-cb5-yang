@@ -6,11 +6,11 @@ import styles from "./top_artist/styles.module.scss";
 const Top_Artist = ({ data }) => {
   return (
     <>
-    <Link className={styles.Back} href={"/"}>
-    <MdArrowBackIos /> ALL ARTISTS
-  </Link>
-    <div className={styles.TopArtist}>
 
+    <div className={styles.TopArtist}>
+      <Link className={styles.Back} href={"/"}>
+        <MdArrowBackIos /> ALL ARTISTS
+      </Link>
       <div className={styles.Content}>
         {data?.data.map((artist) => (
           <div className={styles.container_Content}>
@@ -23,7 +23,6 @@ const Top_Artist = ({ data }) => {
             <div className={styles.infoArtist}>
               <h2>{artist.name}</h2>
               <h3>Position: {artist.position}°</h3>
-              <h4>{artist.type}</h4>
             </div>
           </div>
           ))}
