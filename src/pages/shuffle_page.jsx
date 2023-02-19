@@ -27,10 +27,12 @@ const ShufflePage = ({data}) => {
 
   return (
     <>
+   
+    <div className={styles.Shuffle}>
     <Link className={styles.Back} href={"/"}>
         <MdArrowBackIos /> SHUFFLE
     </Link>
-    <div className={styles.Shuffle}>
+    <div className={styles.Content}>
     {data?.data.map((shuffle, index) => (
           <div className={styles.container_Content} key={index}>
             <Image
@@ -51,6 +53,7 @@ const ShufflePage = ({data}) => {
                 </button>
           </div>
         ))}
+         </div>
     </div>
     </>
   )

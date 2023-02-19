@@ -49,10 +49,33 @@
         gap: 20px;
       }
 
-      .Like {
+      button {
+
+        background-color: transparent;
+        border: none;
+    
+        .Like {
           cursor: pointer;
-          font-size: 1.3rem;
+          color: white;
+          font-size: 1.5rem;
+          
       }
+
+      .Like:hover {
+        color:  #DB00FF;
+        filter: drop-shadow(0px 0px 15px #DB00FF);
+        
+    }
+
+    .Like_pieno {
+      cursor: pointer;
+      font-size: 1.5rem;
+      color:  #DB00FF;
+      filter: drop-shadow(0px 0px 15px #DB00FF);
+    }
+
+      }
+      
     }
 }
 
