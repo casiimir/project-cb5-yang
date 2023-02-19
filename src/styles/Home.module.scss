@@ -3,145 +3,170 @@
     margin: auto;
     display: flex;
     flex-direction: column;
-    gap: .5rem;
     color: white;
-
-    h2 {
-        text-transform: uppercase;
-        font-size: 1rem;
-    }
-
-    a {
-        text-decoration: none;
-    }
-        span {
-            text-transform: uppercase;
-            color: #939393;
-            font-size: .8rem;
-            cursor: pointer;
-        }
-    
-        span:hover {
-            font-weight: bold;
-        }
-        
-    .header,
-    .header,
-    .header{
+    gap: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -51%);
+   
+    .topContent{
         display: flex;
-        justify-content: space-between;
-        padding: 16px 0;
-    }
-
-    .container_Content{
-        display: flex;
+        flex-direction: column;
         gap: 1rem;
-        overflow-x: hidden;
-        overflow-x: scroll;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
 
-        .content{
+        .header{
             display: flex;
-            flex-direction: column;
-        }
-    }
+            align-items: center;
+            justify-content: space-between;
 
-    .container_Content::-webkit-scrollbar { 
-        display: none; 
-    }
+            a{
+                text-decoration: none;
+                h2{
+                    font-size: 1rem;
+                    color: white;
+                }
 
-    .topArtist {
-
-        img {
-            width: 75px;
-            height: 75px;
-            border-radius: 100%;
-        }
-    }
-
-    .topTracks {
-
-        .content {
-            background: linear-gradient(180deg, rgba(252, 247, 255, 0.08) 0%, rgba(252, 247, 255, 0) 100%);
-            border-radius: 36px;
-            height: 130px;
-            position: relative;
-            margin-bottom: 16px;
+                h5{
+                    color: rgb(121, 121, 121);
+                    font-size: .9rem;
+                }
+            }
         }
 
-        img {
-            width: 75px;
-            height: 75px;
-            border-radius: 16px;
-        }
+        .container_Content{
+            display: flex;
+            gap: 1rem;
+            overflow: hidden;
+            overflow: scroll;
 
-        .btnPlay {
-            position: absolute;
-            bottom: 0;
-            right: -5px;
-            color: white;
-            font-size: 1.6rem;
-        }
+            a{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: .5rem;
+                text-decoration: none;
+                font-weight: 500;
 
-        .btnPlay:hover {
-            color:  #DB00FF;
-            filter: drop-shadow(0px 0px 15px #DB00FF);
-        }
-    }
+                img {
+                    width: 85px;
+                    height: 85px;
+                    border-radius: 1rem;
+                }
 
-    .topAlbums {
+                h5{
+                    color: white;
+                    text-align: center;   
+                }
 
-        margin-top: -15px;
-        img {
-            width: 75px;
-            height: 75px;
-            border-radius: 16px;
+                .imgTopAlbum{
+                    margin-bottom: 1rem
+                }
+            }
+
+            .contentTopTrack{
+                background: linear-gradient(180deg, rgba(252, 247, 255, 0.08) 0%, 
+                rgba(252, 247, 255, 0) 100%);
+                border-radius: 1rem;
+                padding: .5rem;
+                padding-bottom: .2rem;
+
+                .icon{
+                    font-size: 1.4rem;
+                    margin-bottom: 1rem;
+                }
+            }
         }
     }
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
 
-    .main {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+    .Homepage{
+        width: 83%;
+        top: 53%;
+        left: 55%;
+        transform: translate(-50%, -53%);
 
-    .Homepage {
-        padding-left: 70px;
-
-      .topArtist,
-      .topTracks,
-      .topAlbums {
-
-        .container_Content {
-            gap: 40px;
+        .topContent{
+            .container_Content::-webkit-scrollbar{
+                display: none;
+            }
         }
-
-        img {
-            width: 116px;
-            height: 116px;
-        }
-      }  
-
-      .topTracks {
-          .content{
-              height: 180px;
-          }
-        
-        .btnPlay {
-            font-size: 2rem;
-        }
-      }
-       
     }
+}
 
+@media screen and (min-width: 1024px) {
+
+    .Homepage{
+        width: 85%;
+        top: 53%;
+        left: 55%;
+        transform: translate(-50%, -53%);
+
+        .topContent{
+            .container_Content::-webkit-scrollbar{
+                display: none;
+            }
+        }
     }
+}
 
+@media screen and (min-width: 1200px) {
+
+    .Homepage{
+        width: 85%;
+        top: 51%;
+        left: 53%;
+        transform: translate(-50%, -51%);
+        gap: 2rem;
+
+        .topContent{
+            .header{
+                a{
+                    text-decoration: none;
+
+                    h2{
+                        font-size: 1.5rem;
+                    }
+    
+                    h5{
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+
+            .container_Content{
+                gap: 2rem;
+    
+                a{
+                    gap: 1rem;
+    
+                    img {
+                        width: 120px;
+                        height: 120px;
+                        border-radius: 1rem;
+                    }
+    
+                    h5{
+                        color: white;
+                        text-align: center;   
+                        font-size:.9rem;
+                    }
+    
+                    .imgTopAlbum{
+                        margin-bottom: 1rem
+                    }
+                }
+    
+                .contentTopTrack{
+                    padding: .2rem;
+    
+                    .icon{
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
