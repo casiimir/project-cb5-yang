@@ -107,7 +107,7 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
                         src={artist.cover_medium}
                         width={200}
                         height={200}
-                        alt={artist.name}
+                        alt={artist.artist.name}
                         className={styles.imgTopAlbum}
                       />
                     </Link>

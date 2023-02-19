@@ -4,12 +4,8 @@
     display: flex;
     flex-direction: column;
     color: white;
-    gap: 1rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -51%);
-   
+    gap: .5rem;
+
     .topContent{
         display: flex;
         flex-direction: column;
@@ -59,9 +55,6 @@
                     text-align: center;   
                 }
 
-                .imgTopAlbum{
-                    margin-bottom: 1rem
-                }
             }
 
             .contentTopTrack{
@@ -69,7 +62,6 @@
                 rgba(252, 247, 255, 0) 100%);
                 border-radius: 1rem;
                 padding: .5rem;
-                padding-bottom: .2rem;
 
                 .icon{
                     font-size: 1.4rem;
@@ -77,18 +69,21 @@
                 }
             }
         }
+        .container_Content::-webkit-scrollbar{
+            display: none;
+        }
     }
 }
 
 @media screen and (min-width: 768px) {
 
     .Homepage{
-        width: 83%;
-        top: 53%;
-        left: 55%;
-        transform: translate(-50%, -53%);
+        width: 86%;
+        margin-top: -.3rem;
+        margin-left: 6rem;
 
         .topContent{
+            width: 100%;
             .container_Content::-webkit-scrollbar{
                 display: none;
             }
@@ -99,15 +94,11 @@
 @media screen and (min-width: 1024px) {
 
     .Homepage{
-        width: 85%;
-        top: 53%;
-        left: 55%;
-        transform: translate(-50%, -53%);
-
+        margin-top: .6rem;
+        margin-left: 7rem;
         .topContent{
-            .container_Content::-webkit-scrollbar{
-                display: none;
-            }
+            
+            width: 100%;
         }
     }
 }
@@ -116,9 +107,8 @@
 
     .Homepage{
         width: 85%;
-        top: 51%;
-        left: 53%;
-        transform: translate(-50%, -51%);
+        margin-top: 2.1rem;
+        margin-left: 10rem;
         gap: 2rem;
 
         .topContent{
@@ -142,9 +132,9 @@
                 a{
                     gap: 1rem;
     
-                    img {
-                        width: 120px;
-                        height: 120px;
+                    img{
+                        width: 110px;
+                        height: 110px;
                         border-radius: 1rem;
                     }
     
@@ -155,7 +145,8 @@
                     }
     
                     .imgTopAlbum{
-                        margin-bottom: 1rem
+                        width: 116px;
+                        height: 116px;
                     }
                 }
     
