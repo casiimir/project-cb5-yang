@@ -54,7 +54,7 @@ export default function SingleTrack({ trackData }) {
             <button>
               {icon === false ? 
               <FaRegHeart onClick={onHandleFavorite} className={styles.Like} /> :
-              <FaHeart className={styles.Like} /> }
+              <FaHeart className={styles.Like_pieno} /> }
             </button>
           </div>
 
