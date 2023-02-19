@@ -12,3 +12,7 @@ body{
   height: 100vh;
   background: linear-gradient(197.56deg,#100f0f 6.06%, #2B1B33 97.9%); 
 }
+
+a, button{
+  cursor: pointer;
+}

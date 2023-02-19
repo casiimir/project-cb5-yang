@@ -7,30 +7,34 @@ import styles from "./top_track/styles.module.scss";
 
 const Top_Track = ({ data }) => {
   return (
-    <>
+      <div className={styles.TopTrack}>
       <Link className={styles.Back} href={"/"}>
         <MdArrowBackIos /> ALL TRACKS
       </Link>
-      <div className={styles.TopTrack}>
+      <div className={styles.Content}>
         {data?.data.map((track) => (
-          <div className={styles.container_Content}>
-            <div className={styles.track}>
-              <Image src={track.album.cover_medium} width={250} height={250} />
-              <div className={styles.infoTrack}>
-                <h2>{track.title}</h2>
-                <h3>{track.artist.name}</h3>
+            <div className={styles.container_Content}>
+              <div className={styles.track}>
+                <Image src={track.album.cover_medium} width={250} height={250} />
+                <div className={styles.infoTrack}>
+                  <h2>
+                    {track.title.length > 13
+                    ? `${track.title.toLowerCase().substring(0, 10)} ...`
+                    : track.title.toLowerCase()}
+                  </h2>
+                  <h3>{track.artist.name}</h3>
+                </div>
               </div>
+              <Link
+                href={`/single_track/${track.id}`}
+                as={`/single_track/${track.id}`}
+              >
+                <BsPlayCircle />
+              </Link>
             </div>
-            <Link
-              href={`/single_track/${track.id}`}
-              as={`/single_track/${track.id}`}
-            >
-              <BsPlayCircle />
-            </Link>
-          </div>
-        ))}
+          ))}
       </div>
-    </>
+      </div>
   );
 };
 
