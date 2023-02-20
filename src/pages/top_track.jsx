@@ -29,7 +29,7 @@ const Top_Track = ({ data }) => {
                 href={`/single_track/${track.id}`}
                 as={`/single_track/${track.id}`}
               >
-                <BsPlayCircle />
+                <BsPlayCircle className={styles.PlayCircle}/>
               </Link>
             </div>
           ))}

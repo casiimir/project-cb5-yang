@@ -1,51 +1,91 @@
-.Back {
-    color: white;
-    padding: 20px;
-    text-decoration: none;
+.ContainerBackForm {
+
+    width: 85%;
+    height: fit-content;
     display: flex;
-    padding: 0 20px;
-    align-items: center;
-    text-transform: uppercase;
-    align-self: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; 
+    margin: auto;
+    z-index: 1;
+
+    .Back {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        font-weight: 600;
+    }
+
+
+form {
+    background: rgb(0, 0, 0);
+    box-shadow: inset 0px 4px 4px 2px #000000;
+    border-radius: 16px;
+    border: none;
+    width: 100%;
+    z-index: 2;
+
+    input {
+        background-color: rgb(0, 0, 0);
+        padding: 20px;
+        border: none;
+        color: #cccccc;
+        text-transform: uppercase;
+        outline: none;
+        border-radius: 16px;
+    }
+
+    .SearchSubmit::placeholder{
+        color: #767676;
+    }
+}
 }
 
 .main {
+    height:60vh;
     width: 85%;
-    height: 450px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2rem;
     overflow: scroll;
     color: white;
-    margin: 20px;
-    position: absolute;
-    bottom: 90px;
+    margin:auto;
+    z-index: 0;
+    margin-top: 20px;
+}
 
-    form {
-        background: rgba(0, 0, 0, 0.42);
-        box-shadow: inset 0px 4px 4px 2px #000000;
-        border-radius: 16px;
-        border: none;
-        width: 100%;
-    
-        input {
-            padding: 20px;
-            background-color: transparent;
-            border: none;
-            color: #000000;
-            text-transform: uppercase;
-            outline: none;
-        }
+@media only screen and (max-width: 768px) {
+    .ContainerBackForm{
 
-        .SearchSubmit{
-            color: #939393;
+        form {
+            display: flex;
+            justify-content: space-between;
+
+            input {
+                font-size: .8rem;
+            }
         }
-        
     }
-
 }
 
 @media only screen and (min-width: 768px) {
+
+
+    .ContainerBackForm{
+        margin-top: -.7rem;
+        margin-left: 10rem;
+        height: 80vh;
+        height: fit-content;
+
+        form {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+        }
+    }
 
     .main {
         width: 85%;
@@ -61,7 +101,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        padding-top: 80px;
+        padding-top: 40px;
 
         form {
             position: absolute;
