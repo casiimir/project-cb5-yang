@@ -66,6 +66,12 @@
                 .icon{
                     font-size: 1.4rem;
                     margin-bottom: 1rem;
+                    color:  #DB00FF;
+                }
+
+                .icon:hover {
+                    color:  #DB00FF;
+            filter: drop-shadow(0px 0px 15px #DB00FF);
                 }
             }
         }

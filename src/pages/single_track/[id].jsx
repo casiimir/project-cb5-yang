@@ -7,11 +7,9 @@ import { useState } from "react";
 import styles from "./styles.module.scss";
 
 export default function SingleTrack({ trackData }) {
-
-  const [icon, setIcon] = useState(false)
+  const [icon, setIcon] = useState(false);
 
   const onHandleFavorite = () => {
- 
     const favoriteTrack = {
       titleTrack: trackData.title,
       artistName: trackData.artist.name,
@@ -25,12 +23,12 @@ export default function SingleTrack({ trackData }) {
       : [];
 
     favoriteTracks.push(favoriteTrack);
-    
+
     const updatedFavoriteTrackJSON = JSON.stringify(favoriteTracks);
 
     localStorage.setItem("favoriteTrack", updatedFavoriteTrackJSON);
 
-    setIcon(true)
+    setIcon(true);
   };
 
   return (
@@ -40,27 +38,52 @@ export default function SingleTrack({ trackData }) {
         Tracks
       </Link>
       <div className={styles.main}>
-        <div className={styles.containerImage}>
-          <Image
-            src={trackData.album.cover_medium}
-            alt="Picture of the author"
-            width={250}
-            height={250}
-          />
-        </div>
-        <div className={styles.containerSong}>
-          <div>
-            <h2>{trackData.title}</h2>
-            <button>
-              {icon === false ? 
-              <FaRegHeart onClick={onHandleFavorite} className={styles.Like} /> :
-              <FaHeart className={styles.Like_pieno} /> }
-            </button>
+        <div className={styles.track}>
+          <div className={styles.containerImage}>
+            <Image
+              src={trackData.album.cover_medium}
+              alt="Picture of the author"
+              width={250}
+              height={250}
+            />
+          </div>
+          <div className={styles.containerSong}>
+            <div>
+              <h2>{trackData.title}</h2>
+              <button>
+                {icon === false ? (
+                  <FaRegHeart
+                    onClick={onHandleFavorite}
+                    className={styles.Like}
+                  />
+                ) : (
+                  <FaHeart className={styles.Like_pieno} />
+                )}
+              </button>
+            </div>
           </div>
 
           <p>{trackData.artist.name}</p>
+          <audio src={trackData.preview} controls />
         </div>
-        <audio src={trackData.preview} controls />
+        <div className={styles.infoTrack}>
+          <div className={styles.bo}>
+            <Image
+              src={trackData.contributors[0].picture_medium}
+              alt="Picture of the author"
+              width={250}
+              height={250}
+            />
+            <p>{trackData.artist.name}</p>
+          </div>
+          <div className={styles}>
+            <p>{trackData.title}</p>
+            <div className={styles}>
+              <p>{trackData.duration}</p>
+              <p>{trackData.album.release_date}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

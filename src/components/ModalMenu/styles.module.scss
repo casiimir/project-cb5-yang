@@ -49,8 +49,8 @@
          list-style: none;
          width: 200px;
          background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(252, 247, 255, 0) 100%);
-            box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.25);
-            border-radius: 16px;
+         box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.192);
+         border-radius: 16px;
             text-align: center;
             text-transform: uppercase;
             cursor: pointer;
@@ -68,7 +68,7 @@
 
      li:hover {
         background: rgba(0, 0, 0, 0.42);
-        box-shadow: inset 0px 4px 4px 2px #000000;
+        box-shadow: none;
         transition: all .35s;
 
         .MenuItem {
@@ -81,7 +81,7 @@
         border: none;
         width: 200px;
        background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(252, 247, 255, 0) 100%);
-       box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.25);
+       box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.192);
        border-radius: 16px;
        text-align: center;
        height: 60px;
@@ -94,7 +94,7 @@
 
     .Logout:hover {
         background: rgba(0, 0, 0, 0.42);
-        box-shadow: inset 0px 4px 4px 2px #000000;
+        box-shadow: none;
         transition: all .35s;
         color: white;
     }

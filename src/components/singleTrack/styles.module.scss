@@ -1,9 +1,14 @@
 .Track {
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.276);
+     padding: 20px;
+     border-radius: 26px;
 
     span {
     line-height: 24px;
+
 
     h2 {
         font-size: .9rem;
