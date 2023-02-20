@@ -29,6 +29,9 @@
         align-items: center;
         justify-content: space-between;
         gap: 20px;
+        background-color: rgba(0, 0, 0, 0.276);
+            padding: 10px;
+            border-radius: 26px;
 
         img {
             width: 75px;
@@ -95,11 +98,13 @@
         .container_Content{
             width: 45%;
             gap: 1rem;
+            padding: 20px;
+    
 
             img {
                 width: 90px;
                     height: 90px;
-                border-radius: 26px;
+                border-radius: 16px;
             }
 
             .infoTrack {

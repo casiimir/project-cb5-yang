@@ -21,6 +21,9 @@ export default function SingleTrack({ trackData }) {
     seconds = "0" + seconds;
   }
 
+  let updateDate = trackData.album.release_date.substring(0, 10);
+  updateDate = updateDate?.split("-").reverse().join("-");
+
   const onHandleFavorite = () => {
     const favoriteTrack = {
       titleTrack: trackData.title,
@@ -45,12 +48,11 @@ export default function SingleTrack({ trackData }) {
 
   return (
     <>
-      
       <div className={styles.main}>
         <Link className={styles.Back} href={`/top_track`}>
-        <MdArrowBackIos />
-        Tracks
-      </Link>
+          <MdArrowBackIos />
+          Tracks
+        </Link>
         <div className={styles.track}>
           <div className={styles.containerImage}>
             <Image
@@ -87,7 +89,6 @@ export default function SingleTrack({ trackData }) {
               width={250}
               height={250}
             />
-            
           </div>
           <div className={styles.artistInfo}>
           <p className={styles.artistName}>{trackData.artist.name}</p>
