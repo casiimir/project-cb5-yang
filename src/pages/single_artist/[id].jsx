@@ -7,11 +7,13 @@ import styles from "./styles.module.scss";
 const SingleArtist = ({ artistData }) => {
 
   return (
-    <div className={styles.SingleArtist}>
-        <Link className={styles.Back} href={`/top_track`}>
+    <>
+    <Link className={styles.Back} href={`/top_track`}>
             <MdArrowBackIos />
             Artists
         </Link>
+    <div className={styles.SingleArtist}>
+        
         <div className={styles.containerSingleArtist}>
             <div className={styles.Content}>
                 <span>Latest releases</span>
@@ -38,6 +40,7 @@ const SingleArtist = ({ artistData }) => {
             </div>
         </div>
     </div>
+    </>
   )
 }
 
