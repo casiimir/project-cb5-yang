@@ -9,6 +9,18 @@ import styles from "./styles.module.scss";
 export default function SingleTrack({ trackData }) {
   const [icon, setIcon] = useState(false);
 
+  let seconds = trackData.duration;
+
+  let minutes = 0;
+  while (seconds > 59) {
+    seconds = seconds - 60;
+    minutes++;
+  }
+
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+
   const onHandleFavorite = () => {
     const favoriteTrack = {
       titleTrack: trackData.title,
@@ -81,7 +93,7 @@ export default function SingleTrack({ trackData }) {
           <p className={styles.artistName}>{trackData.artist.name}</p>
             <p>Titolo: {trackData.title}</p>
             <div className={styles.sub_artistInfo}>
-              <p>Durata: {trackData.duration}</p>
+              <p>Durata {minutes}:{seconds}</p>
               <p>Uscita: {trackData.album.release_date}</p>
             </div>
           </div>
