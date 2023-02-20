@@ -24,11 +24,11 @@ export default function SearchPage({ data }) {
 
   return (
     <>
+    <div className={styles.ContainerBackForm}>
       <Link className={styles.Back} href={"/"}>
         <MdArrowBackIos /> SEARCH
       </Link>
-      <div className={styles.main}>
-        <form onSubmit={onHandleSubmit}>
+      <form onSubmit={onHandleSubmit}>
           <input
             className={styles.SearchSubmit}
             onChange={onHandleChange}
@@ -39,7 +39,9 @@ export default function SearchPage({ data }) {
           />
           <input type="submit" value="search" onSubmit={onHandleSubmit} />
         </form>
-        <SingleTrack data={data} className={styles.singleTrack} />
+        </div>
+      <div className={styles.main}>
+        <SingleTrack data={data} />
       </div>
     </>
   );
