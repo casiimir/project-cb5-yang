@@ -29,16 +29,13 @@ const Top_Track = ({ data }) => {
                 </h2>
                 <h3>{track.artist.name}</h3>
               </div>
-
-              <Link
-                href={`/single_track/${track.id}`}
-                as={`/single_track/${track.id}`}
-              >
-                <BsPlayCircle className={styles.PlayCircle}/>
-              </Link>
-
-      
-           
+            </div>
+            <Link
+              href={`/single_track/${track.id}`}
+              as={`/single_track/${track.id}`}
+            >
+              <BsPlayCircle className={styles.PlayCircle} />
+            </Link>
           </div>
         ))}
       </div>
