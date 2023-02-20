@@ -29,7 +29,6 @@ const Login = () => {
       if (typeof window !== "undefined") {
         localStorage.setItem("logged", true);
         localStorage.setItem("user", [credential.username]);
-        localStorage.setItem("pass", [credential.password]);
       }
     }
   }
