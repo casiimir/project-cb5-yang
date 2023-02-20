@@ -5,6 +5,7 @@
     flex-direction: column;
     color: white;
     gap: .5rem;
+    
 
     .topContent{
         display: flex;
@@ -87,8 +88,12 @@
         width: 86%;
         margin-top: -.3rem;
         margin-left: 6rem;
+        height: 76vh;
+        overflow-y: scroll;
 
         .topContent{
+    
+
             width: 100%;
             .container_Content::-webkit-scrollbar{
                 display: none;
