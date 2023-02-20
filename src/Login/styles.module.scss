@@ -7,6 +7,10 @@
     flex-direction: column-reverse;
     gap: 1rem;
     background: linear-gradient(197.56deg,#100f0f 6.06%, #2B1B33 97.9%); 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     .containerLogin{
      position: absolute;
@@ -104,6 +108,10 @@
             }
           }
     }
+
+    .Login::-webkit-scrollbar {
+        display: none;
+      }
     
     .logoDeezer{
         position: absolute;
