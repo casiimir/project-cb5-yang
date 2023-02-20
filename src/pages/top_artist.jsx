@@ -13,14 +13,23 @@ const Top_Artist = ({ data }) => {
         <div className={styles.Content}>
           {data?.data.map((artist) => (
             <div className={styles.container_Content} key={artist.id}>
-              <Image
-                src={artist.picture_medium}
-                width={200}
-                height={200}
-                alt={artist.name}
-              />
+              <Link 
+              href={`/single_artist/${artist.id}`}
+              as={`/single_artist/${artist.id}`} 
+              >
+                <Image
+                  src={artist.picture_medium}
+                  width={200}
+                  height={200}
+                  alt={artist.name}
+                />
+              </Link>
               <div className={styles.infoArtist}>
-                <h2>{artist.name}</h2>
+                <Link
+                href={`/single_artist/${artist.id}`}
+                as={`/single_artist/${artist.id}`} >
+                  <h2>{artist.name}</h2>
+                </Link>
                 <h3>Position: {artist.position}°</h3>
               </div>
             </div>

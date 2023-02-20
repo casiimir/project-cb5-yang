@@ -91,13 +91,11 @@ export default function SingleTrack({ trackData }) {
             />
           </div>
           <div className={styles.artistInfo}>
-            <p className={styles.artistName}>{trackData.artist.name}</p>
-            <p>Titolo: {trackData.title}</p>
+          <p className={styles.artistName}>{trackData.artist.name}</p>
+            <p>Title: {trackData.title}</p>
             <div className={styles.sub_artistInfo}>
-              <p>
-                Durata {minutes}:{seconds}
-              </p>
-              <p>Uscita: {updateDate}</p>
+              <p>Duration {minutes}:{seconds}</p>
+              <p>Release date: {trackData.album.release_date}</p>
             </div>
           </div>
         </div>
