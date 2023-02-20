@@ -49,7 +49,7 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
 
                 <div className={styles.container_Content}>
                   {dataArtist?.data.map((artist) => (
-                    <Link href={"/top_artist"}>
+                    <Link href={"/top_artist"} key={artist.id}>
                       <Image
                         src={artist.picture_big}
                         width={200}
@@ -73,7 +73,7 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
                 </div>
                 <div className={styles.container_Content}>
                   {dataTracks?.data.map((track) => (
-                    <div className={styles.contentTopTrack}>
+                    <div className={styles.contentTopTrack} key={track.id}>
                       <Link
                         href={`/single_track/${track.id}`}
                         as={`/single_track/${track.id}`}
@@ -102,7 +102,7 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
                 </div>
                 <div className={styles.container_Content}>
                   {dataAlbums?.data.map((artist) => (
-                    <Link href={"/top_album"}>
+                    <Link href={"/top_album"} key={artist.id}>
                       <Image
                         src={artist.cover_medium}
                         width={200}

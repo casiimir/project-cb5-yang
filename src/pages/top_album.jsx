@@ -11,7 +11,7 @@ const Top_Album = ({ data }) => {
       </Link>
       <div className={styles.TopAlbum}>
         {data?.data.map((album) => (
-          <div className={styles.container_Content}>
+          <div className={styles.container_Content} key={album.id}>
             <Image
               src={album.cover_medium}
               width={200}
