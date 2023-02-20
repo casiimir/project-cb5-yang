@@ -10,16 +10,6 @@ const ShufflePage = ({ data }) => {
   const [currentTrack, setCurrentTrack] = useState(false);
   const [playingTrackIndex, setPlayingTrackIndex] = useState(null);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setPlayingTrackIndex(null);
-    }, 30000);
-
-    setTimeout(() => {
-      currentTrack.pause();
-    }, 27000);
-  }, [playingTrackIndex]);
-
   const playTrack = (trackUrl, index) => {
     if (currentTrack) {
       currentTrack.pause();
@@ -30,7 +20,10 @@ const ShufflePage = ({ data }) => {
     }
 
     const audio = new Audio(trackUrl);
-    audio.play();
+    audio.onended = () => {
+      setPlayingTrackIndex(null);
+    };
+    audio?.play();
     setCurrentTrack(audio);
     setPlayingTrackIndex(index);
   };
