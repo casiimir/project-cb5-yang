@@ -33,11 +33,12 @@ export default function SingleTrack({ trackData }) {
 
   return (
     <>
-      <Link className={styles.Back} href={`/top_track`}>
+      
+      <div className={styles.main}>
+        <Link className={styles.Back} href={`/top_track`}>
         <MdArrowBackIos />
         Tracks
       </Link>
-      <div className={styles.main}>
         <div className={styles.track}>
           <div className={styles.containerImage}>
             <Image
@@ -67,20 +68,21 @@ export default function SingleTrack({ trackData }) {
           <audio src={trackData.preview} controls />
         </div>
         <div className={styles.infoTrack}>
-          <div className={styles.bo}>
+          <div className={styles.sub_infoTrack}>
             <Image
               src={trackData.contributors[0].picture_medium}
               alt="Picture of the author"
               width={250}
               height={250}
             />
-            <p>{trackData.artist.name}</p>
+            
           </div>
-          <div className={styles}>
-            <p>{trackData.title}</p>
-            <div className={styles}>
-              <p>{trackData.duration}</p>
-              <p>{trackData.album.release_date}</p>
+          <div className={styles.artistInfo}>
+          <p className={styles.artistName}>{trackData.artist.name}</p>
+            <p>Titolo: {trackData.title}</p>
+            <div className={styles.sub_artistInfo}>
+              <p>Durata: {trackData.duration}</p>
+              <p>Uscita: {trackData.album.release_date}</p>
             </div>
           </div>
         </div>

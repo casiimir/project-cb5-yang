@@ -26,6 +26,9 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            background-color: rgba(0, 0, 0, 0.276);
+            border-radius: 16px;
+            padding: 16px;
 
             .track {
                 display: flex;
@@ -35,7 +38,7 @@
                 img {
                     width: 75px;
                     height:75px;
-                    border-radius: 1.6rem;
+                    border-radius: 16px;
                 }
 
                 .infoTrack {
@@ -58,6 +61,7 @@
         a {
 
             .PlayCircle{
+                font-size: 1.5rem;
                 color:  #DB00FF;
             }
 
@@ -79,15 +83,21 @@
         
         .Content{
             flex-wrap: wrap;
+
             .container_Content {
                 width: 45%;
                 gap: 1rem;
+                border-radius: 26px;
 
                 .track {
                     img {
                         width: 80px;
                         height: 80px;
                     }
+                }
+
+                .PlayCircle {
+                    font-size: 1.5rem;
                 }
             }
         }
