@@ -45,7 +45,10 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
 
                 <div className={styles.container_Content}>
                   {dataArtist?.data.map((artist) => (
-                    <Link href={"/top_artist"} key={artist.id}>
+                    <Link 
+                    href={`/single_artist/${artist.id}`}
+                    as={`/single_artist/${artist.id}`} 
+                    key={artist.id}>
                       <Image
                         src={artist.picture_big}
                         width={200}
