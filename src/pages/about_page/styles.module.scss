@@ -1,75 +1,68 @@
 .Back {
-    color: white;
-    padding: 20px;
-    text-decoration: none;
-    display: flex;
-    padding: 0 20px;
-    align-items: center;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
 }
 
-
 .About {
-    width: 90%;
-    height: 450px;
+  width: 90%;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  color: white;
+  margin: 20px;
+  position: absolute;
+  bottom: 90px;
+  padding-bottom: 20px;
+  gap: 30px;
+
+  .Content {
     display: flex;
-    flex-direction: column;
-    overflow: scroll;
-    color: white;
-    margin: 20px;
-    position: absolute;
-    bottom: 90px;
-    padding-bottom: 20px;
-    gap: 30px;
+    align-items: center;
+    border-radius: 26px;
+    cursor: pointer;
+    transition: all 0.35s;
+    gap: 20px;
 
-    .Content {
-        display: flex;
-        align-items: center;
-        border-radius: 26px;
-        cursor: pointer;   
-        transition: all .35s;
-        gap: 20px;
-
-        img {
-            width: 100px;
-            height: 100px;
-            border-radius: 100%;
-        }
-
-        .infoDev {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
-            gap: 8px;
-
-            h2 {
-                font-size: 1rem;
-            }
-
-            a {
-                text-decoration: none;
-                color: #ccc;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                cursor: pointer; 
-            }
-
-           
-
-        }
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
     }
 
-    .Content:hover {
+    .infoDev {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 8px;
 
-        img {
-            cursor: pointer;
-            animation: shadow-pulse 1s infinite;
-            border-radius: 100%;
-        }
-    
-        @keyframes shadow-pulse
-    {
+      h2 {
+        font-size: 1rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: #ccc;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .Content:hover {
+    img {
+      cursor: pointer;
+      animation: shadow-pulse 1s infinite;
+      border-radius: 100%;
+    }
+
+    @keyframes shadow-pulse {
       0% {
         box-shadow: 0 0 0 0px #d900ff39;
       }
@@ -78,45 +71,152 @@
       }
     }
 
-        .infoDev {
-
-            a:hover {
-                color:  #DB00FF;
-                filter: drop-shadow(0px 0px 26px #DB00FF);
-            }
-        }
-
+    .infoDev {
+      a:hover {
+        color: #db00ff;
+        filter: drop-shadow(0px 0px 26px #db00ff);
+      }
     }
+  }
+}
 
+.About::-webkit-scrollbar {
+  display: none;
+}
+
+@media only screen and (min-width: 480px) {
+  .About {
+    height: 70vh;
+  }
 }
 
 @media only screen and (min-width: 768px) {
+  .Back {
+    margin-left: 7rem;
+  }
 
-    .About{
-        width: 65%;
-        flex-direction: row;
-        flex-wrap: wrap;
+  .About {
+    width: 65%;
+    height: 60vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin: 20px 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .Content {
+      padding-top: 20px;
+      img {
+        width: 70px;
+        height: 70px;
+      }
+
+      .infoDev {
+        display: flex;
+        flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        margin-left: 70px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 650px;
-        padding: 20px;
-        gap: 60px;
+        gap: 8px;
+        font-size: 0.8rem;
 
-        .Content{
-
-            img {
-                width: 150px;
-                height: 150px;
-            }
+        h2 {
+          font-size: 0.8rem;
         }
-
-        
+      }
     }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Back {
+    margin-left: 10rem;
+  }
+
+  .About {
+    width: 70%;
+    height: 65vh;
+
+    .Content {
+      padding: 20px 0 0 30px;
+
+      img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .infoDev {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 12px;
+        font-size: 1rem;
+
+        h2 {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Back {
+    margin-left: 16rem;
+  }
+
+  .About {
+    width: 75%;
+    height: 72vh;
+    gap: 0px;
+
+    .Content {
+      padding: 50px 0 0 100px;
+      gap: 24px;
+
+      img {
+        width: 110px;
+        height: 110px;
+      }
+
+      .infoDev {
+        gap: 20px;
+        font-size: 1.1rem;
+
+        h2 {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .Back {
+    margin-left: 18rem;
+  }
+
+  .About {
+    height: 80vh;
+
+    .Content {
+      padding-left: 120px;
+      gap: 30px;
+
+      img {
+        width: 140px;
+        height: 140px;
+      }
+
+      .infoDev {
+        gap: 30px;
+      }
+    }
+  }
 }

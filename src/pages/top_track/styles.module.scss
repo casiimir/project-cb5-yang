@@ -1,208 +1,201 @@
 .TopTrack {
-    width: 85%;
-    margin: auto;
-    height: 75vh;
+  width: 85%;
+  margin: auto;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: white;
+
+  .Back {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    font-weight: 600;
+  }
+
+  .Content {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    color: white;
-    
-    .Back {
-        color: white;
-        text-decoration: none;
+    overflow: scroll;
+
+    .container_Content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba(0, 0, 0, 0.276);
+      border-radius: 16px;
+      padding: 16px;
+
+      .track {
         display: flex;
         align-items: center;
-        padding: 0.5rem;
-        font-weight: 600;
-    }
-
-    .Content{
-        display: flex;
-        flex-direction: column;
         gap: 1rem;
-        overflow: scroll;
 
-        .container_Content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: rgba(0, 0, 0, 0.276);
-            border-radius: 16px;
-            padding: 16px;
+        img {
+          width: 75px;
+          height: 75px;
+          border-radius: 16px;
+        }
 
-            .track {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
+        .infoTrack {
+          line-height: 1.5rem;
 
-                img {
-                    width: 75px;
-                    height:75px;
-                    border-radius: 16px;
-                }
+          h2 {
+            width: 90%;
+            font-size: 1rem;
+            text-transform: capitalize;
+          }
 
-                .infoTrack {
-                line-height: 1.5rem;
-                
-                h2 {
-                    width: 90%;
-                    font-size: 1rem;
-                    text-transform: capitalize;
-                }
+          h3 {
+            color: rgb(121, 121, 121);
+            font-size: 1rem;
+            font-weight: 600;
+          }
+        }
+      }
 
-                h3{
-                    color: rgb(121, 121, 121);
-                    font-size: 1rem;
-                    font-weight: 600;
-                }
-            }
-         }
-
-        a {
-
-            .PlayCircle{
-                font-size: 1.5rem;
-                color:  #DB00FF;
-            }
+      a {
+        .PlayCircle {
+          font-size: 1.5rem;
+          color: #db00ff;
+        }
 
         .PlayCircle:hover {
-            color:  #DB00FF;
-            filter: drop-shadow(0px 0px 15px #DB00FF);}
+          color: #db00ff;
+          filter: drop-shadow(0px 0px 15px #db00ff);
         }
-        }
+      }
     }
-        
+  }
 }
 
 @media screen and (min-width: 768px) {
+  .TopTrack {
+    margin-top: -0.7rem;
+    margin-left: 7rem;
+    height: 80vh;
 
-    .TopTrack {
-        margin-top: -.7rem;
-        margin-left: 7rem;
-        height: 80vh;
-        
-        .Content{
-            flex-wrap: wrap;
+    .Content {
+      flex-wrap: wrap;
 
-            .container_Content {
-                width: 45%;
-                gap: 1rem;
-                border-radius: 26px;
+      .container_Content {
+        width: 45%;
+        gap: 1rem;
+        border-radius: 26px;
 
-                .track {
-                    img {
-                        width: 80px;
-                        height: 80px;
-                    }
-                }
-
-                .PlayCircle {
-                    font-size: 1.5rem;
-                }
-            }
+        .track {
+          img {
+            width: 80px;
+            height: 80px;
+          }
         }
+
+        .PlayCircle {
+          font-size: 1.5rem;
+        }
+      }
     }
+  }
 }
 
 @media screen and (min-width: 1024px) {
-
-    .TopTrack {
-        margin-top: .2rem;
-        margin-left: 7rem;
-        height: 80vh;
-
-    }
+  .TopTrack {
+    margin-top: 0.2rem;
+    margin-left: 7rem;
+    height: 80vh;
+  }
 }
 
 @media screen and (min-width: 1200px) {
+  .TopTrack {
+    margin-top: 1.7rem;
+    margin-left: 10rem;
+    height: 70vh;
 
-    .TopTrack {
-        margin-top: 1.7rem;
-        margin-left: 10rem;
-        height: 70vh;
+    .Content {
+      width: 100%;
+      .container_Content {
+        width: 35%;
+        .track {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
 
-        .Content{
-            width: 100%;
-            .container_Content {
-                width: 35%; 
-                .track {
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    gap: 1rem;
-    
-                    img {
-                        width: 120px;
-                        height: 120px;
-                        border-radius: 1.6rem;
-                    }
-    
-                    .infoTrack {
-                    line-height: 1.5rem;
-                    
-                    h2 {
-                        width: 90%;
-                        font-size: 1rem;
-                        text-transform: capitalize;
-                    }
-    
-                    h3{
-                        color: rgb(121, 121, 121);
-                        font-size: 1rem;
-                        font-weight: 600;
-                    }
-                }
+          img {
+            width: 120px;
+            height: 120px;
+            border-radius: 1.6rem;
+          }
+
+          .infoTrack {
+            line-height: 1.5rem;
+
+            h2 {
+              width: 90%;
+              font-size: 1rem;
+              text-transform: capitalize;
             }
+
+            h3 {
+              color: rgb(121, 121, 121);
+              font-size: 1rem;
+              font-weight: 600;
+            }
+          }
         }
-        }
-        
+      }
     }
+  }
 }
 
 @media screen and (min-width: 1500px) {
+  .TopTrack {
+    margin-top: 1.7rem;
+    margin-left: 10rem;
+    height: 70vh;
 
-    .TopTrack {
-        margin-top: 1.7rem;
-        margin-left: 10rem;
-        height: 70vh;
+    .Content {
+      width: 100%;
+      .container_Content {
+        width: 25%;
+        .track {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
 
-        .Content{
-            width: 100%;
-            .container_Content {
-                width: 25%; 
-                .track {
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    gap: 1rem;
-    
-                    img {
-                        width: 100px;
-                        height: 100px;
-                        border-radius: 1.6rem;
-                    }
-    
-                    .infoTrack {
-                    line-height: 1.5rem;
-                    
-                    h2 {
-                        width: 90%;
-                        font-size: 1rem;
-                        text-transform: capitalize;
-                    }
-    
-                    h3{
-                        color: rgb(121, 121, 121);
-                        font-size: 1rem;
-                        font-weight: 600;
-                    }
-                }
+          img {
+            width: 100px;
+            height: 100px;
+            border-radius: 1.6rem;
+          }
+
+          .infoTrack {
+            line-height: 1.5rem;
+
+            h2 {
+              width: 90%;
+              font-size: 1rem;
+              text-transform: capitalize;
             }
+
+            h3 {
+              color: rgb(121, 121, 121);
+              font-size: 1rem;
+              font-weight: 600;
+            }
+          }
         }
+      }
     }
-    
-    .Content::-webkit-scrollbar{
-        display: none;
+
+    .Content::-webkit-scrollbar {
+      display: none;
     }
-}
+  }
 }
