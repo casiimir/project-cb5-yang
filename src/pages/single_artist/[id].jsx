@@ -4,43 +4,53 @@ import Image from "next/image";
 
 import styles from "./styles.module.scss";
 
-const SingleArtist = ({ artistData }) => {
+const SingleArtist = ({ artistAlbum, artistData }) => {
 
   return (
-    <>
-    <Link className={styles.Back} href={`/top_track`}>
-            <MdArrowBackIos />
-            Artists
-        </Link>
     <div className={styles.SingleArtist}>
-        
-        <div className={styles.containerSingleArtist}>
-            <div className={styles.Content}>
-                <span>Latest releases</span>
-                {
-                    artistData?.data
-                    .slice(0,10)
-                    .map(artist => (
-                        <div className={styles.infoArtist} key={artist.id}>
-                            <Image 
-                            width={200}
-                            height={200}
-                            src={artist.cover_medium}
-                            alt={artist.title}
-                            />
-                            <div className={styles.infoArtist}>
-                                <h2>Title: {artist.title}</h2>
-                                <h3>Release date: {artist.release_date.split("-").reverse().join("-")}</h3>
-                                <h4>Follower: {artist.fans}</h4>
-                                <h5>{artist.explicit_lyrics ? "Explicit Lyrics" : ""}</h5>
-                            </div>
-                        </div>
-                    ))  
-                }
-            </div>
+      <Link className={styles.Back} href={`/top_track`}>
+        <MdArrowBackIos />
+        Artists
+      </Link>
+      <div className={styles.containerSingleArtist}>
+        <div className={styles.mainArtist}>
+          <Image
+          src={artistData.picture_big} 
+          width={500}
+          height={500}
+          alt={artistData.name}
+          />
+          <div className={styles.infoMainArtist}>
+            <h2>{artistData.name}</h2>
+            <h3>N° Albums: {artistData.nb_album}</h3>
+            <h4>Follower: {artistData.nb_fan}</h4>
+          </div>
         </div>
+        <span>Latest releases</span>
+        <div className={styles.Content}>
+          {
+            artistAlbum?.data
+            .slice(0,10)
+            .map(artist => (
+              <div className={styles.infoArtist} key={artist.id}>
+                <Image 
+                width={200}
+                height={200}
+                src={artist.cover_medium}
+                alt={artist.title}
+                />
+                <div className={styles.infoAlbum}>
+                  <h2>{artist.title}</h2>
+                  <h3>Release: {artist.release_date.split("-").reverse().join("-")}</h3>
+                  <h4>Follower: {artist.fans}</h4>
+                  <h5>{artist.explicit_lyrics ? "Explicit Lyrics" : ""}</h5>
+                </div>
+              </div>
+              ))
+          }
+        </div>
+      </div>
     </div>
-    </>
   )
 }
 
@@ -58,9 +68,18 @@ export async function getStaticPaths() {
   }
 
   export async function getStaticProps({ params }) {
-    const res = await fetch(`https://api.deezer.com/artist/${params.id}/albums?index=10`);
-    const artistData = await res.json();
+    const resAlbum = await fetch(`https://api.deezer.com/artist/${params.id}/albums`);
+    const resArtist = await fetch(`https://api.deezer.com/artist/${params.id}`);
+
+    const artistAlbum = await resAlbum.json();
+    const artistData = await resArtist.json();
   
-    return { props: { artistData } };
+    return { 
+      props: 
+      { 
+        artistData,
+        artistAlbum, 
+      } 
+    };
   }
   

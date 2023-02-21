@@ -1,121 +1,107 @@
-.Back {
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    padding: 0.5rem 0;
-    margin-left: 20px;
-    text-transform: uppercase;
-    width: fit-content;
-}
-
 .SingleArtist {
     width: 85%;
     margin: auto;
     display: flex;
     flex-direction: column;
     color: white;
-    height: 70vh;
-    overflow: scroll;
-    margin-top: 10px;
+    height: 75vh;
+    
+    .Back {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        padding: 0.5rem 0;
+        text-transform: uppercase;
+        width: fit-content;
+    }
 
     .containerSingleArtist {
+         gap: 1rem;
+         display: flex;
+         flex-direction: column;
 
-        .Content{
+         .mainArtist{
             display: flex;
-            flex-direction: column;
-            gap: 20px;
-       
-        .infoArtist{
-            display: flex;
-            flex-direction: column;
+            gap: 1rem;
             align-items: center;
-            line-height: 30px;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.276);
-            padding: 20px;
-            border-radius: 26px;
-            line-height: 40px;
-
-            .infoArtist {
-                background-color: transparent;
-                padding: 0;
-            }
-
-            img {
-                width: 116px;
-                height: 116px;
-                border-radius: 16px;
-                margin-bottom: 20px;
-            }
-
-            h2 {
-                font-size: 1rem;
-                font-weight: bold;
-            }
-
-            h3, h4, h5 {
-                font-size: 1rem;
-                font-weight: 100;
-                color: #ccc;
-            }
-
-        }
-    }
-
-    }
-}
-
-@media screen and (min-width: 768px){
-
-    .Back{
-        margin-left: 10rem;
-        margin-top: -.5rem;
-        margin-bottom: 20px;
-    }
-
-    .SingleArtist{
-        margin-left: 10rem;
-        margin-top: -.5rem;
-
-
-.containerSingleArtist{
-
-    .Content {
-
-        align-items:center ;
-        gap: 40px;
-
-        span {
-            display: none;
-        }
-
-        .infoArtist {
-             width: 60%;
-            gap: 15px;
-
-            .infoArtist {
-                gap: 0;
-                width: 100%;
-            }
-
-            img {
-                width: 130px;
-                height: 130px;
-            }
-
-
-            h2 {
-                font-size: 1.6rem;
-            }
             
-            h3, h4, h5 {
-                font-size: 1.2rem;
+            img{
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+            }
+
+            .infoMainArtist{
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+
+                h2{
+                    font-size: 1.5rem;
+                }
+
+                h3{
+                    font-size: 1rem;
+                    color: #ccc;
+                }
+
+                h4{
+                    font-size: .8rem;
+                    color: #ccc;
+                }
+            }
+         }
+
+         span{
+            font-size: 1.2rem;
+            text-align: center;
+            font-weight: 600;
+         }
+         
+         .Content{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            overflow: scroll;
+            height: 42.5vh;
+            box-shadow: 0 0 10px black;
+            border-radius: 1.4rem;
+            padding: .5rem 1rem;
+            
+            .infoArtist{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                background-color: rgba(0, 0, 0, 0.276);
+                padding: 1rem;
+                border-radius: 1.4rem;
+                gap: .5rem;
+
+                img {
+                    width: 110px;
+                    height: 110px;
+                    border-radius: 1.4rem;
+                }
+
+                .infoAlbum{
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+
+                    h2 {
+                        font-size: 1rem;
+                        font-weight: 600;
+                    }
+                
+                    h3, h4, h5 {
+                        font-size: .8rem;
+                        font-weight: 600;
+                        color: #ccc;
+                    }
+                }
             }
         }
     }
-    
 }
-}
-} 
