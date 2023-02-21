@@ -58,6 +58,11 @@
 
 @media only screen and (min-width: 768px) {
 
+
+    .Back {
+        margin-left: 7rem;
+    }
+
     .TopAlbum{
         width: 85%;
         flex-direction: row;
@@ -72,7 +77,6 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        height: 600px;
 
         .container_Content{
             width: 350px;
