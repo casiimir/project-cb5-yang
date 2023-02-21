@@ -37,16 +37,18 @@ const ShufflePage = ({ data }) => {
         <div className={styles.Content}>
           {data?.data.map((shuffle, index) => (
             <div className={styles.container_Content} key={index}>
-              <Image
-                src={shuffle.album.cover_medium}
-                width={200}
-                height={200}
-                alt={shuffle.title}
-              />
-              <div className={styles.infoTrack}>
-                <h2>{shuffle.title_short}</h2>
-                <h3>{shuffle.artist.name}</h3>
-                <h4>{shuffle.album.type}</h4>
+              <div className={styles.mainContent}>
+                <Image
+                  src={shuffle.album.cover_medium}
+                  width={200}
+                  height={200}
+                  alt={shuffle.title}
+                />
+                <div className={styles.infoTrack}>
+                  <h2>{shuffle.title_short}</h2>
+                  <h3>{shuffle.artist.name}</h3>
+                  <h4>{shuffle.album.type}</h4>
+                </div>
               </div>
               <button>
                 {playingTrackIndex === index ? (
