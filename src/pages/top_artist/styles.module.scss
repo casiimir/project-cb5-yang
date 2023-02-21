@@ -5,7 +5,6 @@
     flex-direction: column;
     color: white;
 
-    
     a{
         text-decoration: none;
         color: white;
@@ -64,7 +63,6 @@
 
     .TopArtist{
         margin-left: 6rem;
-        margin-top: -.5rem;
 
         .Content{
             justify-content: space-between;
@@ -97,8 +95,7 @@
 @media screen and (min-width: 1024px){
 
     .TopArtist{
-        margin-left: 7.5rem;
-        margin-top: .5rem;
+        margin-left: 7rem;
 
         .Content{
             width: fit-content;
@@ -122,8 +119,7 @@
 @media screen and (min-width: 1200px){
 
     .TopArtist{
-        margin-left: 11rem;
-        margin-top: 1.75rem;
+        margin-left: 10rem;
 
         .Content{
             width: 70%;

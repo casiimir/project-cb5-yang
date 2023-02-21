@@ -9,7 +9,7 @@ const Top_Track = ({ data }) => {
   return (
     <div className={styles.TopTrack}>
       <Link className={styles.Back} href={"/"}>
-        <MdArrowBackIos /> ALL TRACKS
+        <MdArrowBackIos /> TOP TRACKS
       </Link>
       <div className={styles.Content}>
         {data?.data.map((track) => (

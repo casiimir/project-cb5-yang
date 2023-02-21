@@ -8,7 +8,7 @@ const Top_Artist = ({ data }) => {
     <>
       <div className={styles.TopArtist}>
         <Link className={styles.Back} href={"/"}>
-          <MdArrowBackIos /> ALL ARTISTS
+          <MdArrowBackIos /> TOP ARTISTS
         </Link>
         <div className={styles.Content}>
           {data?.data.map((artist) => (
