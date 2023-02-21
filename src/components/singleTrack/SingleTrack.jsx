@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BsPlayCircle, BsPauseCircleFill } from "react-icons/bs";
+import Image from "next/image";
 import styles from "./styles.module.scss";
 
 const SingleTrack = ({ data, className }) => {
@@ -23,14 +24,19 @@ const SingleTrack = ({ data, className }) => {
 
   return data?.map((item, index) => (
     <div className={styles.Track} key={index}>
-      <span>
-        <h2>{item.title}</h2>
-        <p>{item.artist.name}</p>
-      </span>
+      <Image 
+      src={item?.album?.cover_medium}
+      width={250}
+      height={250}
+      alt={item?.title} />
+      <div className={styles.infoTrack}>
+        <h2>{item?.title}</h2>
+        <p>{item?.artist.name}</p>
+      </div>
       <button>
         {playingTrackIndex === index ? 
-        <BsPauseCircleFill className={styles.btnPause} onClick={() => playTrack(item.preview, index)}/> : 
-        <BsPlayCircle className={styles.btnPlay} onClick={() => playTrack(item.preview, index)}/>}
+        <BsPauseCircleFill className={styles.btnPause} onClick={() => playTrack(item?.preview, index)}/> : 
+        <BsPlayCircle className={styles.btnPlay} onClick={() => playTrack(item?.preview, index)}/>}
       </button>
     </div>
   ));

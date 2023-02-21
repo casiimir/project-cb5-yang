@@ -57,7 +57,7 @@ export default function SingleTrack({ trackData }) {
           <div className={styles.containerImage}>
             <Image
               src={trackData?.album?.cover_medium}
-              alt="Picture of the author"
+              alt={trackData?.album.title}
               width={250}
               height={250}
             />
@@ -83,12 +83,16 @@ export default function SingleTrack({ trackData }) {
         </div>
         <div className={styles.infoTrack}>
           <div className={styles.sub_infoTrack}>
-            <Image
-              src={trackData?.contributors[0]?.picture_medium}
-              alt="Picture of the author"
-              width={250}
-              height={250}
-            />
+            <Link
+            href={`/single_artist/${trackData?.artist?.id}`}
+            as={`/single_artist/${trackData?.artist?.id}`} >
+              <Image
+                src={trackData?.artist?.picture_medium}
+                alt={trackData?.artist.name}
+                width={250}
+                height={250}
+              />
+            </Link>
           </div>
           <div className={styles.artistInfo}>
           <p className={styles.artistName}>{trackData?.artist.name}</p>
