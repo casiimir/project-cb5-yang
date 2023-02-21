@@ -18,7 +18,7 @@ export default function GenreList({ data }){
             {data.data
             .slice(1, data.length)
             .map((genre) => (
-            <div className={styles.Content}>
+            <div className={styles.Content} key={genre.id}>
                 <Image 
                 className={styles.Picture}
                 src={genre.picture_medium}
