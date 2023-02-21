@@ -10,15 +10,13 @@
 
 .TopAlbum{
     width: 85%;
-    height: 450px;
+    height: 68vh;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     overflow: scroll;
     color: white;
     margin: 20px;
-    position: absolute;
-    bottom: 90px;
 
     .container_Content{
         display: flex;
