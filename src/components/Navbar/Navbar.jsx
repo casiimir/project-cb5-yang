@@ -10,27 +10,27 @@ const Navbar = () => {
       <ul>
         <li>
           <Link href={`/#`}>
-            <HiOutlineHome />
+            <HiOutlineHome className={styles.Icon} />
           </Link>
         </li>
         <li>
           <Link href={`/favourite_page`}>
-            <HiOutlineHeart />
+            <HiOutlineHeart className={styles.Icon}/>
           </Link>
         </li>
         <li>
           <Link href={`/shuffle_page`}>
-            <BsMusicNoteList />
+            <BsMusicNoteList className={styles.Icon}/>
           </Link>
         </li>
         <li>
           <Link href={`/categorie`}>
-            <BsCollectionPlay />
+            <BsCollectionPlay className={styles.Icon}/>
           </Link>
         </li>
         <li>
           <Link href={`/search_page?q=track`}>
-            <BsSearch />
+            <BsSearch className={styles.Icon}/>
           </Link>
         </li>
       </ul>
