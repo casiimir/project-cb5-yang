@@ -34,7 +34,7 @@ const ModalMenu = ({ onHandleModal }) => {
           </li>
           <li>
             <Link
-              href={`/preferiti`}
+              href={`/favourite_page`}
               className={styles.MenuItem}
               onClick={handleLinkClick}
             >
