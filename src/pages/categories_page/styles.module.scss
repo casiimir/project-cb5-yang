@@ -38,7 +38,7 @@
       );
       box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.25);
       border-radius: 26px;
-      width: 158px;
+      width: 159px;
       height: 109px;
       cursor: pointer;
       transition: all 0.35s;
@@ -88,6 +88,10 @@
       }
     }
   }
+}
+
+.Categories::-webkit-scrollbar {
+  display: none;
 }
 
 @media only screen and (min-width: 480px) {
