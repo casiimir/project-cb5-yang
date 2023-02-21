@@ -24,40 +24,40 @@ const FavouritePage = () => {
       ? JSON.parse(favoriteTrackJSON)
       : [];
 
-    favoriteTracks.splice(index, 1); // rimuovi l'elemento dall'array
+    favoriteTracks.splice(index, 1); 
 
     const updatedFavoriteTrackJSON = JSON.stringify(favoriteTracks);
     localStorage.setItem("favoriteTrack", updatedFavoriteTrackJSON);
 
-    setFavoriteTracks(favoriteTracks); // aggiorna lo stato
+    setFavoriteTracks(favoriteTracks); 
   };
 
   return (
-    <>
-      <Link className={styles.Back} href={"/"}>
-        <MdArrowBackIos /> FAVOURITE
-      </Link>
       <div className={styles.FavouritePage}>
-        {favoriteTracks.map((item) => (
-          <>
-            <div className={styles.Content}>
-              <Image
-                src={item.artistImage}
-                width={50}
-                height={50}
-                alt={item.titleTrack}
-              />
-              <div className={styles.infoTrack}>
-                <h2>{item.titleTrack}</h2>
-                <h3>{item.artistName}</h3>
+        <Link className={styles.Back} href={"/"}>
+          <MdArrowBackIos /> FAVOURITE
+        </Link>
+        <div className={styles.containerFavouritePage}>
+          {favoriteTracks.map((item) => (
+              <div className={styles.Content} key={item.id}>
+                <div className={styles.mainContent}>
+                  <Image
+                    src={item.artistImage}
+                    width={50}
+                    height={50}
+                    alt={item.titleTrack}
+                  />
+                  <div className={styles.infoTrack}>
+                    <h2>{item.titleTrack.toLowerCase()}</h2>
+                    <h3>{item.artistName}</h3>
+                  </div>
+                  <FaHeart className={styles.Heart} onClick={removeFavourite} />
+                </div>
+                <audio src={item.trackPreview} controls />
               </div>
-              <FaHeart className={styles.Heart} onClick={removeFavourite} />
-              <audio src={item.trackPreview} controls />
-            </div>
-          </>
-        ))}
+          ))}
+        </div>
       </div>
-    </>
   );
 };
 
