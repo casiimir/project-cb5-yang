@@ -15,15 +15,15 @@ const SingleArtist = ({ artistAlbum, artistData }) => {
       <div className={styles.containerSingleArtist}>
         <div className={styles.mainArtist}>
           <Image
-          src={artistData.picture_big} 
+          src={artistData?.picture_big} 
           width={500}
           height={500}
-          alt={artistData.name}
+          alt={artistData?.name}
           />
           <div className={styles.infoMainArtist}>
-            <h2>{artistData.name}</h2>
-            <h3>N° Albums: {artistData.nb_album}</h3>
-            <h4>Follower: {artistData.nb_fan}</h4>
+            <h2>{artistData?.name}</h2>
+            <h3>N° Albums: {artistData?.nb_album}</h3>
+            <h4>Follower: {artistData?.nb_fan}</h4>
           </div>
         </div>
         <span>Latest releases</span>
@@ -32,19 +32,23 @@ const SingleArtist = ({ artistAlbum, artistData }) => {
             artistAlbum?.data
             .slice(0,10)
             .map(artist => (
-              <div className={styles.infoArtist} key={artist.id}>
-                <Image 
-                width={200}
-                height={200}
-                src={artist.cover_medium}
-                alt={artist.title}
+              <div className={styles.infoMainAlbum} key={artist?.id}>
+                <Link
+                href={`/single_album/${artist.id}`}
+                as={`/single_album/${artist.id}`} >
+                  <Image 
+                  width={200}
+                  height={200}
+                  src={artist?.cover_medium}
+                  alt={artist?.title}
                 />
                 <div className={styles.infoAlbum}>
                   <h2>{artist.title}</h2>
-                  <h3>Release: {artist.release_date.split("-").reverse().join("-")}</h3>
-                  <h4>Follower: {artist.fans}</h4>
-                  <h5>{artist.explicit_lyrics ? "Explicit Lyrics" : ""}</h5>
+                  <h3>Release: {artist?.release_date.split("-").reverse().join("-")}</h3>
+                  <h4>Follower: {artist?.fans}</h4>
+                  <h5>{artist?.explicit_lyrics ? "Explicit Lyrics" : ""}</h5>
                 </div>
+                </Link>
               </div>
               ))
           }
@@ -64,7 +68,7 @@ export async function getStaticPaths() {
       params: { id: artist.id.toString() },
     }));
   
-    return { paths, fallback: false };
+    return { paths, fallback: true };
   }
 
   export async function getStaticProps({ params }) {

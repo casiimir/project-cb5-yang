@@ -56,7 +56,7 @@ export default function SingleTrack({ trackData }) {
         <div className={styles.track}>
           <div className={styles.containerImage}>
             <Image
-              src={trackData.album.cover_medium}
+              src={trackData?.album?.cover_medium}
               alt="Picture of the author"
               width={250}
               height={250}
@@ -64,7 +64,7 @@ export default function SingleTrack({ trackData }) {
           </div>
           <div className={styles.containerSong}>
             <div>
-              <h2>{trackData.title}</h2>
+              <h2>{trackData?.title}</h2>
               <button>
                 {icon === false ? (
                   <FaRegHeart
@@ -78,24 +78,24 @@ export default function SingleTrack({ trackData }) {
             </div>
           </div>
 
-          <p>{trackData.artist.name}</p>
-          <audio src={trackData.preview} controls />
+          <p>{trackData?.artist.name}</p>
+          <audio src={trackData?.preview} controls />
         </div>
         <div className={styles.infoTrack}>
           <div className={styles.sub_infoTrack}>
             <Image
-              src={trackData.contributors[0].picture_medium}
+              src={trackData?.contributors[0]?.picture_medium}
               alt="Picture of the author"
               width={250}
               height={250}
             />
           </div>
           <div className={styles.artistInfo}>
-          <p className={styles.artistName}>{trackData.artist.name}</p>
-            <p>Title: {trackData.title}</p>
+          <p className={styles.artistName}>{trackData?.artist.name}</p>
+            <p>Title: {trackData?.title}</p>
             <div className={styles.sub_artistInfo}>
               <p>Duration {minutes}:{seconds}</p>
-              <p>Release date: {trackData.album.release_date}</p>
+              <p>Release date: {trackData?.album?.release_date}</p>
             </div>
           </div>
         </div>

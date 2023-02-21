@@ -70,35 +70,40 @@
             border-radius: 1.4rem;
             padding: .5rem 1rem;
             
-            .infoArtist{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                background-color: rgba(0, 0, 0, 0.276);
-                padding: 1rem;
-                border-radius: 1.4rem;
-                gap: .5rem;
+            .infoMainAlbum{
 
-                img {
-                    width: 110px;
-                    height: 110px;
-                    border-radius: 1.4rem;
-                }
-
-                .infoAlbum{
+                a{
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: rgba(0, 0, 0, 0.276);
+                    padding: 1rem;
+                    border-radius: 1.4rem;
                     gap: .5rem;
+                    text-decoration: none;
 
-                    h2 {
-                        font-size: 1rem;
-                        font-weight: 600;
+                    img {
+                        width: 110px;
+                        height: 110px;
+                        border-radius: 1.4rem;
                     }
-                
-                    h3, h4, h5 {
-                        font-size: .8rem;
-                        font-weight: 600;
-                        color: #ccc;
+    
+                    .infoAlbum{
+                        display: flex;
+                        flex-direction: column;
+                        gap: .5rem;
+    
+                        h2 {
+                            font-size: 1rem;
+                            font-weight: 600;
+                            color: white;
+                        }
+                    
+                        h3, h4, h5 {
+                            font-size: .8rem;
+                            font-weight: 600;
+                            color: #ccc;
+                        }
                     }
                 }
             }
