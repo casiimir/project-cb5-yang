@@ -34,9 +34,7 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="../public/favicon.ico" />
         </Head>
-        {!logged ? (
-          <Login />
-        ) : (
+        {logged ? (
           <main className={styles.main}>
             <div className={styles.Homepage}>
               <section className={styles.topContent}>
@@ -127,7 +125,7 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
               </section>
             </div>
           </main>
-        )}
+        ) : null}
       </>
     );
   }

@@ -17,7 +17,7 @@ const Top_Album = ({ data }) => {
               src={album.cover_medium}
               width={200}
               height={200}
-              alt={album.name}
+              alt="album name"
             />
             <div className={styles.infoAlbum}>
               <h2>
