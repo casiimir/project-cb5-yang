@@ -1,18 +1,18 @@
 import MainLayouts from "@/layouts/MainLayouts";
 import { applicationContext, initialState } from "@/store/state";
 import { useReducer } from "react";
-import favoriteReducer from "./favourite_page";
+import { reducer } from "@/store/Reducer";
 
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
-  const [state, dispatch] = useReducer(favoriteReducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <MainLayouts>
-      <applicationContext.Provider value={{ state, dispatch }}>
+    <applicationContext.Provider value={{ state, dispatch }}>
+      <MainLayouts>
         <Component {...pageProps} />;
-      </applicationContext.Provider>
-    </MainLayouts>
+      </MainLayouts>
+    </applicationContext.Provider>
   );
 }

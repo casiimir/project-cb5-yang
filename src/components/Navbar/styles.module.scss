@@ -5,6 +5,8 @@
   left: 50%;
   transform: translate(-50%);
   bottom: 0.5rem;
+  .active{ color:  #DB00FF;
+    filter: drop-shadow(0px 0px 15px #DB00FF);}
 
     ul{
       padding: 1rem;
@@ -24,13 +26,13 @@
         color: white;
       }
 
-      a:hover, a:active{
+      a:hover {
         color:  #DB00FF;
         filter: drop-shadow(0px 0px 15px #DB00FF);
       }
 
       .Icon {
-        border: 1px solid red;
+       
         border-radius: 100%;
       }
   }
