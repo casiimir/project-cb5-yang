@@ -1,13 +1,21 @@
 import SingleTrack from "@/components/singleTrack/SingleTrack";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import Link from "next/link";
 import { MdArrowBackIos } from "react-icons/md";
 
 import styles from "../pages/search_page/styles.module.scss";
+import { applicationContext } from "@/store/state";
 
 export default function SearchPage({ data }) {
+  const { dispatch } = useContext(applicationContext);
   const router = useRouter();
+  useEffect(() => {
+    if (router.asPath === "/search_page?q=track") {
+      dispatch({ type: "active", payload: router.asPath });
+    }
+  }, [router.asPath]);
 
   const [searchTitle, setSearchTitle] = useState("");
 
@@ -24,11 +32,11 @@ export default function SearchPage({ data }) {
 
   return (
     <>
-    <div className={styles.ContainerBackForm}>
-      <Link className={styles.Back} href={"/"}>
-        <MdArrowBackIos /> SEARCH
-      </Link>
-      <form onSubmit={onHandleSubmit}>
+      <div className={styles.ContainerBackForm}>
+        <Link className={styles.Back} href={"/"}>
+          <MdArrowBackIos /> SEARCH
+        </Link>
+        <form onSubmit={onHandleSubmit}>
           <input
             className={styles.SearchSubmit}
             onChange={onHandleChange}
@@ -39,7 +47,7 @@ export default function SearchPage({ data }) {
           />
           <input type="submit" value="search" onSubmit={onHandleSubmit} />
         </form>
-        </div>
+      </div>
       <div className={styles.main}>
         <SingleTrack data={data} />
       </div>

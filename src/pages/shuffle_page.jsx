@@ -3,10 +3,15 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { MdArrowBackIos } from "react-icons/md";
 import { BsPlayCircle, BsPauseCircleFill } from "react-icons/bs";
+import { useContext } from "react";
+import { useRouter } from "next/router";
 
 import styles from "./shuffle_page/styles.module.scss";
+import { applicationContext } from "@/store/state";
 
 const ShufflePage = ({ data }) => {
+  const router = useRouter();
+  const { state, dispatch } = useContext(applicationContext);
   const [currentTrack, setCurrentTrack] = useState(false);
   const [playingTrackIndex, setPlayingTrackIndex] = useState(null);
 
@@ -28,6 +33,13 @@ const ShufflePage = ({ data }) => {
     setPlayingTrackIndex(index);
   };
 
+  useEffect(() => {
+    if (router.asPath === "/shuffle_page") {
+      dispatch({ type: "active", payload: router.asPath });
+    }
+  }, []);
+
+  console.log(state);
   return (
     <>
       <div className={styles.Shuffle}>
