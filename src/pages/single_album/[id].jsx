@@ -13,19 +13,19 @@ export default function SigleAlbum({ albumData }) {
       <div className={styles.Album}>
         <div className={styles.containerAlbum}>
           <Image
-            src={albumData.cover_medium}
+            src={albumData?.cover_medium}
             width={250}
             height={250}
-            alt={albumData.title}
+            alt={albumData?.title}
           />
-          <h1>{albumData.title}</h1>
-          <h5>{albumData.artist.name}</h5>
+          <h1>{albumData?.title}</h1>
+          <h5>{albumData?.artist.name}</h5>
           <div className={styles.Tracks}>
             {albumData?.tracks?.data?.map((track) => (
               <div className={styles.singleTrack} key={track.id}>
-                <span>{track.title_short}</span>
+                <span>{track?.title_short}</span>
                 <audio controls id="my-audio">
-                  <source src={track.preview} type="audio/mp3" />
+                  <source src={track?.preview} type="audio/mp3" />
                 </audio>
               </div>
             ))}
@@ -33,8 +33,8 @@ export default function SigleAlbum({ albumData }) {
         </div>
         <div className={styles.divIframe}>
           <iframe
-            id={`deezer-widget-${albumData.id}`}
-            src={`https://widget.deezer.com/widget/dark/album/${albumData.id}?app_id=457142&autoplay=false&radius=true&tracklist=true`}
+            id={`deezer-widget-${albumData?.id}`}
+            src={`https://widget.deezer.com/widget/dark/album/${albumData?.id}?app_id=457142&autoplay=false&radius=true&tracklist=true`}
             width="790"
             height="710"
             allowtransparency="true"
@@ -55,7 +55,7 @@ export async function getStaticPaths() {
     params: { id: album.id.toString() },
   }));
 
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 
 export async function getStaticProps({ params }) {
