@@ -7,7 +7,6 @@ const MainLayout = ({ children }) => {
   useEffect(() => {
     setLogged(localStorage.getItem("logged"));
   }, []);
-  console.log(logged);
   if (logged === "true") {
     return (
       <>

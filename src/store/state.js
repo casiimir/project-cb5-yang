@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-const initialState = "alfio";
+const initialState = "";
 
 const applicationContext = createContext(initialState);
 
