@@ -112,7 +112,7 @@ export async function getStaticPaths() {
     params: { id: track.id.toString() },
   }));
 
-  return { paths, fallback: true };
+  return { paths, fallback: false };
 }
 export async function getStaticProps({ params }) {
   const res = await fetch(`https://api.deezer.com/track/${params.id}`);
