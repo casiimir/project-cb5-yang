@@ -1,5 +1,5 @@
 .Login{
-    width: 100vw;
+    width: 85%;
     height: 100vh;
     position: relative;
     display: flex;
@@ -11,6 +11,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    overflow: scroll;
 
     .containerLogin{
      position: absolute;
