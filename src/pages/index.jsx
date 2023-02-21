@@ -1,13 +1,13 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import { BsPlayCircle } from "react-icons/bs";
 import Login from "@/Login/Login";
 import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-
-import styles from "@/styles/Home.module.scss";
 import { applicationContext } from "@/store/state";
+
+import { BsPlayCircle } from "react-icons/bs";
+import styles from "@/styles/Home.module.scss";
 
 export default function Home({ dataArtist, dataTracks, dataAlbums }) {
   const { dispatch, state } = useContext(applicationContext);
@@ -25,7 +25,6 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
         dispatch({ type: "active", payload: router.asPath });
       }
     }, [router.asPath]);
-    console.log(state);
 
     return (
       <>

@@ -1,17 +1,20 @@
 import Link from "next/link";
-import { MdArrowBackIos } from "react-icons/md";
-import { FaHeart } from "react-icons/fa";
 import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { applicationContext } from "@/store/state";
 
+import { MdArrowBackIos } from "react-icons/md";
+import { FaHeart } from "react-icons/fa";
 import styles from "./favourite_page/styles.module.scss";
 import Image from "next/image";
-import { applicationContext } from "@/store/state";
 
 const FavouritePage = () => {
   const router = useRouter();
+
   const [favoriteTracks, setFavoriteTracks] = useState([]);
+
   const { dispatch } = useContext(applicationContext);
+
   useEffect(() => {
     if (router.asPath === "/favourite_page") {
       dispatch({ type: "active", payload: router.asPath });
@@ -43,7 +46,7 @@ const FavouritePage = () => {
 
   return (
     <div className={styles.FavouritePage}>
-      <Link className={styles.Back} href={"/"}>
+      <Link className={styles.Back} href={"/#"}>
         <MdArrowBackIos /> FAVOURITE
       </Link>
       <div className={styles.containerFavouritePage}>

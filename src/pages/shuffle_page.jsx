@@ -1,18 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { useRouter } from "next/router";
+import { applicationContext } from "@/store/state";
+
 import { MdArrowBackIos } from "react-icons/md";
 import { BsPlayCircle, BsPauseCircleFill } from "react-icons/bs";
-import { useContext } from "react";
-import { useRouter } from "next/router";
-
 import styles from "./shuffle_page/styles.module.scss";
-import { applicationContext } from "@/store/state";
 
 const ShufflePage = ({ data }) => {
   const router = useRouter();
+
   const { state, dispatch } = useContext(applicationContext);
+
   const [currentTrack, setCurrentTrack] = useState(false);
+
   const [playingTrackIndex, setPlayingTrackIndex] = useState(null);
 
   const playTrack = (trackUrl, index) => {
@@ -23,11 +25,12 @@ const ShufflePage = ({ data }) => {
         return;
       }
     }
-
     const audio = new Audio(trackUrl);
+
     audio.onended = () => {
       setPlayingTrackIndex(null);
     };
+
     audio?.play();
     setCurrentTrack(audio);
     setPlayingTrackIndex(index);
@@ -39,11 +42,10 @@ const ShufflePage = ({ data }) => {
     }
   }, []);
 
-  console.log(state);
   return (
     <>
       <div className={styles.Shuffle}>
-        <Link className={styles.Back} href={"/"}>
+        <Link className={styles.Back} href={"/#"}>
           <MdArrowBackIos /> SHUFFLE
         </Link>
         <div className={styles.Content}>

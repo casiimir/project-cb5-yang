@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+
 import { BsPlayCircle } from "react-icons/bs";
 import { MdArrowBackIos } from "react-icons/md";
 
@@ -8,7 +9,7 @@ import styles from "./top_track/styles.module.scss";
 const Top_Track = ({ data }) => {
   return (
     <div className={styles.TopTrack}>
-      <Link className={styles.Back} href={"/"}>
+      <Link className={styles.Back} href={"/#"}>
         <MdArrowBackIos /> TOP TRACKS
       </Link>
       <div className={styles.Content}>

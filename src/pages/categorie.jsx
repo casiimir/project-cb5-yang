@@ -1,17 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MdArrowBackIos } from "react-icons/md";
-import { BsPlayCircle } from "react-icons/bs";
-
-import { useContext } from "react";
-import { useEffect } from "react";
-import styles from "./categories_page/styles.module.scss";
+import { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import { applicationContext } from "@/store/state";
 
+import { MdArrowBackIos } from "react-icons/md";
+import { BsPlayCircle } from "react-icons/bs";
+import styles from "./categories_page/styles.module.scss";
+
 export default function GenreList({ data }) {
   const { dispatch } = useContext(applicationContext);
+
   const router = useRouter(applicationContext);
+
   useEffect(() => {
     if (router.asPath === "/categorie") {
       dispatch({ type: "active", payload: router.asPath });
@@ -20,7 +21,7 @@ export default function GenreList({ data }) {
 
   return (
     <>
-      <Link className={styles.Back} href={"/"}>
+      <Link className={styles.Back} href={"/#"}>
         <MdArrowBackIos /> CATEGORIES
       </Link>
       <div className={styles.Categories}>

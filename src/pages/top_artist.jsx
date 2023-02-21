@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import { MdArrowBackIos } from "react-icons/md";
 import styles from "./top_artist/styles.module.scss";
 
@@ -7,15 +8,15 @@ const Top_Artist = ({ data }) => {
   return (
     <>
       <div className={styles.TopArtist}>
-        <Link className={styles.Back} href={"/"}>
+        <Link className={styles.Back} href={"/#"}>
           <MdArrowBackIos /> TOP ARTISTS
         </Link>
         <div className={styles.Content}>
           {data?.data.map((artist) => (
             <div className={styles.container_Content} key={artist.id}>
-              <Link 
-              href={`/single_artist/${artist.id}`}
-              as={`/single_artist/${artist.id}`} 
+              <Link
+                href={`/single_artist/${artist.id}`}
+                as={`/single_artist/${artist.id}`}
               >
                 <Image
                   src={artist.picture_medium}
@@ -26,8 +27,9 @@ const Top_Artist = ({ data }) => {
               </Link>
               <div className={styles.infoArtist}>
                 <Link
-                href={`/single_artist/${artist.id}`}
-                as={`/single_artist/${artist.id}`} >
+                  href={`/single_artist/${artist.id}`}
+                  as={`/single_artist/${artist.id}`}
+                >
                   <h2>{artist.name}</h2>
                 </Link>
                 <h3>Position: {artist.position}°</h3>
