@@ -1,117 +1,164 @@
 .Back {
-    color: white;
-    padding: 20px;
-    text-decoration: none;
-    display: flex;
-    padding: 0 20px;
-    align-items: center;
-    width: fit-content;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
+  padding-left: 1.5rem;
+  width: fit-content;
 }
 
-.Categories{
-    width: 90%;
-    height: 450px;
+.Categories {
+  width: 90%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  color: white;
+  margin: 20px;
+  position: absolute;
+  bottom: 90px;
+  padding-bottom: 20px;
+
+  .wrapper {
+    gap: 20px;
     display: flex;
-    flex-direction: column;
-    overflow: scroll;
-    color: white;
-    margin: 20px;
-    position: absolute;
-    bottom: 90px;
-    padding-bottom: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 
-    .wrapper{
-        gap: 20px;
-        display: flex;
-        flex-wrap: wrap;
+    .Content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(252, 247, 255, 0) 100%
+      );
+      box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.25);
+      border-radius: 26px;
+      width: 158px;
+      height: 109px;
+      cursor: pointer;
+      transition: all 0.35s;
+      position: relative;
+      gap: 16px;
 
-        .Content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-evenly;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(252, 247, 255, 0) 100%);
-            box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.25);
-            border-radius: 26px;
-            width: 158px;
-            height: 109px; 
-            cursor: pointer;   
-            transition: all .35s;
-            position: relative;
-            gap: 16px;
+      .Picture {
+        width: 100%;
+        height: 60px;
+        border-radius: 26px 26px 0 0;
+        position: absolute;
+        top: 0;
+        z-index: 0;
+        object-fit: cover;
+      }
 
-            .Picture {
-                width: 100%;
-                height: 60px;
-                border-radius: 26px 26px 0 0;
-                position: absolute;
-                top: 0;
-                z-index: 0;
-                object-fit: cover;
-            }
+      h2 {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        color: #ccc;
+        z-index: 1;
+      }
 
-            h2 {
-                font-size: .8rem;
-                text-transform: uppercase;
-                color: #ccc;
-                z-index: 1;
-            }
+      .Play {
+        cursor: pointer;
+      }
 
-            .Play {
-                cursor: pointer;
-            }
-
-            .Play:hover, a:active{
-               color:  #DB00FF;
-                filter: drop-shadow(0px 0px 15px #DB00FF);
-            }
-        }
-
-        .Content:hover  {
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(255, 247, 247, 0) 100%);
-            box-shadow: inset 4px 4px 4px 4px rgba(0, 0, 0, 0.42);
-            border-radius: 26px;
-
-            h2 {
-                color: white;
-                text-shadow: 0 0 2px black;
-            }
-        }
+      .Play:hover,
+      a:active {
+        color: #db00ff;
+        filter: drop-shadow(0px 0px 15px #db00ff);
+      }
     }
+
+    .Content:hover {
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.08) 0%,
+        rgba(255, 247, 247, 0) 100%
+      );
+      box-shadow: inset 4px 4px 4px 4px rgba(0, 0, 0, 0.42);
+      border-radius: 26px;
+
+      h2 {
+        color: white;
+        text-shadow: 0 0 2px black;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .Back {
+    padding-left: 2rem;
+  }
+
+  .Categories {
+    height: 70vh;
+  }
 }
 
 @media only screen and (min-width: 768px) {
+  .Back {
+    margin-top: -1rem;
+    padding-left: 7rem;
+  }
 
-    .Categories{
-        width: 85%;
-        flex-direction: row;
-        align-items: flex-start;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        margin-left: 70px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 550px;
+  .Categories {
+    width: 85%;
+    flex-direction: row;
+    align-items: flex-start;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin-left: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 75vh;
+    margin-top: 3.5rem;
 
-        .wrapper {
+    .wrapper {
+      gap: 30px;
 
-            gap: 30px;
+      .Content {
+        width: 180px;
 
-            .Content {
-                width: 180px;
-
-                h2 {
-                    font-size: 1rem;
-                    text-align: center;
-                }
-
-                .Play {
-                    font-size: 1.3rem;
-                }
-            }
+        h2 {
+          font-size: 1rem;
+          text-align: center;
         }
-    }
 
+        .Play {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .Back {
+    margin-top: 0rem;
+    padding-left: 9rem;
+  }
+
+  .Categories {
+    height: 75vh;
+    margin-top: 3.5rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .Back {
+    padding-left: 8rem;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .Back {
+    padding-left: 11rem;
+  }
 }
