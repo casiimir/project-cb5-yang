@@ -4,9 +4,11 @@ import Navbar from "@/components/Navbar";
 
 const MainLayout = ({ children }) => {
   const [logged, setLogged] = useState("true");
+
   useEffect(() => {
     setLogged(localStorage.getItem("logged"));
   }, []);
+
   if (logged === "true") {
     return (
       <>
