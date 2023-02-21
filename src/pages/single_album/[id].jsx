@@ -19,7 +19,7 @@ export default function SigleAlbum({ albumData }) {
             alt={albumData?.title}
           />
           <h1>{albumData?.title}</h1>
-          <h5>{albumData?.artist.name}</h5>
+          <h5>{albumData?.artist?.name}</h5>
           <div className={styles.Tracks}>
             {albumData?.tracks?.data?.map((track) => (
               <div className={styles.singleTrack} key={track.id}>

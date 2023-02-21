@@ -52,16 +52,21 @@ const ShufflePage = ({ data }) => {
           {data?.data.map((shuffle, index) => (
             <div className={styles.container_Content} key={index}>
               <div className={styles.mainContent}>
-                <Image
-                  src={shuffle.album.cover_medium}
+                <Link
+                href={`/single_artist/${shuffle?.artist?.id}`}
+                as={`/single_artist/${shuffle?.artist?.id}`} >
+                  <Image
+                  src={shuffle?.album?.cover_medium}
                   width={200}
                   height={200}
-                  alt={shuffle.title}
-                />
+                  alt={shuffle?.title}
+                  />
+                </Link>
+
                 <div className={styles.infoTrack}>
-                  <h2>{shuffle.title_short}</h2>
-                  <h3>{shuffle.artist.name}</h3>
-                  <h4>{shuffle.album.type}</h4>
+                  <h2>{shuffle?.title_short}</h2>
+                  <h3>{shuffle?.artist?.name}</h3>
+                  <h4>{shuffle?.album?.type}</h4>
                 </div>
               </div>
               <button>
