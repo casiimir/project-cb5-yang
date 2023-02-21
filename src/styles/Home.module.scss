@@ -6,7 +6,6 @@
     color: white;
     gap: .5rem;
     
-
     .topContent{
         display: flex;
         flex-direction: column;
@@ -85,16 +84,12 @@
 @media screen and (min-width: 768px) {
 
     .Homepage{
-        width: 86%;
-        margin-top: -.3rem;
         margin-left: 6rem;
         height: 76vh;
         overflow-y: scroll;
 
         .topContent{
-    
 
-            width: 100%;
             .container_Content::-webkit-scrollbar{
                 display: none;
             }
@@ -105,12 +100,14 @@
 @media screen and (min-width: 1024px) {
 
     .Homepage{
-        margin-top: .6rem;
         margin-left: 7rem;
         .topContent{
-            
             width: 100%;
         }
+    }
+    
+    .Homepage::-webkit-scrollbar{
+        display: none;
     }
 }
 
@@ -118,7 +115,6 @@
 
     .Homepage{
         width: 85%;
-        margin-top: 2.1rem;
         margin-left: 10rem;
         gap: 2rem;
 
