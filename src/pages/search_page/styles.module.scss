@@ -55,7 +55,7 @@ form {
     color: white;
     margin:auto;
     z-index: 0;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -103,7 +103,7 @@ form {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        padding-top: 40px;
+        margin-top: 60px;
 
         form {
             position: absolute;
