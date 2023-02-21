@@ -147,7 +147,6 @@
                     }
                     
                     .infoTrack{
-
                         gap: .5rem;
                         
                         h3, h4 {
@@ -173,7 +172,7 @@
             height: 70vh;
             
             .Content{
-                width: 30%;
+                width: 45%;
                 height: fit-content;
 
                 .mainContent{
@@ -183,10 +182,27 @@
                     }
                     
                     h2 {
+                        width: 80%;
                         font-size: 1.2rem;
+                        text-align: center;
+                        align-self: center;
                     }
+
+                    .Heart {
+                        font-size: 2rem;
+                    }
+
+                    .infoTrack{
+                        width: 100%;
+                        align-items: center;
+                    } 
                 }
             }
+
+
+        }
+        .containerFavouritePage::-webkit-scrollbar{
+            display: none;
         }
     }
 }
