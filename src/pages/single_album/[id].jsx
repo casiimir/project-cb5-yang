@@ -7,10 +7,11 @@ import styles from "./styles.module.scss";
 export default function SigleAlbum({ albumData }) {
   return (
     <>
-      <Link className={styles.linkAlbum} href={"/top_album"}>
-        <MdArrowBackIos /> ALL ALBUMS
-      </Link>
+      
       <div className={styles.Album}>
+      <Link className={styles.linkAlbum} href={"/top_album"}>
+        <MdArrowBackIos /> ALBUM
+      </Link>
         <div className={styles.containerAlbum}>
           <Image
             src={albumData?.cover_medium}

@@ -1,14 +1,4 @@
-.linkAlbum {
-    color: white;
-    padding: 20px;
-    text-decoration: none;
-    display: flex;
-    padding: 0 20px;
-    align-items: center;
-    text-transform: uppercase;
-    align-self: flex-start;
-    width: fit-content;
-}
+
 
 .Album {
     width: 90%;
@@ -19,6 +9,20 @@
     overflow: scroll;
     color: white;
     margin: 20px;
+
+
+    .linkAlbum {
+        color: white;
+        padding: 20px;
+        text-decoration: none;
+        display: flex;
+        padding: 0 20px;
+        align-items: center;
+        align-self: flex-start;
+        text-transform: uppercase;
+        font-weight: bold;
+        width: fit-content;
+    }
 
     // .containerAlbum {
     //     display: flex;
@@ -90,6 +94,11 @@
             margin-left: 70px;
             justify-content: center;
             align-items: center;
+
+        .linkAlbum {
+            margin-top: 1.7rem;
+        margin-left: 7rem;
+        }
 
     .containerAlbum {
         display: none;
