@@ -48,6 +48,7 @@ export default function SingleTrack({ trackData }) {
 
   return (
     <>
+    
       <div className={styles.main}>
         <Link className={styles.Back} href={`/top_track`}>
           <MdArrowBackIos />
@@ -63,7 +64,7 @@ export default function SingleTrack({ trackData }) {
             />
           </div>
           <div className={styles.containerSong}>
-            <div>
+            <div className={styles.sub_containerSong}>
               <h2>{trackData?.title}</h2>
               <button>
                 {icon === false ? (

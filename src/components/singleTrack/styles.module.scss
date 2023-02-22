@@ -1,18 +1,28 @@
 .Track {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     background-color: rgba(0, 0, 0, 0.276);
      padding: 20px;
      border-radius: 26px;
+     gap: 20px;
+
+     img {
+         width: 116px;
+         height: 116px;
+         border-radius: 16px;
+     }
 
     .infoTrack {
-    line-height: 24px;
-
+        display: flex;
+        flex-direction: column;
+        justify-content:space-evenly;
+        align-items: flex-start;
+        gap: 10px;
+       
 
     h2 {
         font-size: .9rem;
-        width: 200px;
     }
 
     p {
@@ -40,4 +50,11 @@ button {
 }
 }
 
+}
+
+@media only screen and (min-width: 768px) {
+
+    .Track {
+        width: 30%;
+    }
 }
