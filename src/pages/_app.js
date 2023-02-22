@@ -1,7 +1,7 @@
 import MainLayouts from "@/layouts/MainLayouts";
 import { applicationContext, initialState } from "@/store/state";
 import { useReducer } from "react";
-import { reducer } from "@/store/Reducer";
+import { reducer } from "@/store/reducer";
 
 import "@/styles/globals.css";
 
