@@ -32,12 +32,13 @@ const SingleTrack = ({ data, className }) => {
       <div className={styles.infoTrack}>
         <h2>{item?.title}</h2>
         <p>{item?.artist.name}</p>
-      </div>
-      <button>
+        <button>
         {playingTrackIndex === index ? 
         <BsPauseCircleFill className={styles.btnPause} onClick={() => playTrack(item?.preview, index)}/> : 
         <BsPlayCircle className={styles.btnPlay} onClick={() => playTrack(item?.preview, index)}/>}
       </button>
+      </div>
+      
     </div>
   ));
 };

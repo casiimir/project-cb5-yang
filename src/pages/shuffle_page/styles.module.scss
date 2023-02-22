@@ -1,11 +1,13 @@
 .Shuffle {
     width: 85%;
     margin: auto;
-    height: 65vh;
+    height: 73vh;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     color: white;
+    box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 0.3);   
+
 
     .Back {
         width: fit-content;

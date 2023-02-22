@@ -32,6 +32,7 @@ export default function SearchPage({ data }) {
 
   return (
     <>
+    <div className={styles.Search}>
       <div className={styles.ContainerBackForm}>
         <Link className={styles.Back} href={"/#"}>
           <MdArrowBackIos /> SEARCH
@@ -51,6 +52,7 @@ export default function SearchPage({ data }) {
       <div className={styles.main}>
         <SingleTrack data={data} />
       </div>
+    </div>
     </>
   );
 }

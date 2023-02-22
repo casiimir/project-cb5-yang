@@ -21,10 +21,11 @@ export default function GenreList({ data }) {
 
   return (
     <>
+
+      <div className={styles.Categories}>
       <Link className={styles.Back} href={"/#"}>
         <MdArrowBackIos /> CATEGORIES
       </Link>
-      <div className={styles.Categories}>
         <ul className={styles.wrapper}>
           {data.data.slice(1, data.length).map((genre) => (
             <div className={styles.Content} key={genre.id}>
