@@ -34,9 +34,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 20px;
+      gap: 10px;
 
       img {
+        width: 220px;
+        height: 220px;
         animation: shadow-pulse 1s infinite;
         border-radius: 100%;
     }
@@ -61,14 +63,15 @@
 
   .sub_containerSong {
    display: flex;
+   flex-direction: column;
    align-items: center;
    justify-content:center;
    gap: 20px;
 
    h2 {
-     width: 60%;
+     line-height: 30px;
      text-align: center;
-     font-size: 1.3rem;
+     font-size: 1.1rem;
    }
 
    button {
