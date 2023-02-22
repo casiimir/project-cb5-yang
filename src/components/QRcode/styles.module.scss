@@ -1,0 +1,33 @@
+.QRcode{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    background: linear-gradient(-45deg, black,  #3a2544, #540155, );
+    
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+
+
+    .Spline{
+        padding: 22rem 27rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
