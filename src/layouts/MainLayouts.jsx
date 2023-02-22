@@ -15,14 +15,12 @@ const MainLayout = ({ children }) => {
       <>
         <Header />
         {children}
-
         <Navbar />
       </>
     );
   } else {
     return (
       <>
-        {" "}
         <Login />;
       </>
     );
