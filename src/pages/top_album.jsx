@@ -7,13 +7,14 @@ import styles from "./top_album/styles.module.scss";
 const Top_Album = ({ data }) => {
   return (
     <>
-      
-      <div className={styles.TopAlbum}><Link className={styles.Back} href={"/#"}>
+      <div className={styles.TopAlbum}>
+        <Link className={styles.Back} href={"/#"}>
         <MdArrowBackIos /> ALL ALBUMS
-      </Link>
+        </Link>
       
         {data?.data.map((album) => (
           <div className={styles.container_Content} key={album.id}>
+            <div className={styles.Content}>
             <Image
               src={album.cover_medium}
               width={200}
@@ -30,6 +31,7 @@ const Top_Album = ({ data }) => {
                 <h5>{album.artist.name}</h5>
                 <span>Position: {album.position}</span>
               </div>
+            </div>
             </div>
             <Link
               className={styles.seeAll}
