@@ -1,19 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
+
 import { MdArrowBackIos } from "react-icons/md";
+import { BsPlayCircle } from "react-icons/bs";
 
 import styles from "./top_album/styles.module.scss";
 
 const Top_Album = ({ data }) => {
   return (
-    <>
       <div className={styles.TopAlbum}>
         <Link className={styles.Back} href={"/#"}>
         <MdArrowBackIos /> ALL ALBUMS
         </Link>
-      
+        <div className={styles.container_Content}>
         {data?.data.map((album) => (
-          <div className={styles.container_Content} key={album.id}>
+          <div className={styles.infoContent} key={album.id}>
             <div className={styles.Content}>
             <Image
               src={album.cover_medium}
@@ -29,7 +30,7 @@ const Top_Album = ({ data }) => {
               </h2>
               <div className={styles.subInfoAlbum}>
                 <h5>{album.artist.name}</h5>
-                <span>Position: {album.position}</span>
+                <span>Position: {album.position}°</span>
               </div>
             </div>
             </div>
@@ -38,12 +39,12 @@ const Top_Album = ({ data }) => {
               href={`/single_album/${album.id}`}
               as={`/single_album/${album.id}`}
             >
-              <span>See Details</span>
+              <BsPlayCircle className={styles.PlayCircle} />
             </Link>
           </div>
         ))}
+        </div>
       </div>
-    </>
   );
 };
 

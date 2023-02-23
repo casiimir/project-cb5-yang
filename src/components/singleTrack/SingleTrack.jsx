@@ -50,8 +50,12 @@ const SingleTrack = ({ data }) => {
       height={250}
       alt={item?.title} />
       <div className={styles.infoTrack}>
-        <h2>{item?.title}</h2>
-        <p>{item?.artist.name}</p>
+        <h2>
+          {item.title.length > 10
+          ? `${item.title.substring(0, 10)}...`
+          : item.title}
+        </h2>
+        <span>{item?.artist.name}</span>
         <button>
         {playingTrackIndex === index ? 
         <BsPauseCircleFill className={styles.btnPause} onClick={() => playTrack(item?.preview, index)}/> : 

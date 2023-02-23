@@ -6,8 +6,6 @@
     flex-direction: column;
     gap: 1rem;
     color: white;
-    box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 0.3);   
-
 
     .Back {
         width: fit-content;
@@ -25,6 +23,8 @@
         flex-direction: column;
         gap: 1rem;
         overflow-y: scroll;
+        padding: 0 0 .5rem 0;
+        box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 1);   
 
         .container_Content {
             width: 100%;
@@ -93,7 +93,97 @@
     }   
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
+
+    .Shuffle {
+        margin-left: 8rem;
+        width: 85%;
+
+        .Back {
+            width: fit-content;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            width: fit-content;
+        }
+    
+        .Content{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            box-shadow: none;
+
+            .container_Content {
+                width: fit-content;
+                width: 32%;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem;
+                background-color: rgba(0, 0, 0, 0.276);
+                padding: .5rem .6rem;
+                border-radius: 1rem;
+
+                .mainContent{
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 1.6rem;
+                    }
+
+                    .infoTrack {
+                        display: flex;
+                        flex-direction: column;
+                        gap: .25rem;
+
+                        h2 {
+                            font-size: 1rem;
+                            text-transform: uppercase;
+                        }
+            
+                        h3{
+                            font-size: 1rem;
+                            color: #939393;
+                            font-weight: 600;
+                        }
+
+                        h4{
+                            font-weight: 500;
+                            font-size: 1rem;
+                        }
+                    } 
+                }
+        
+            button {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                
+                .btnPlay {
+                    width: 30px;
+                    height: 30px;
+                    color:  #DB00FF;
+                    filter: drop-shadow(0px 0px 5px #DB00FF);
+                }
+
+                .btnPause {
+                    width: 30px;
+                    height: 30px;
+                    color:  #DB00FF;
+                    filter: drop-shadow(0px 0px 5px #DB00FF);
+                }
+            } 
+        }
+    }   
+}
+}
+
+/*@media screen and (min-width: 768px) {
 
     .Shuffle {
         margin-left: 6rem;
@@ -132,51 +222,11 @@
             display: none;
         }
     }  
-}
+}*/
 
-@media screen and (min-width: 1200px) {
 
-    .Shuffle {
-        margin-left: 10rem;
-        height: 80vh;
-    
-        .Content{
-            width: 80%;
-            display: flex;
-    
-            .container_Content {
-                width: 40%;
 
-                .mainContent{
-                    display: flex;
-                    align-items: center;
-                    gap: 1rem;
-                    
-                    img {
-                        width: 100px;
-                        height: 100px;
-                    }
-    
-                    .infoTrack {
-                        h2 {
-                            font-size: .9rem;
-                        }
-            
-                        h3{
-                            font-size: .8rem;
-                        }
-    
-                        h4{
-                            font-size: .8rem;
-                        }
-                    } 
-                }
-            }
-        }   
-    }  
-}
-
-@media screen and (min-width: 1500px) {
+/*@media screen and (min-width: 1500px) {
 
     .Shuffle {   
         .Content{
@@ -199,4 +249,4 @@
             }
         }   
     }  
-}
+}*/

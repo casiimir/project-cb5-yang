@@ -1,54 +1,55 @@
 .Track {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.276);
-     padding: 20px;
-     border-radius: 26px;
-     gap: 20px;
+     padding: 1rem;
+     border-radius: 1rem;
+     gap: 1rem;
 
      img {
          width: 116px;
          height: 116px;
-         border-radius: 16px;
+         border-radius: 1rem;
      }
 
     .infoTrack {
+        width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content:space-evenly;
-        align-items: flex-start;
-        gap: 10px;
+        gap: .5rem;
        
+        h2 {
+            font-size: 1rem;
+        }
 
-    h2 {
-        font-size: .9rem;
-    }
+        span {
+            font-size: 1rem;
+        }
 
-    p {
-        font-size: .8rem;
-    }
+        button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            align-self: flex-end;
+        
+        .btnPlay {
+            width: 30px;
+            height: 30px;
+            color:  #DB00FF;
+            filter: drop-shadow(0px 0px 5px #DB00FF);
+        }
+        
+        .btnPause {
+            width: 30px;
+            height: 30px;
+            color:  #DB00FF;
+            filter: drop-shadow(0px 0px 5px #DB00FF);
+        }
+        }
   }
 
-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
 
-.btnPlay {
-    width: 30px;
-    height: 30px;
-    color:  #DB00FF;
-    filter: drop-shadow(0px 0px 5px #DB00FF);
-}
-
-.btnPause {
-    width: 30px;
-    height: 30px;
-    color:  #DB00FF;
-    filter: drop-shadow(0px 0px 5px #DB00FF);
-}
-}
 
 }
 

@@ -1,13 +1,7 @@
 .Search {
-.ContainerBackForm {
     width: 85%;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start; 
     margin: auto;
-    z-index: 1;
+    height: 73vh;
 
     .Back {
         color: white;
@@ -17,58 +11,88 @@
         font-weight: 600;
         width: fit-content;
     }
-
-
-form {
-    background: rgb(0, 0, 0);
-    box-shadow: inset 0px 4px 4px 2px #000000;
-    border-radius: 1rem;
-    border: none;
-    width: 100%;
-    z-index: 2;
-    margin: 1rem 0;
-
-    input {
-        background-color: rgb(0, 0, 0);
-        padding: 20px;
+    
+    form {
+        background: rgb(0, 0, 0);
+        box-shadow: inset 0px 4px 4px 2px #000000;
+        border-radius: 1rem;
         border: none;
-        color: #cccccc;
-        text-transform: uppercase;
-        outline: none;
-        border-radius: 16px;
-    }
-
-    input[type=text]{
         width: 100%;
-        text-transform: initial;
-        font-weight: 600;
+        margin: 1rem 0;
+        display: flex;
+        
+        input {
+            background-color: rgb(0, 0, 0);
+            padding: 20px;
+            border: none;
+            color: #cccccc;
+            text-transform: uppercase;
+            outline: none;
+            border-radius: 1rem;
+        }
+        
+        input[type=text]{
+            width: 100%;
+            text-transform: initial;
+            font-weight: 600;
+        }
+        
+        .SearchSubmit::placeholder{
+            color: #767676;
+        }
     }
-
-    .SearchSubmit::placeholder{
-        color: #767676;
+    
+    .main {
+        height: 65vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .5rem;
+        overflow-y: scroll;
+        color: white;
+        margin:auto;
+        z-index: 0;
+        box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 1);   
     }
-  }
 }
 
-.main {
-    height:58vh;
-    width: 85%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    overflow: scroll;
-    color: white;
-    margin:auto;
-    z-index: 0;
+@media screen and (min-width: 1200px) {
 
-    box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 0.3);   
+    .Search {
+        margin-left: 8rem;
+        
+        form {
+            width: 30rem;
+        }
+        
+        .main {
+            height: 58.5vh;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-right: 1rem;
+            padding-bottom: .5rem;
+        }
 
+        .main::-webkit-scrollbar {
+            display: flex;
+            width: 10px;
+          }
+          
+          .main::-webkit-scrollbar-thumb {
+            background-color: #52005f;
+            border-radius: 10px;
+          }
+          
+          .main::-webkit-scrollbar-track {
+            background-color: #2B1B33;
+            border-radius: 10px;
+          }
+    }
 }
 
-}
-
-@media only screen and (max-width: 768px) {
+/*@media only screen and (max-width: 768px) {
     
     .Search {
 
@@ -130,4 +154,4 @@ form {
     }
 
 }
-}
+}*/

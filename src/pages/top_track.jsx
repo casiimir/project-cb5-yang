@@ -24,9 +24,7 @@ const Top_Track = ({ data }) => {
               />
               <div className={styles.infoTrack}>
                 <h2>
-                  {track.title.length > 13
-                    ? `${track.title.toLowerCase().substring(0, 10)} ...`
-                    : track.title.toLowerCase()}
+                  {track.title}
                 </h2>
                 <h3>{track.artist.name}</h3>
               </div>
