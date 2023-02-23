@@ -30,6 +30,7 @@ export default function SearchPage({ data }) {
     setSearchTitle(e.target.value);
   };
 
+
   return (
     <>
     <div className={styles.Search}>
