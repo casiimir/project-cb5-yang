@@ -77,10 +77,13 @@
   .Navbar {
     width: fit-content;
     position: fixed;
+
     top: -5%;
     left: 4%;
 
     ul {
+      display: flex;
+      flex-direction: column;
       gap: 5rem;
       padding: 1.5rem;
     }
