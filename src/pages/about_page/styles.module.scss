@@ -1,23 +1,20 @@
-
-
 .About {
   width: 85%;
   margin: auto;
-  height: 73vh;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   color: white;
   overflow: scroll;
-  box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 0.3);   
+  height: 75vh;
 
   .Back {
     color: white;
-          text-decoration: none;
-          display: flex;
-          align-items: center;
-          font-weight: 600;
-          width: fit-content;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    width: fit-content;
   }
 
   .Content {
