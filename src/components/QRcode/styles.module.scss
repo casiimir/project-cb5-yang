@@ -4,15 +4,11 @@
     height: 100vh;
     overflow-x: hidden;
     overflow-y: hidden;
-
     background: linear-gradient(-45deg, black,  #3a2544, #540155, );
-    
 	background-size: 400% 400%;
 	animation: gradient 10s ease infinite;
 
-
-    .Spline{
-        padding: 22rem 27rem;
+    img{
         position: absolute;
         top: 50%;
         left: 50%;
@@ -30,4 +26,25 @@
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+
+@media screen and (min-width: 1024px) {
+
+    .QRcode{ 
+        img{
+            width: 55rem;
+            height: 30rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .QRcode{
+        img{
+            width: 75rem;
+            height: 45rem;
+        }
+    }
 }

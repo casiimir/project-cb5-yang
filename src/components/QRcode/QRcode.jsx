@@ -1,10 +1,15 @@
-import Spline from '@splinetool/react-spline';
+import Image from "next/image"
 import styles from "./styles.module.scss"
 
 const QRcode = () => {
   return (
     <div className={styles.QRcode}>
-        <Spline scene="https://prod.spline.design/LJJiRQTLuDq3lWSV/scene.splinecode" className={styles.Spline}/>
+        <Image
+        src={"/qrcodetemplate.png"} 
+        width={1280}
+        height={768}
+        alt={"QRCODE"}
+        />
     </div>
 
   )
