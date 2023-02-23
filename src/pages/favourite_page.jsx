@@ -9,11 +9,10 @@ import styles from "./favourite_page/styles.module.scss";
 import Image from "next/image";
 
 const FavouritePage = () => {
+  const { dispatch, state } = useContext(applicationContext);
   const router = useRouter();
 
   const [favoriteTracks, setFavoriteTracks] = useState([]);
-
-  const { dispatch } = useContext(applicationContext);
 
   useEffect(() => {
     if (router.asPath === "/favourite_page") {
@@ -22,27 +21,22 @@ const FavouritePage = () => {
   }, [router.asPath]);
 
   useEffect(() => {
-    const favoriteTrackJSON = localStorage.getItem("favoriteTrack");
-    const favoriteTracks = favoriteTrackJSON
-      ? JSON.parse(favoriteTrackJSON)
-      : [];
+    const favoriteTracks = JSON.parse(localStorage.getItem("favoriteTrack"));
+    favoriteTracks ? favoriteTracks : undefined;
 
-    setFavoriteTracks(favoriteTracks);
+    dispatch({ type: "favorite", payload: favoriteTracks });
   }, []);
+  console.log(state);
 
-  const removeFavourite = (index) => {
-    const favoriteTrackJSON = localStorage.getItem("favoriteTrack");
-    const favoriteTracks = favoriteTrackJSON
-      ? JSON.parse(favoriteTrackJSON)
-      : [];
-
-    favoriteTracks.splice(index, 1);
-
-    const updatedFavoriteTrackJSON = JSON.stringify(favoriteTracks);
-    localStorage.setItem("favoriteTrack", updatedFavoriteTrackJSON);
-
-    setFavoriteTracks(favoriteTracks);
+  const removeFavourite = (item) => {
+    console.log(item);
+    dispatch({ type: "remove", payload: item });
   };
+  useEffect(() => {
+    localStorage.setItem("favoriteTrack", JSON.stringify(state.favorite));
+  }, [state]);
+
+  console.log(state);
 
   return (
     <div className={styles.FavouritePage}>
@@ -50,7 +44,7 @@ const FavouritePage = () => {
         <MdArrowBackIos /> FAVOURITE
       </Link>
       <div className={styles.containerFavouritePage}>
-        {favoriteTracks.map((item) => (
+        {state?.favorite?.map((item) => (
           <div className={styles.Content} key={item.id}>
             <div className={styles.mainContent}>
               <Image
@@ -60,10 +54,15 @@ const FavouritePage = () => {
                 alt={item.titleTrack}
               />
               <div className={styles.infoTrack}>
-                <h2>{item.titleTrack.toLowerCase()}</h2>
+                <h2>{item.titleTrack?.toLowerCase()}</h2>
                 <h3>{item.artistName}</h3>
               </div>
-              <FaHeart className={styles.Heart} onClick={removeFavourite} />
+              <FaHeart
+                className={styles.Heart}
+                onClick={() => {
+                  removeFavourite(item.titleTrack);
+                }}
+              />
             </div>
             <audio src={item.trackPreview} controls />
           </div>

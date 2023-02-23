@@ -2,12 +2,27 @@ import Link from "next/link";
 import Image from "next/image";
 import { MdArrowBackIos } from "react-icons/md";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState, useEffect } from "react";
 
 import styles from "./styles.module.scss";
+import { applicationContext } from "@/store/state";
 
 export default function SingleTrack({ trackData }) {
+  const { state, dispatch } = useContext(applicationContext);
   const [icon, setIcon] = useState(false);
+
+  console.log(state);
+
+  // useEffect(() => {
+  //   if (localStorage.getItem("favoriteTrack") != null) {
+  //     setLogged(true);
+  //   }
+  // }, []);
+  // useEffect(() => {
+  //   if (router.asPath === "/#") {
+  //     dispatch({ type: "active", payload: router.asPath });
+  //   }
+  // }, [router.asPath]);
 
   let seconds = trackData.duration;
 
@@ -25,26 +40,61 @@ export default function SingleTrack({ trackData }) {
   updateDate = updateDate?.split("-").reverse().join("-");
 
   const onHandleFavorite = () => {
-    const favoriteTrack = {
-      titleTrack: trackData.title,
-      artistName: trackData.artist.name,
-      artistImage: trackData.album.cover_medium,
-      trackPreview: trackData.preview,
-    };
-
     const favoriteTrackJSON = localStorage.getItem("favoriteTrack");
+    const favoriteTrack = [
+      {
+        titleTrack: "",
+        artistName: "",
+        artistImage: "",
+        trackPreview: "",
+      },
+    ];
     const favoriteTracks = favoriteTrackJSON
       ? JSON.parse(favoriteTrackJSON)
-      : [];
+      : undefined;
 
-    favoriteTracks.push(favoriteTrack);
+    // favoriteTracks.push(favoriteTrack);
 
-    const updatedFavoriteTrackJSON = JSON.stringify(favoriteTracks);
-
-    localStorage.setItem("favoriteTrack", updatedFavoriteTrackJSON);
-
+    const updatedFavoriteTrackJSON = favoriteTracks;
+    console.log(updatedFavoriteTrackJSON);
     setIcon(true);
+    if (
+      !favoriteTracks?.some((track) => track.titleTrack === trackData.title)
+    ) {
+      if (favoriteTracks === undefined) {
+        const struttura = [
+          {
+            titleTrack: trackData.title,
+            artistName: trackData.artist.name,
+            artistImage: trackData.album.cover_medium,
+            trackPreview: trackData.preview,
+          },
+        ];
+        localStorage.setItem("favoriteTrack", JSON.stringify(struttura));
+      } else {
+        const struttura = [
+          ...favoriteTracks,
+          {
+            titleTrack: trackData.title,
+            artistName: trackData.artist.name,
+            artistImage: trackData.album.cover_medium,
+            trackPreview: trackData.preview,
+          },
+        ];
+        localStorage.setItem("favoriteTrack", JSON.stringify(struttura));
+        dispatch({ type: "favorite", payload: struttura });
+      }
+    }
   };
+
+  const onHandleUnFavorite = () => {
+    setIcon(false);
+    const favoriteTrackJSON = localStorage.getItem("favoriteTrack");
+    dispatch({ type: "remove", payload: trackData.title });
+  };
+  useEffect(() => {
+    localStorage.setItem("favoriteTrack", JSON.stringify(state.favorite));
+  }, [state]);
 
   return (
     <>
@@ -66,13 +116,16 @@ export default function SingleTrack({ trackData }) {
             <div>
               <h2>{trackData?.title}</h2>
               <button>
-                {icon === false ? (
+                {icon === true ? (
+                  <FaHeart
+                    onClick={onHandleUnFavorite}
+                    className={styles.Like_pieno}
+                  />
+                ) : (
                   <FaRegHeart
                     onClick={onHandleFavorite}
                     className={styles.Like}
                   />
-                ) : (
-                  <FaHeart className={styles.Like_pieno} />
                 )}
               </button>
             </div>
@@ -84,8 +137,9 @@ export default function SingleTrack({ trackData }) {
         <div className={styles.infoTrack}>
           <div className={styles.sub_infoTrack}>
             <Link
-            href={`/single_artist/${trackData?.artist?.id}`}
-            as={`/single_artist/${trackData?.artist?.id}`} >
+              href={`/single_artist/${trackData?.artist?.id}`}
+              as={`/single_artist/${trackData?.artist?.id}`}
+            >
               <Image
                 src={trackData?.artist?.picture_medium}
                 alt={trackData?.artist.name}
@@ -95,10 +149,12 @@ export default function SingleTrack({ trackData }) {
             </Link>
           </div>
           <div className={styles.artistInfo}>
-          <p className={styles.artistName}>{trackData?.artist.name}</p>
+            <p className={styles.artistName}>{trackData?.artist.name}</p>
             <p>Title: {trackData?.title}</p>
             <div className={styles.sub_artistInfo}>
-              <p>Duration {minutes}:{seconds}</p>
+              <p>
+                Duration {minutes}:{seconds}
+              </p>
               <p>Release date: {trackData?.album?.release_date}</p>
             </div>
           </div>
