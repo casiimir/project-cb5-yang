@@ -97,73 +97,65 @@ export default function SingleTrack({ trackData }) {
   }, [state]);
 
   return (
-    <>
-    
       <div className={styles.main}>
         <Link className={styles.Back} href={`/top_track`}>
           <MdArrowBackIos />
           Tracks
         </Link>
-        <div className={styles.track}>
-          <div className={styles.containerImage}>
-            <Image
-              src={trackData?.album?.cover_medium}
-              alt={trackData?.album.title}
-              width={250}
-              height={250}
-            />
-          </div>
-          <div className={styles.containerSong}>
-            <div className={styles.sub_containerSong}>
-              <h2>{trackData?.title}</h2>
-              <p>{trackData?.artist.name}</p>
-              <button>
-                {icon === true ? (
-                  <FaHeart
-                    onClick={onHandleUnFavorite}
-                    className={styles.Like_pieno}
-                  />
-                ) : (
-                  <FaRegHeart
-                    onClick={onHandleFavorite}
-                    className={styles.Like}
-                  />
-                )}
-              </button>
-            </div>
-            
-          </div>
-
-
-          <audio src={trackData?.preview} controls />
-        </div>
-        <div className={styles.infoTrack}>
-          <div className={styles.sub_infoTrack}>
-            <Link
-              href={`/single_artist/${trackData?.artist?.id}`}
-              as={`/single_artist/${trackData?.artist?.id}`}
-            >
+        <div className={styles.containerMain}>
+          <div className={styles.track}>
+            <div className={styles.containerImage}>
               <Image
-                src={trackData?.artist?.picture_medium}
-                alt={trackData?.artist.name}
+                src={trackData?.album?.cover_medium}
+                alt={trackData?.album.title}
                 width={250}
                 height={250}
               />
-            </Link>
+            </div>
+            <div className={styles.containerSong}>
+              <div className={styles.sub_containerSong}>
+                <h2>{trackData?.title}</h2>
+                <span>{trackData?.artist.name}</span>
+                <button>
+                  {icon === true ? (
+                    <FaHeart
+                      onClick={onHandleUnFavorite}
+                      className={styles.Like_pieno}
+                    />
+                  ) : (
+                    <FaRegHeart
+                      onClick={onHandleFavorite}
+                      className={styles.Like}
+                    />
+                  )}
+                </button>
+              </div>
+            </div>
+            <audio src={trackData?.preview} controls />
           </div>
-          <div className={styles.artistInfo}>
-            <p className={styles.artistName}>{trackData?.artist.name}</p>
-            <p>Title: {trackData?.title}</p>
-            <div className={styles.sub_artistInfo}>
-              <p>
-                Duration {minutes}:{seconds}
-              </p>
-              <p>Release date: {trackData?.album?.release_date}</p>
+          <div className={styles.infoTrack}>
+            <div className={styles.sub_infoTrack}>
+              <Link
+                href={`/single_artist/${trackData?.artist?.id}`}
+                as={`/single_artist/${trackData?.artist?.id}`}
+              >
+                <Image
+                  src={trackData?.artist?.picture_medium}
+                  alt={trackData?.artist.name}
+                  width={250}
+                  height={250}
+                />
+              </Link>
+            </div>
+            <div className={styles.artistInfo}>
+              <h2>{trackData?.artist.name}</h2>
+              <h3>Title: {trackData?.title}</h3>
+              <span>Duration {minutes}:{seconds}</span>
+              <span>Release date: {trackData?.album?.release_date}</span>
             </div>
           </div>
         </div>
       </div>
-    </>
   );
 }
 
