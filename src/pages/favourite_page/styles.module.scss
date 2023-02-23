@@ -22,11 +22,10 @@
         flex-direction: column;
         gap: 1rem;
         overflow-y: scroll;
-        height: 66vh;
+        height: 70vh;
         border-radius: .8rem;
         padding: .5rem;
-        box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 0.3);   
-
+        box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 1);   
 
         .Content{
             display: flex;
@@ -40,25 +39,35 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-    
-                img {
-                    border-radius: 1rem;
-                    width:75px;
-                    height: 75px;
-                }
-    
-                h2 {
-                    text-transform: capitalize;
-                    font-size: .9rem;
+
+                .infoContent{
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+                    
+                    img {
+                        border-radius: 1rem;
+                        width:75px;
+                        height: 75px;
+                    }
+        
                 }
     
                 .infoTrack{
                     display: flex;
                     flex-direction: column;
                     gap: .5rem;
+                    
+                    h2 {
+                        width: 100%;
+                        align-self: flex-start;
+                        text-transform: capitalize;
+                        font-size: 1.1rem;
+                    }
     
-                    h3, h4 {
-                        font-size: .8rem;
+                    h3{
+                        align-self: flex-start;
+                        font-size: 1rem;
                         color: #939393;
                         font-weight: 600;
                     }
@@ -81,113 +90,33 @@
 
 }
 
-@media only screen and (min-width: 768px) {
-
-    .FavouritePage{
-        margin-left: 6rem;
-
-        .containerFavouritePage{
-            width: 95%;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            overflow-y: scroll;
-
-                .Content{
-                    width: 45%;
-                     .mainContent{
-                        img {
-                            width: 90px;
-                            height: 90px;
-                        }
-
-                        h2 {
-                            font-size: 1rem;
-                        }
-
-                        .infoTrack{
-                            display: flex;
-                            flex-direction: column;
-                            gap: .5rem;
-
-                            h3, h4 {
-                                font-size: .8rem;
-                                color: #939393;
-                                font-weight: 600;
-                            }
-                        }
-                    }
-                }
-           }
-        }
-    }
-
-
-@media only screen and (min-width: 1024px) {
-    
-    .FavouritePage{
-        margin-left: 7rem;
-        
-        .containerFavouritePage{
-            width: 100%;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            overflow-y: scroll;
-            
-            .Content{
-                width: 45%;
-
-                .mainContent{
-                    img {
-                        width: 90px;
-                        height: 90px;
-                    }
-                    
-                    h2 {
-                        font-size: 1.4rem;
-                    }
-                    
-                    .infoTrack{
-                        gap: .5rem;
-                        
-                        h3, h4 {
-                            font-size: 1rem;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
 @media only screen and (min-width: 1200px) {
     
     .FavouritePage{
-        margin-left: 10rem;
+        margin-left: 8rem;
         
         .containerFavouritePage{
             width: 100%;
-            margin: 0;
             flex-direction: row;
-            overflow-x: hidden;
-            height: 70vh;
+            flex-wrap: wrap;
+            overflow-y: scroll;
+            height: 65vh;
             
             .Content{
-                width: 45%;
+                width: 32%;
                 height: fit-content;
 
                 .mainContent{
-                    img {
-                        width: 85px;
-                        height: 85px;
-                    }
+                    .infoContent{
+                        img {
+                            width: 100px;
+                            height: 100px;
+                        }
                     
                     h2 {
-                        width: 80%;
+
+                        width: 100%;
                         font-size: 1.2rem;
-                        text-align: center;
-                        align-self: center;
                     }
 
                     .Heart {
@@ -198,15 +127,28 @@
                         width: 100%;
                         align-items: center;
                     } 
+
+                    }
                 }
             }
-
-
         }
-        .containerFavouritePage::-webkit-scrollbar{
-            display: none;
+
+        .containerFavouritePage::-webkit-scrollbar {
+            display: flex;
+            width: 10px;
+            }
+              
+        .containerFavouritePage::-webkit-scrollbar-thumb {
+            background-color: #52005f;
+            border-radius: 10px;
+            }
+              
+        .containerFavouritePage::-webkit-scrollbar-track {
+            background-color: #2B1B33;
+            border-radius: 10px;
+            }
         }
     }
-}
+
 
     

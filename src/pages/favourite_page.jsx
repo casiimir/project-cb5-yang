@@ -47,6 +47,7 @@ const FavouritePage = () => {
         {state?.favorite?.map((item) => (
           <div className={styles.Content} key={item.id}>
             <div className={styles.mainContent}>
+              <div className={styles.infoContent}>
               <Image
                 src={item.artistImage}
                 width={50}
@@ -54,8 +55,12 @@ const FavouritePage = () => {
                 alt={item.titleTrack}
               />
               <div className={styles.infoTrack}>
-                <h2>{item.titleTrack?.toLowerCase()}</h2>
+                <h2>
+                {item.titleTrack.length > 10
+                  ? `${item.titleTrack.toLowerCase().substring(0, 10)}...`
+                  : item.titleTrack}</h2>
                 <h3>{item.artistName}</h3>
+              </div>
               </div>
               <FaHeart
                 className={styles.Heart}
