@@ -25,9 +25,10 @@ const SingleArtist = ({ artistAlbum, artistData }) => {
             <h4>Follower: {artistData?.nb_fan}</h4>
           </div>
         </div>
+        <div className={styles.container_Content}>
         <span>Latest releases</span>
         <div className={styles.Content}>
-          {artistAlbum?.data.slice(0, 10).map((artist) => (
+        {artistAlbum?.data.slice(0, 10).map((artist) => (
             <div className={styles.infoMainAlbum} key={artist?.id}>
               <Link
                 href={`/single_album/${artist.id}`}
@@ -51,6 +52,7 @@ const SingleArtist = ({ artistAlbum, artistData }) => {
               </Link>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </div>
