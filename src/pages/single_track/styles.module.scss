@@ -1,5 +1,3 @@
-
-
 .main{
   width: 85%;
   margin: auto;
@@ -26,12 +24,11 @@
     }
 
     .track{
-
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 1.5rem;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -55,28 +52,28 @@
 }
 
 .containerSong {
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
 
   .sub_containerSong {
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content:center;
-   gap: 20px;
+   gap: 1rem;
 
    h2 {
-     line-height: 30px;
      text-align: center;
      font-size: 1.1rem;
    }
 
-   button {
+   p{
+    font-weight: 600;
+   }
 
+   button {
     background-color: transparent;
     border: none;
  
@@ -84,7 +81,7 @@
       cursor: pointer;
       color: white;
       font-size: 1.5rem;
-      
+
   }
  
   .Like:hover {
