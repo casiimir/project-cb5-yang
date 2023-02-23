@@ -12,7 +12,6 @@
     display: flex;
     align-items: center;
     font-weight: 600;
-    padding: 0.5rem 0;
     text-transform: uppercase;
     width: fit-content;
   }
@@ -21,6 +20,7 @@
     gap: 1rem;
     display: flex;
     flex-direction: column;
+    padding: 1rem 0;
 
     .mainArtist {
       display: flex;

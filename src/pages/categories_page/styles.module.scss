@@ -13,7 +13,6 @@
     text-decoration: none;
     display: flex;
     align-items: center;
-    padding: 0.5rem;
     width: fit-content;
     font-weight: 600;
     
@@ -26,7 +25,7 @@
     justify-content: center;
     flex-wrap: wrap;
     overflow: scroll;
-    padding: .5rem;
+    padding: 1rem 0;
 
     .Content {
       display: flex;
