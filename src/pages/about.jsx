@@ -4,12 +4,20 @@ import Image from 'next/image';
 import Link from "next/link";
 
 import styles from "./about_page/styles.module.scss";
+import { useEffect, useState } from "react";
 
 
-const About = ({data}) => {
+const About = () => {
+
+  const [data, setData] = useState([])
+
+  useEffect(() =>{
+    fetch("/api/about")
+    .then(res => res.json())
+    .then(data => setData(data))
+  }, [])
+
   return (
-    <>
-   
     <div className={styles.About}>
     <Link className={styles.Back} href={"/"}>
       <MdArrowBackIos /> SVILUPPATA DA
@@ -36,21 +44,9 @@ const About = ({data}) => {
           </div>
         ))}
       </div>
-    </>
-
   );
 };
 
 export default About;
 
-export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/about");
 
-  const data = await res.json();
-
-  return {
-    props: {
-      data,
-    },
-  };
-}
