@@ -7,10 +7,11 @@ import styles from "./top_album/styles.module.scss";
 const Top_Album = ({ data }) => {
   return (
     <>
-      <Link className={styles.Back} href={"/#"}>
+      
+      <div className={styles.TopAlbum}><Link className={styles.Back} href={"/#"}>
         <MdArrowBackIos /> ALL ALBUMS
       </Link>
-      <div className={styles.TopAlbum}>
+      
         {data?.data.map((album) => (
           <div className={styles.container_Content} key={album.id}>
             <Image

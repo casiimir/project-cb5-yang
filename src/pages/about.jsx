@@ -9,10 +9,11 @@ import styles from "./about_page/styles.module.scss";
 const About = ({data}) => {
   return (
     <>
+   
+    <div className={styles.About}>
     <Link className={styles.Back} href={"/"}>
       <MdArrowBackIos /> SVILUPPATA DA
     </Link>
-    <div className={styles.About}>
         {data.map((item) => (
           <div className={styles.Content} key={item.id}>
             <Image

@@ -1,25 +1,24 @@
-.Back {
-    color: white;
-    padding: 20px;
-    text-decoration: none;
-    display: flex;
-    padding: 0 20px;
-    align-items: center;
-    width: fit-content;
-    font-weight: bold;
-}
+
 
 .TopAlbum{
     width: 85%;
-    height: 67vh;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    overflow: scroll;
-    color: white;
-    margin: 20px;
+  margin: auto;
+  height: 73vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: white;
+  overflow: scroll;
     box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 0.3);   
 
+    .Back {
+        width: fit-content;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+    }
 
     .container_Content{
         display: flex;
@@ -28,15 +27,16 @@
 
         .seeAll {
 
-                font-size: .8rem;
+                font-size: .9rem;
+                font-weight: 600;
                 color: #939393;
                 text-align: right;
                 text-decoration: none;
         }
 
         img {
-            width: 116px;
-            height:116px;
+            width: 100px;
+            height:100px;
             border-radius: 26px;
         }
 
@@ -45,14 +45,24 @@
             line-height: 20px;
 
             h2 {
-                font-size: .8rem;
+                font-size: 1rem;
+            }
+
+            .subInfoAlbum {
+
+                h5 {
+                    font-size: .9rem;
+                    color: #939393;
+                }
+
+                span {
+                    font-size: .9rem;
+                    color: #939393;
+                    font-weight: 600;
+                }
             }
             
-            span {
-                font-size: .8rem;
-                color: #939393;
-                font-weight: 100;
-            }
+            
         }
         
     }
