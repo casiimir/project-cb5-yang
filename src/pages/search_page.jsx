@@ -32,29 +32,25 @@ export default function SearchPage({ data }) {
 
 
   return (
-    <>
     <div className={styles.Search}>
-      <div className={styles.ContainerBackForm}>
-        <Link className={styles.Back} href={"/#"}>
-          <MdArrowBackIos /> SEARCH
-        </Link>
-        <form onSubmit={onHandleSubmit}>
-          <input
-            className={styles.SearchSubmit}
-            onChange={onHandleChange}
-            type="text"
-            placeholder="What do you want to hear?"
-            value={searchTitle}
-            required
-          />
-          <input type="submit" value="search"/>
-        </form>
-      </div>
+      <Link className={styles.Back} href={"/#"}>
+        <MdArrowBackIos /> SEARCH
+      </Link>
+      <form onSubmit={onHandleSubmit}>
+        <input
+        className={styles.SearchSubmit}
+        onChange={onHandleChange}
+        type="text"
+        placeholder="What do you want to hear?"
+        value={searchTitle}
+        required
+        />
+        <input type="submit" value="search"/>
+      </form>
       <div className={styles.main}>
         <SingleTrack data={data} />
       </div>
     </div>
-    </>
   );
 }
 

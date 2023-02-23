@@ -80,7 +80,10 @@ const ShufflePage = ({ data }) => {
                 </Link>
 
                 <div className={styles.infoTrack}>
-                  <h2>{shuffle?.title_short}</h2>
+                  <h2>
+                  {shuffle.title_short.length > 10
+                  ? `${shuffle.title_short.substring(0, 10)}...`
+                  : shuffle.title_short}</h2>
                   <h3>{shuffle?.artist?.name}</h3>
                   <h4>{shuffle?.album?.type}</h4>
                 </div>
