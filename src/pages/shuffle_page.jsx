@@ -37,6 +37,22 @@ const ShufflePage = ({ data }) => {
   };
 
   useEffect(() => {
+    const handleRouteChange = () => {
+      if (currentTrack) {
+        currentTrack.pause();
+        setCurrentTrack(null);
+        setPlayingTrackIndex(null);
+      }
+    };
+  
+    router.events.on("routeChangeStart", handleRouteChange);
+  
+    return () => {
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, [router, currentTrack, playingTrackIndex]);
+
+  useEffect(() => {
     if (router.asPath === "/shuffle_page") {
       dispatch({ type: "active", payload: router.asPath });
     }

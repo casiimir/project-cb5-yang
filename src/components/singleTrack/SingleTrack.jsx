@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BsPlayCircle, BsPauseCircleFill } from "react-icons/bs";
 import Image from "next/image";
+import { useRouter } from "next/router";
+
 import styles from "./styles.module.scss";
 
-const SingleTrack = ({ data, className }) => {
+const SingleTrack = ({ data }) => {
+
+  const router = useRouter();
 
   const [currentTrack, setCurrentTrack] = useState(false);
   const [playingTrackIndex, setPlayingTrackIndex] = useState(null);
@@ -21,6 +25,22 @@ const SingleTrack = ({ data, className }) => {
     setCurrentTrack(audio);
     setPlayingTrackIndex(index);
   }
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      if (currentTrack) {
+        currentTrack.pause();
+        setCurrentTrack(null);
+        setPlayingTrackIndex(null);
+      }
+    };
+  
+    router.events.on("routeChangeStart", handleRouteChange);
+  
+    return () => {
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, [router, currentTrack, playingTrackIndex]);
 
   return data?.map((item, index) => (
     <div className={styles.Track} key={index}>
