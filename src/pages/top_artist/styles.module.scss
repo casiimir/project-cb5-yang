@@ -1,101 +1,98 @@
-.TopArtist{
-    width: 85%;
-    margin: auto;
+.TopArtist {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  color: white;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .Back {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    width: fit-content;
+  }
+
+  .Content {
     display: flex;
     flex-direction: column;
-    color: white;
+    padding: 1rem 0;
+    gap: 1rem;
+    height: 68vh;
+    overflow-y: scroll;
+    box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 1);
 
-    a{
-        text-decoration: none;
-        color: white;
-    }
+    .container_Content {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
 
-    .Back {
-        color: white;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        font-weight: 600;
-        width: fit-content;
-    }
+      img {
+        width: 75px;
+        height: 75px;
+        border-radius: 26px;
+      }
 
-    .Content{
+      .infoArtist {
         display: flex;
         flex-direction: column;
-        padding: 1rem 0;
-        gap: 1rem;
-        height: 68vh;
-        overflow-y: scroll;
-        box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 1);   
+        gap: 0.2rem;
 
-        .container_Content{
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            width: 100%;
-
-            img{
-                width: 75px;
-                height: 75px;
-                border-radius: 26px;
-            }
-
-            .infoArtist{
-                display: flex;
-                flex-direction: column;
-                gap: .2rem;
-                
-                h2{
-                    font-size: 1rem;
-                }
-                
-                h3{
-                    text-transform: capitalize;
-                    font-size: 1rem;
-                    color: whitesmoke;
-                    font-weight: 200;
-                }
-            }
+        h2 {
+          font-size: 1rem;
         }
+
+        h3 {
+          text-transform: capitalize;
+          font-size: 1rem;
+          color: whitesmoke;
+          font-weight: 200;
+        }
+      }
     }
+  }
 }
 
+@media screen and (min-width: 768px) {
+  .TopArtist {
+    /*  margin-left: 6rem; */
 
+    .Content {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2rem;
+      height: 70vh;
+      box-shadow: none;
 
+      .container_Content {
+        width: 30%;
 
-/*@media screen and (min-width: 768px){
-
-    .TopArtist{
-        margin-left: 6rem;
-
-        .Content{
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 2rem;
-            height: 75vh;
-
-            .container_Content{
-                width: 30%;
-
-                img{
-                    width: 90px;
-                    height: 90px;
-                    border-radius: 1.8rem;
-                }
-
-                .infoArtist{
-                    width: 50%;
-                    
-                    h2{
-                        width: 50%;
-                    }
-                }
-            }
+        img {
+          width: 90px;
+          height: 90px;
+          border-radius: 1.8rem;
         }
+
+        .infoArtist {
+          width: 50%;
+
+          h2 {
+            width: 50%;
+          }
+        }
+      }
     }
+  }
 }
 
-@media screen and (min-width: 1024px){
+/* @media screen and (min-width: 1024px){
 
     .TopArtist{
         margin-left: 7rem;
@@ -119,28 +116,27 @@
     }
 }*/
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1200px) {
+  .TopArtist {
+    margin-left: 8rem;
 
-    .TopArtist{
-        margin-left: 8rem;
+    .Content {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2rem;
+      height: 60vh;
+      box-shadow: none;
 
-        .Content{
-            width: 100%;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 2rem;
-            height: 60vh;
-            box-shadow: none;
+      .container_Content {
+        width: 22.5%;
 
-            .container_Content{
-                width: 22.5%;
-
-                img{
-                    width: 110px;
-                    height: 110px;
-                    border-radius: 1.8rem;
-                }
-            }
+        img {
+          width: 110px;
+          height: 110px;
+          border-radius: 1.8rem;
         }
+      }
     }
+  }
 }
