@@ -6,32 +6,10 @@ import styles from "./styles.module.scss";
 
 export default function SigleAlbum({ albumData }) {
   return (
-    <>
-      
       <div className={styles.Album}>
-      <Link className={styles.linkAlbum} href={"/top_album"}>
-        <MdArrowBackIos /> ALBUM
-      </Link>
-        <div className={styles.containerAlbum}>
-          <Image
-            src={albumData?.cover_medium}
-            width={250}
-            height={250}
-            alt={albumData?.title}
-          />
-          <h1>{albumData?.title}</h1>
-          <h5>{albumData?.artist?.name}</h5>
-          <div className={styles.Tracks}>
-            {albumData?.tracks?.data?.map((track) => (
-              <div className={styles.singleTrack} key={track.id}>
-                <span>{track?.title_short}</span>
-                <audio controls id="my-audio">
-                  <source src={track?.preview} type="audio/mp3" />
-                </audio>
-              </div>
-            ))}
-          </div>
-        </div>
+        <Link className={styles.linkAlbum} href={"/top_album"}>
+          <MdArrowBackIos /> ALBUM
+        </Link>
         <div className={styles.divIframe}>
           <iframe
             id={`deezer-widget-${albumData?.id}`}
@@ -45,7 +23,6 @@ export default function SigleAlbum({ albumData }) {
           ></iframe>
         </div>
       </div>
-    </>
   );
 }
 

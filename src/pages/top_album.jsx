@@ -16,12 +16,16 @@ const Top_Album = ({ data }) => {
         {data?.data.map((album) => (
           <div className={styles.infoContent} key={album.id}>
             <div className={styles.Content}>
-            <Image
-              src={album.cover_medium}
-              width={200}
-              height={200}
-              alt="album name"
-            />
+            <Link
+              href={`/single_album/${album.id}`}
+              as={`/single_album/${album.id}`}>
+              <Image
+                src={album.cover_medium}
+                width={200}
+                height={200}
+                alt={album.title}
+              />
+            </Link>
             <div className={styles.infoAlbum}>
               <h2>
                 {album.title.length > 10
