@@ -15,7 +15,9 @@ const Navbar = () => {
         <li>
           <Link href={`/#`}>
             <HiOutlineHome
-              className={state === "/#" ? `${styles.active}` : `${styles.icon}`}
+              className={
+                state?.route[0] === "/#" ? `${styles.active}` : `${styles.icon}`
+              }
             />
           </Link>
         </li>
@@ -23,7 +25,7 @@ const Navbar = () => {
           <Link href={`/favourite_page`}>
             <HiOutlineHeart
               className={
-                state === "/favourite_page"
+                state?.route[0] === "/favourite_page"
                   ? `${styles.active}`
                   : `${styles.icon}`
               }
@@ -34,7 +36,7 @@ const Navbar = () => {
           <Link href={`/shuffle_page`}>
             <BsMusicNoteList
               className={
-                state === "/shuffle_page"
+                state?.route[0] === "/shuffle_page"
                   ? `${styles.active}`
                   : `${styles.icon}`
               }
@@ -45,7 +47,9 @@ const Navbar = () => {
           <Link href={`/categorie`}>
             <BsCollectionPlay
               className={
-                state === "/categorie" ? `${styles.active}` : `${styles.icon}`
+                state?.route[0] === "/categorie"
+                  ? `${styles.active}`
+                  : `${styles.icon}`
               }
             />
           </Link>
@@ -54,7 +58,7 @@ const Navbar = () => {
           <Link href={`/search_page?q=track`}>
             <BsSearch
               className={
-                state === "/search_page?q=track"
+                state?.route[0] === "/search_page?q=track"
                   ? `${styles.active}`
                   : `${styles.icon}`
               }

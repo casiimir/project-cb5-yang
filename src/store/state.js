@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-const initialState = "";
+const initialState = { route: "", favorite: [] };
 
 const applicationContext = createContext(initialState);
 
