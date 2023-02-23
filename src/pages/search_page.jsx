@@ -42,11 +42,11 @@ export default function SearchPage({ data }) {
             className={styles.SearchSubmit}
             onChange={onHandleChange}
             type="text"
-            placeholder="Track title"
+            placeholder="What do you want to hear?"
             value={searchTitle}
             required
           />
-          <input type="submit" value="search" onSubmit={onHandleSubmit} />
+          <input type="submit" value="search"/>
         </form>
       </div>
       <div className={styles.main}>

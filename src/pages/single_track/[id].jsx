@@ -66,6 +66,7 @@ export default function SingleTrack({ trackData }) {
           <div className={styles.containerSong}>
             <div className={styles.sub_containerSong}>
               <h2>{trackData?.title}</h2>
+              <p>{trackData?.artist.name}</p>
               <button>
                 {icon === false ? (
                   <FaRegHeart
@@ -77,9 +78,10 @@ export default function SingleTrack({ trackData }) {
                 )}
               </button>
             </div>
+            
           </div>
 
-          <p>{trackData?.artist.name}</p>
+
           <audio src={trackData?.preview} controls />
         </div>
         <div className={styles.infoTrack}>
