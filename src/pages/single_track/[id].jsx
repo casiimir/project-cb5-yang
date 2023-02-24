@@ -20,7 +20,7 @@ export default function SingleTrack({ trackData }) {
   }, []);
 
   // cerco l'artista corrente e il relativo valore di favorite
-  const currentArtist = state.favorite.find(
+  const currentArtist = state?.favorite.find(
     (item) => item.titleTrack === trackData.title
   );
 
