@@ -10,7 +10,7 @@ import { BsPlayCircle } from "react-icons/bs";
 import styles from "@/styles/Home.module.scss";
 
 export default function Home({ dataArtist, dataTracks, dataAlbums }) {
-  const { dispatch, state } = useContext(applicationContext);
+  const { dispatch } = useContext(applicationContext);
   const router = useRouter();
   const [logged, setLogged] = useState(false);
 

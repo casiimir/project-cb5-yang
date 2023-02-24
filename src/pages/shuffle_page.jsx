@@ -44,9 +44,9 @@ const ShufflePage = ({ data }) => {
         setPlayingTrackIndex(null);
       }
     };
-  
+
     router.events.on("routeChangeStart", handleRouteChange);
-  
+
     return () => {
       router.events.off("routeChangeStart", handleRouteChange);
     };
@@ -69,21 +69,23 @@ const ShufflePage = ({ data }) => {
             <div className={styles.container_Content} key={index}>
               <div className={styles.mainContent}>
                 <Link
-                href={`/single_artist/${shuffle?.artist?.id}`}
-                as={`/single_artist/${shuffle?.artist?.id}`} >
+                  href={`/single_artist/${shuffle?.artist?.id}`}
+                  as={`/single_artist/${shuffle?.artist?.id}`}
+                >
                   <Image
-                  src={shuffle?.album?.cover_medium}
-                  width={200}
-                  height={200}
-                  alt={shuffle?.title}
+                    src={shuffle?.album?.cover_medium}
+                    width={200}
+                    height={200}
+                    alt={shuffle?.title}
                   />
                 </Link>
 
                 <div className={styles.infoTrack}>
                   <h2>
-                  {shuffle.title_short.length > 10
-                  ? `${shuffle.title_short.substring(0, 10)}...`
-                  : shuffle.title_short}</h2>
+                    {shuffle.title_short.length > 10
+                      ? `${shuffle.title_short.substring(0, 10)}...`
+                      : shuffle.title_short}
+                  </h2>
                   <h3>{shuffle?.artist?.name}</h3>
                   <h4>{shuffle?.album?.type}</h4>
                 </div>

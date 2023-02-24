@@ -12,8 +12,6 @@ const FavouritePage = () => {
   const { dispatch, state } = useContext(applicationContext);
   const router = useRouter();
 
-  const [favoriteTracks, setFavoriteTracks] = useState([]);
-
   useEffect(() => {
     if (router.asPath === "/favourite_page") {
       dispatch({ type: "active", payload: router.asPath });
@@ -26,17 +24,13 @@ const FavouritePage = () => {
 
     dispatch({ type: "favorite", payload: favoriteTracks });
   }, []);
-  console.log(state);
 
   const removeFavourite = (item) => {
-    console.log(item);
     dispatch({ type: "remove", payload: item });
   };
   useEffect(() => {
     localStorage.setItem("favoriteTrack", JSON.stringify(state.favorite));
   }, [state]);
-
-  console.log(state);
 
   return (
     <div className={styles.FavouritePage}>
@@ -48,19 +42,20 @@ const FavouritePage = () => {
           <div className={styles.Content} key={item.id}>
             <div className={styles.mainContent}>
               <div className={styles.infoContent}>
-              <Image
-                src={item.artistImage}
-                width={50}
-                height={50}
-                alt={item.titleTrack}
-              />
-              <div className={styles.infoTrack}>
-                <h2>
-                {item.titleTrack.length > 10
-                  ? `${item.titleTrack.toLowerCase().substring(0, 10)}...`
-                  : item.titleTrack}</h2>
-                <h3>{item.artistName}</h3>
-              </div>
+                <Image
+                  src={item.artistImage}
+                  width={50}
+                  height={50}
+                  alt={item.titleTrack}
+                />
+                <div className={styles.infoTrack}>
+                  <h2>
+                    {item.titleTrack.length > 10
+                      ? `${item.titleTrack.toLowerCase().substring(0, 10)}...`
+                      : item.titleTrack}
+                  </h2>
+                  <h3>{item.artistName}</h3>
+                </div>
               </div>
               <FaHeart
                 className={styles.Heart}
