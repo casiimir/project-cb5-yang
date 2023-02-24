@@ -14,7 +14,7 @@
   
 <p  align="left"> Yangify rappresenta un'opportunità per gli amanti della musica di accedere a una vasta gamma di contenuti <br> e di gestire facilmente le proprie canzoni preferite, il tutto con un'esperienza utente coinvolgente e personalizzata.</p>
 
-     <div>
+     <div  align="left">
         <h3 align="left">Descrizione</h3>
         <p align="left" >Yangify è una web App basata su l'API di <a style='color: rgb(255, 0, 230); text-decoration: none'href='https://developers.deezer.com/login?redirect=/api' target='_blank' >DEEZER</a> con focus sul front-end, sviluppata utilizzando il framework Next.js e il preprocessore CSS SASS. <br>
             L'idea alla base di questo progetto è stata quella di creare un ibrido tra Spotify e Deezer, garantendo una vasta selezione di contenuti audio da cui scegliere.
@@ -22,7 +22,7 @@
     </div>
 
      
-      <div>
+      <div  align="left">
         <h3 align="left">Home in versione mobile e desktop</h3>
         <div style="display: flex; gap: 10px;  justify-content: center;">
       <!-- <img src='./src/images/cart.jpg'  style="height: 300px; padding: 20px 0;" />
@@ -33,7 +33,7 @@
       <hr>
   
 
-      <div>
+      <div  align="left">
         <h3 align="left">Routing</h3>
         <p align="left">L'uso di <span style='color: rgb(255, 0, 230);'> Next.js</span> fornisce un'esperienza di navigazione fluida e veloce. Per garantire un caricamento rapido delle pagine e una migliore indicizzazione sui motori di ricerca, è stato utilizzato il <span style='color: rgb(255, 0, 230);'> server-side rendering</span>, che permette di generare le pagine HTML lato server prima di inviarle al client.  </p>
         <div style="display: flex; gap: 10px;  justify-content: center;">
