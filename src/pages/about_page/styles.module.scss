@@ -136,6 +136,23 @@
     }
   }
 
+  @media screen and (min-width: 1500px) {
+
+    .About {
+      margin-left: 10rem;
+    
+      .containerContent{
+        gap: 2rem;
+    
+        .Content {
+          width: 25%;
+          padding: 1rem;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
 
 /*@media only screen and (min-width: 480px) {
   .About {
