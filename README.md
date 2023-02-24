@@ -11,6 +11,8 @@
       <h1  align="center" style="color: white;"><span style="color: rgb(255, 0, 234);">YANG</span> IFY</h1>
       <!-- <img align="center" src="./src/images/logotype_colorful.png" style="width: 350px;" /> -->
      
+       <hr>
+      
       <p align="center">
         Yangify rappresenta un'opportunità per gli amanti della musica di accedere a una vasta gamma di contenuti <br> e di gestire facilmente le proprie canzoni preferite, il tutto con un'esperienza utente coinvolgente e personalizzata.
       </p>
