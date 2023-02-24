@@ -26,33 +26,33 @@ const SingleArtist = ({ artistAlbum, artistData }) => {
           </div>
         </div>
         <div className={styles.container_Content}>
-        <span>Latest releases</span>
-        <div className={styles.Content}>
-        {artistAlbum?.data.slice(0, 10).map((artist) => (
-            <div className={styles.infoMainAlbum} key={artist?.id}>
-              <Link
-                href={`/single_album/${artist.id}`}
-                as={`/single_album/${artist.id}`}
-              >
-                <Image
-                  width={200}
-                  height={200}
-                  src={artist?.cover_medium}
-                  alt={artist?.title}
-                />
-                <div className={styles.infoAlbum}>
-                  <h2>{artist.title}</h2>
-                  <h3>
-                    Release:{" "}
-                    {artist?.release_date.split("-").reverse().join("-")}
-                  </h3>
-                  <h4>Follower: {artist?.fans}</h4>
-                  <h5>{artist?.explicit_lyrics ? "Explicit Lyrics" : ""}</h5>
-                </div>
-              </Link>
-            </div>
-          ))}
-        </div>
+          <span>Latest releases</span>
+          <div className={styles.Content}>
+            {artistAlbum?.data.slice(0, 10).map((artist) => (
+              <div className={styles.infoMainAlbum} key={artist?.id}>
+                <Link
+                  href={`/single_album/${artist.id}`}
+                  as={`/single_album/${artist.id}`}
+                >
+                  <Image
+                    width={200}
+                    height={200}
+                    src={artist?.cover_medium}
+                    alt={artist?.title}
+                  />
+                  <div className={styles.infoAlbum}>
+                    <h2>{artist?.title}</h2>
+                    <h3>
+                      Release:{" "}
+                      {artist?.release_date.split("-").reverse().join("-")}
+                    </h3>
+                    <h4>Follower: {artist?.fans}</h4>
+                    <h5>{artist?.explicit_lyrics ? "Explicit Lyrics" : ""}</h5>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
