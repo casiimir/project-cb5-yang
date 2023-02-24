@@ -32,7 +32,7 @@
     <h3 align="left">Home in versione mobile e desktop</h3>
   <div style="display: flex; gap: 10px;  flex-direction: row;
         align-items: center; justify-content: center;">
-<img src='https://i.postimg.cc/FK0K250b/Schermata-2023-02-24-alle-14-43-06-removebg-preview.png'  style="height: 300px; padding: 20px 0;" />
+<img src='https://i.postimg.cc/SNCBhSJv/Schermata-2023-02-24-alle-14-43-06-removebg-preview.png'  style="height: 300px; padding: 20px 0;" />
   <img src='https://i.postimg.cc/VLTLvLRB/Schermata-2023-02-24-alle-14-43-17-removebg-preview.png'  style="height: 300px; padding: 20px 0;" />
 </div>
 </div>      
