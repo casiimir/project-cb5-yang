@@ -88,7 +88,12 @@
    <hr>
       
    <div style="display: flex; flex-direction: column;  align-items: center;">
-      <h3>Team Yang - coding bootcamp 5 <span style='color:rgb(255, 0, 238);'>Edgemony</span> :</h3>
+      <h3>Team Yang</h3>
+     <p>
+       Il progetto finale del coding bootcamp 5 di Edgemony è stato svolto in gruppo, con la partecipazione degli studenti in elenco. Il progetto è stato completato in due settimane e la metodologia utilizzata è stata Agile, nello specifico Scrum.
+Durante gli sprint, il team ha tenuto incontri regolari per monitorare il progresso del lavoro e identificare eventuali ostacoli fino al completamento del progetto.
+In questo modo, abbiamo lavorato insieme per completare il progetto finale in modo collaborativo e con un approccio altamente organizzato. Grazie alla metodologia Agile Scrum, abbiamo lavorato in modo efficiente e concentrandoci sui compiti più importanti per il successo del progetto.
+     </p>
       <ul style="list-style-type: none; padding: 0px; text-align: center;">
         <li>Giulio Simone Floresta:  <a href="https://www.linkedin.com/in/giuliosimonefloresta/"  target="_blank">LinkedIn</a>,  <a href="https://github.com/flgisimone"  target="_blank">GitHub</a></li>
         <li>Jessica Vitanza:  <a href="https://www.linkedin.com/in/jessica-vitanza/"  target="_blank">LinkedIn</a>,  <a href="https://github.com/JessicaVitanza"  target="_blank">GitHub</a></li>
