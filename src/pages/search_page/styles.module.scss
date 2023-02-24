@@ -93,6 +93,21 @@
     }
 }
 
+@media screen and (min-width: 1500px) {
+
+    .Search {
+        margin-left: 10rem;
+        
+        form {
+            width: 30rem;
+        }
+        
+        .main {
+            gap: 1rem;
+        }
+    }
+}
+
 /*@media only screen and (max-width: 768px) {
     
     .Search {
