@@ -31,8 +31,8 @@
 <div>
     <h3 align="left">Home in versione mobile e desktop</h3>
   <div style="display: flex; gap: 10px;  justify-content: center;">
-  <!-- <img src='./src/images/cart.jpg'  style="height: 300px; padding: 20px 0;" />
-  <img src='./src/images/login.jpg'  style="height: 300px; padding: 20px 0;" /> -->
+<img src='[./src/images/cart.jpg](https://postimg.cc/Y4qkWPnj)'  style="height: 300px; padding: 20px 0;" />
+  <img src='[./src/images/login.jpg](https://postimg.cc/GHF1SR6H)'  style="height: 300px; padding: 20px 0;" />
 </div>
 </div>      
       
