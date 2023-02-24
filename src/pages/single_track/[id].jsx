@@ -13,16 +13,15 @@ export default function SingleTrack({ trackData }) {
   const router = useRouter();
 
   useEffect(() => {
-    const favoriteTracks = JSON.parse(localStorage.getItem("favoriteTrack"));
-    favoriteTracks ? favoriteTracks : undefined;
+    let favoriteTracks = JSON.parse(localStorage.getItem("favoriteTrack"));
+    if (favoriteTracks === null) {
+      favoriteTracks = [];
+    } else {
+      favoriteTracks;
+    }
 
     dispatch({ type: "favorite", payload: favoriteTracks });
   }, []);
-
-  // cerco l'artista corrente e il relativo valore di favorite
-  const currentArtist = state?.favorite?.find(
-    (item) => item.titleTrack === trackData.title
-  );
 
   let seconds = trackData.duration;
   let minutes = 0;
@@ -49,14 +48,14 @@ export default function SingleTrack({ trackData }) {
     ];
     const favoriteTracks = favoriteTrackJSON
       ? JSON.parse(favoriteTrackJSON)
-      : undefined;
+      : [];
 
     const updatedFavoriteTrackJSON = favoriteTracks;
 
     if (
       !favoriteTracks?.some((track) => track.titleTrack === trackData.title)
     ) {
-      if (favoriteTracks === undefined) {
+      if (favoriteTracks === null) {
         const struttura = [
           {
             titleTrack: trackData.title,
@@ -84,6 +83,10 @@ export default function SingleTrack({ trackData }) {
       }
     }
   };
+  // cerco l'artista corrente e il relativo valore di favorite
+  const currentArtist = state?.favorite?.find(
+    (item) => item.titleTrack === trackData.title
+  );
 
   const onHandleUnFavorite = () => {
     const favoriteTrackJSON = localStorage.getItem("favoriteTrack");
