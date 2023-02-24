@@ -1,11 +1,11 @@
 .Navbar {
-  width: 85%;
+  width: 100%;
   height: fit-content;
   margin: auto;
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-  bottom: 0.5rem;
+  bottom: 0;
   background-color: rgb(21, 1, 24);
   border-radius: 1rem;
 
@@ -16,16 +16,18 @@
   }
 
   ul {
+    width: 100%;
+    margin: auto;
     padding: 1rem;
     border-radius: 1rem;
     display: flex;
-    justify-content: space-between;
-    text-decoration: none;
-    background: linear-gradient(
+    justify-content: space-evenly;
+    text-decoration: none;  background: linear-gradient(
       180deg,
       rgba(252, 247, 255, 0.08) 0%,
       rgba(252, 247, 255, 0) 100%
     );
+  
 
     li {
       list-style-type: none;
@@ -77,7 +79,6 @@
   .Navbar {
     width: fit-content;
     position: fixed;
-
     top: -5%;
     left: 4%;
 
