@@ -67,9 +67,9 @@
 <div style='display: flex; flex-direction: column; align-items: flex-start;'>
 <p>Inoltre, il progetto include: </p>
 <ul style="padding: 0px; text-align: left;">
-        <li>- una pagina dedicata alla gestione delle canzoni preferite, dove gli utenti possono aggiungere e rimuovere le loro tracce</li>
-        <li>- una pagina "shuffle" che suggerisce all'utente canzoni casuali</li>
-        <li>- una pagina di ricerca che consente di cercare album o canzoni specifiche</li>
+        <li> una pagina dedicata alla gestione delle canzoni preferite, dove gli utenti possono aggiungere e rimuovere le loro tracce</li>
+        <li> una pagina "shuffle" che suggerisce all'utente canzoni casuali</li>
+        <li> una pagina di ricerca che consente di cercare album o canzoni specifiche</li>
     </ul> 
   </div>
 </div>
