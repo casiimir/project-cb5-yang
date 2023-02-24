@@ -247,17 +247,11 @@
       .container_Content {
         overflow-x: hidden;
 
-        a {
+        a{
           img {
             width: 120px;
             height: 120px;
             border-radius: 1rem;
-          }
-
-          h5 {
-            color: white;
-            text-align: center;
-            font-size: 1.1rem;
           }
         }
 
@@ -266,9 +260,17 @@
           padding: 0.9rem;
           margin-bottom: 1rem;
 
-          .icon {
-            font-size: 2rem;
-            margin: 1rem;
+          a {
+            img {
+              width: 120px;
+              height: 120px;
+              border-radius: 1rem;
+            }
+  
+            .icon {
+              font-size: 2rem;
+              margin: 1rem;
+            }
           }
         }
       }
