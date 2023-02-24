@@ -31,8 +31,8 @@
 <div>
     <h3 align="left">Home in versione mobile e desktop</h3>
   <div style="display: flex; gap: 10px;  justify-content: center;">
-<img src='https://postimg.cc/Y4qkWPnj'  style="height: 300px; padding: 20px 0;" />
-  <img src='https://postimg.cc/GHF1SR6H'  style="height: 300px; padding: 20px 0;" />
+<img src='https://i.postimg.cc/FK0K250b/Schermata-2023-02-24-alle-14-43-06-removebg-preview.png'  style="height: 300px; padding: 20px 0;" />
+  <img src='https://i.postimg.cc/VLTLvLRB/Schermata-2023-02-24-alle-14-43-17-removebg-preview.png'  style="height: 300px; padding: 20px 0;" />
 </div>
 </div>      
       
