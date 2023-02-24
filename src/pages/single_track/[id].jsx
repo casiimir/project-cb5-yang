@@ -83,7 +83,7 @@ export default function SingleTrack({ trackData }) {
       }
     }
   };
-  // cerco l'artista corrente e il relativo valore di favorite
+  // cerco l'artista corrente e il relativo valore di favoritee
   const currentArtist = state?.favorite?.find(
     (item) => item.titleTrack === trackData.title
   );
