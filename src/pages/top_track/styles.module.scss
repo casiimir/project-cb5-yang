@@ -185,14 +185,23 @@
 @media screen and (min-width: 1500px) {
   .TopTrack {
     margin-left: 10rem;
-    height: 70vh;
+    height: 55vh;
 
     .Content {
+      box-shadow: 0px 0 0 0 rgba(0, 0, 0, 0);
+
       .container_Content {
         width: 22%;
+        height: fit-content;
+
+        a{
+          .PlayCircle {
+            font-size: 2rem;
+          }
+        }
       }
     }
-
+    
     .Content::-webkit-scrollbar {
       display: none;
     }
