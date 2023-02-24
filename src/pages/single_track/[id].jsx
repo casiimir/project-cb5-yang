@@ -9,20 +9,15 @@ import { applicationContext } from "@/store/state";
 
 export default function SingleTrack({ trackData }) {
   const { state, dispatch } = useContext(applicationContext);
-  const [icon, setIcon] = useState(false);
 
+  // cerco l'artista corrente e il relativo valore di favorite
+  const currentArtist = state.favorite.find(
+    (item) => item.titleTrack === trackData.title
+  );
+  console.log(currentArtist?.favorite);
+
+  console.log(trackData.title);
   console.log(state);
-
-  // useEffect(() => {
-  //   if (localStorage.getItem("favoriteTrack") != null) {
-  //     setLogged(true);
-  //   }
-  // }, []);
-  // useEffect(() => {
-  //   if (router.asPath === "/#") {
-  //     dispatch({ type: "active", payload: router.asPath });
-  //   }
-  // }, [router.asPath]);
 
   let seconds = trackData.duration;
 
@@ -57,7 +52,7 @@ export default function SingleTrack({ trackData }) {
 
     const updatedFavoriteTrackJSON = favoriteTracks;
     console.log(updatedFavoriteTrackJSON);
-    setIcon(true);
+
     if (
       !favoriteTracks?.some((track) => track.titleTrack === trackData.title)
     ) {
@@ -68,6 +63,7 @@ export default function SingleTrack({ trackData }) {
             artistName: trackData.artist.name,
             artistImage: trackData.album.cover_medium,
             trackPreview: trackData.preview,
+            favorite: true,
           },
         ];
         localStorage.setItem("favoriteTrack", JSON.stringify(struttura));
@@ -79,6 +75,7 @@ export default function SingleTrack({ trackData }) {
             artistName: trackData.artist.name,
             artistImage: trackData.album.cover_medium,
             trackPreview: trackData.preview,
+            favorite: true,
           },
         ];
         localStorage.setItem("favoriteTrack", JSON.stringify(struttura));
@@ -88,7 +85,6 @@ export default function SingleTrack({ trackData }) {
   };
 
   const onHandleUnFavorite = () => {
-    setIcon(false);
     const favoriteTrackJSON = localStorage.getItem("favoriteTrack");
     dispatch({ type: "remove", payload: trackData.title });
   };
@@ -97,65 +93,67 @@ export default function SingleTrack({ trackData }) {
   }, [state]);
 
   return (
-      <div className={styles.main}>
-        <Link className={styles.Back} href={`/top_track`}>
-          <MdArrowBackIos />
-          Tracks
-        </Link>
-        <div className={styles.containerMain}>
-          <div className={styles.track}>
-            <div className={styles.containerImage}>
+    <div className={styles.main}>
+      <Link className={styles.Back} href={`/top_track`}>
+        <MdArrowBackIos />
+        Tracks
+      </Link>
+      <div className={styles.containerMain}>
+        <div className={styles.track}>
+          <div className={styles.containerImage}>
+            <Image
+              src={trackData?.album?.cover_medium}
+              alt={trackData?.album.title}
+              width={250}
+              height={250}
+            />
+          </div>
+          <div className={styles.containerSong}>
+            <div className={styles.sub_containerSong}>
+              <h2>{trackData?.title}</h2>
+              <span>{trackData?.artist.name}</span>
+              <button>
+                {currentArtist?.favorite === true ? (
+                  <FaHeart
+                    onClick={onHandleUnFavorite}
+                    className={styles.Like_pieno}
+                  />
+                ) : (
+                  <FaRegHeart
+                    onClick={onHandleFavorite}
+                    className={styles.Like}
+                  />
+                )}
+              </button>
+            </div>
+          </div>
+          <audio src={trackData?.preview} controls />
+        </div>
+        <div className={styles.infoTrack}>
+          <div className={styles.sub_infoTrack}>
+            <Link
+              href={`/single_artist/${trackData?.artist?.id}`}
+              as={`/single_artist/${trackData?.artist?.id}`}
+            >
               <Image
-                src={trackData?.album?.cover_medium}
-                alt={trackData?.album.title}
+                src={trackData?.artist?.picture_medium}
+                alt={trackData?.artist.name}
                 width={250}
                 height={250}
               />
-            </div>
-            <div className={styles.containerSong}>
-              <div className={styles.sub_containerSong}>
-                <h2>{trackData?.title}</h2>
-                <span>{trackData?.artist.name}</span>
-                <button>
-                  {icon === true ? (
-                    <FaHeart
-                      onClick={onHandleUnFavorite}
-                      className={styles.Like_pieno}
-                    />
-                  ) : (
-                    <FaRegHeart
-                      onClick={onHandleFavorite}
-                      className={styles.Like}
-                    />
-                  )}
-                </button>
-              </div>
-            </div>
-            <audio src={trackData?.preview} controls />
+            </Link>
           </div>
-          <div className={styles.infoTrack}>
-            <div className={styles.sub_infoTrack}>
-              <Link
-                href={`/single_artist/${trackData?.artist?.id}`}
-                as={`/single_artist/${trackData?.artist?.id}`}
-              >
-                <Image
-                  src={trackData?.artist?.picture_medium}
-                  alt={trackData?.artist.name}
-                  width={250}
-                  height={250}
-                />
-              </Link>
-            </div>
-            <div className={styles.artistInfo}>
-              <h2>{trackData?.artist.name}</h2>
-              <h3>Title: {trackData?.title}</h3>
-              <span>Duration {minutes}:{seconds}</span>
-              <span>Release date: {trackData?.album?.release_date}</span>
-            </div>
+          <div className={styles.artistInfo}>
+            <h2>{trackData?.artist.name}</h2>
+            <h3>Title: {trackData?.title}</h3>
+            <span>
+              Duration {minutes}:{seconds}
+            </span>
+            <span>Release date: {trackData?.album?.release_date}</span>
           </div>
         </div>
       </div>
+    </div>
   );
 }
 
