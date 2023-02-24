@@ -53,7 +53,7 @@
 <div>
 <h3 align="left">Design</h3>
  <p align="left">Il design dell'applicazione è stato realizzato completamente da zero per offrire un'esperienza utente unica partendo dalla creazione di un mock up su Figma. L'utilizzo di <span style='color: rgb(255, 0, 230);'> SASS</span> ha semplificato la scrittura del codice CSS. Sono stati utilizzati i <span style='color: rgb(255, 0, 230);'> moduli SCSS</span>, una tecnologia che consente di organizzare il codice CSS in file separati, semplificando la manutenzione e il debugging del codice.</p>  
- <div style="display: flex; gap: 10px;  justify-content: center;">
+ <div style="display: flex; justify-content: center; ">
 <img src='https://i.postimg.cc/3rL0YhDY/Schermata-2023-02-24-alle-15-05-29.png'  style="height: 500px; padding: 20px 0;" />
 </div>  
         
