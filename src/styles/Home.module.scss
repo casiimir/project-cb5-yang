@@ -1,277 +1,292 @@
 .Homepage {
-    width: 85%;
-    margin: auto;
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 0.5rem;
+  height: 65vh;
+
+  .topContent {
     display: flex;
     flex-direction: column;
-    color: white;
-    gap: .5rem;
-    height: 65vh;
-    
-    .topContent{
+    gap: 1rem;
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      a {
+        text-decoration: none;
+        h2 {
+          font-size: 1rem;
+          color: white;
+        }
+
+        h5 {
+          color: rgb(121, 121, 121);
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .container_Content {
+      display: flex;
+      gap: 1rem;
+      overflow: hidden;
+      overflow: scroll;
+
+      a {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        font-weight: 500;
 
-        .header{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            a{
-                text-decoration: none;
-                h2{
-                    font-size: 1rem;
-                    color: white;
-                }
-
-                h5{
-                    color: rgb(121, 121, 121);
-                    font-size: .9rem;
-                }
-            }
+        img {
+          width: 85px;
+          height: 85px;
+          border-radius: 1rem;
         }
 
-        .container_Content{
-            display: flex;
-            gap: 1rem;
-            overflow: hidden;
-            overflow: scroll;
-    
-            a{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: .5rem;
-                text-decoration: none;
-                font-weight: 500;
-
-                img {
-                    width: 85px;
-                    height: 85px;
-                    border-radius: 1rem;
-                }
-
-                h5{
-                    color: white;
-                    text-align: center;   
-                }
-
-            }
-
-            .contentTopTrack{
-                background: linear-gradient(180deg, rgba(252, 247, 255, 0.08) 0%, 
-                rgba(252, 247, 255, 0) 100%);
-                border-radius: 1rem;
-                padding: .5rem;
-
-                .icon{
-                    font-size: 1.4rem;
-                    margin-bottom: 1rem;
-                    color:  #DB00FF;
-                }
-
-                .icon:hover {
-                    color:  #DB00FF;
-            filter: drop-shadow(0px 0px 15px #DB00FF);
-                }
-            }
+        h5 {
+          color: white;
+          text-align: center;
         }
-        .container_Content::-webkit-scrollbar{
-            display: none;
+      }
+
+      .contentTopTrack {
+        background: linear-gradient(
+          180deg,
+          rgba(252, 247, 255, 0.08) 0%,
+          rgba(252, 247, 255, 0) 100%
+        );
+        border-radius: 1rem;
+        padding: 0.5rem;
+
+        .icon {
+          font-size: 1.4rem;
+          margin-bottom: 1rem;
+          color: #db00ff;
         }
+
+        .icon:hover {
+          color: #db00ff;
+          filter: drop-shadow(0px 0px 15px #db00ff);
+        }
+      }
     }
+    .container_Content::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1023.9px) {
+  .Homepage {
+    height: 76vh;
+    gap: 1.5rem;
+    overflow-y: scroll;
 
-    .Homepage{
-        margin-left: 6rem;
-        height: 76vh;
-        overflow-y: scroll;
+    .topContent {
+      .container_Content {
+        overflow-y: hidden;
+        overflow-x: scroll;
+        padding-bottom: 0.5rem;
+      }
 
-        .topContent{
+      .container_Content::-webkit-scrollbar {
+        display: flex;
+        width: 10px;
+      }
 
-            .container_Content::-webkit-scrollbar{
-                display: none;
-            }
-        }
+      .container_Content::-webkit-scrollbar-thumb {
+        background-color: #52005f;
+        border-radius: 10px;
+      }
+
+      .container_Content::-webkit-scrollbar-track {
+        background-color: #2b1b33;
+        border-radius: 10px;
+      }
     }
+  }
 }
 
 @media screen and (min-width: 1024px) {
+  .Homepage {
+    margin-left: 7rem;
 
-    .Homepage{
-        margin-left: 7rem;
+    .topContent {
+      width: 100%;
+    }
+  }
 
-        .topContent{
-            width: 100%;
-        }
-    }
-    
-    .Homepage::-webkit-scrollbar{
-        display: none;
-    }
+  .Homepage::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1200px) {
+  .Homepage {
+    width: 85%;
+    height: 100vh;
+    overflow-y: scroll;
+    margin-left: 8rem;
+    gap: 1rem;
 
-    .Homepage {
-        width: 85%;
-        height: 100vh;
-        overflow-y: scroll;
-        margin-left: 8rem;
-        gap: 1rem;
-        
-        .topContent{
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-    
-            .header{
-                a{
-                    text-decoration: none;
+    .topContent {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
 
-                    h2{
-                        font-size: 1.2rem;
-                    }
-    
-                    h5{
-                        font-size: 1rem;
-                    }
-                }
-            }
-    
-            .container_Content{
-                display: flex;
-                gap: 1rem;
-                overflow-y: hidden;
-                overflow-x: scroll;
-        
-                a{
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: .5rem;
-                    text-decoration: none;
-                    font-weight: 500;
-                    margin-bottom: .5rem;
-    
-                    img {
-                        width: 100px;
-                        height: 100px;
-                        border-radius: 1rem;
-                    }
-    
-                    h5{
-                        color: white;
-                        text-align: center;
-                        font-size: 1rem;
-                        width: 70%;
-                    }
-    
-                }
-    
-                .contentTopTrack{
-                    background: linear-gradient(180deg, rgba(252, 247, 255, 0.08) 0%, 
-                    rgba(252, 247, 255, 0) 100%);
-                    border-radius: 1rem;
-                    padding: .5rem;
+      .header {
+        a {
+          text-decoration: none;
 
-                    .icon{
-                        font-size: 1.5rem;
-                        margin-bottom: 1rem;
-                        color:  #DB00FF;
-                    }
-                    
-                    .icon:hover {
-                        color:  #DB00FF;
-                        filter: drop-shadow(0px 0px 15px #DB00FF);
-                    }
-                }
-            }
+          h2 {
+            font-size: 1.2rem;
+          }
 
-            .container_Content::-webkit-scrollbar {
-                display: flex;
-                width: 10px;
-              }
-              
-            .container_Content::-webkit-scrollbar-thumb {
-                background-color: #52005f;
-                border-radius: 10px;
-              }
-              
-            .container_Content::-webkit-scrollbar-track {
-                background-color: #2B1B33;
-                border-radius: 10px;
-              }
+          h5 {
+            font-size: 1rem;
+          }
         }
+      }
+
+      .container_Content {
+        display: flex;
+        gap: 1rem;
+        overflow-y: hidden;
+        overflow-x: scroll;
+
+        a {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+          text-decoration: none;
+          font-weight: 500;
+          margin-bottom: 0.5rem;
+
+          img {
+            width: 100px;
+            height: 100px;
+            border-radius: 1rem;
+          }
+
+          h5 {
+            color: white;
+            text-align: center;
+            font-size: 1rem;
+            width: 70%;
+          }
+        }
+
+        .contentTopTrack {
+          background: linear-gradient(
+            180deg,
+            rgba(252, 247, 255, 0.08) 0%,
+            rgba(252, 247, 255, 0) 100%
+          );
+          border-radius: 1rem;
+          padding: 0.5rem;
+
+          .icon {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #db00ff;
+          }
+
+          .icon:hover {
+            color: #db00ff;
+            filter: drop-shadow(0px 0px 15px #db00ff);
+          }
+        }
+      }
+
+      .container_Content::-webkit-scrollbar {
+        display: flex;
+        width: 10px;
+      }
+
+      .container_Content::-webkit-scrollbar-thumb {
+        background-color: #52005f;
+        border-radius: 10px;
+      }
+
+      .container_Content::-webkit-scrollbar-track {
+        background-color: #2b1b33;
+        border-radius: 10px;
+      }
     }
+  }
 }
 
 @media screen and (min-width: 1500px) {
-    
-    .Homepage {
-        margin-left: 10rem;
-        gap: 0rem;
-        
-        .topContent{
-            .header{
-                a{
-                    h2{
-                        font-size: 1.3rem;
-                    }
-    
-                    h5{
-                        font-size: 1.1rem;
-                    }
-                }
-            }
-    
-            .container_Content{
-                overflow-x: hidden;
-                
-                a{
-                    img {
-                        width: 120px;
-                        height: 120px;
-                        border-radius: 1rem;
-                    }
-    
-                    h5{
-                        color: white;
-                        text-align: center;
-                        font-size: 1.1rem;   
-                    }
-    
-                }
-    
-                .contentTopTrack{
-                    background-color: transparent;
-                    padding: .9rem;
-                    margin-bottom: 1rem;
+  .Homepage {
+    margin-left: 10rem;
+    gap: 0rem;
 
-                    .icon{
-                        font-size: 2rem;
-                        margin: 1rem;
-                    }
-                }
-            }
+    .topContent {
+      .header {
+        a {
+          h2 {
+            font-size: 1.3rem;
+          }
 
-            .container_Content::-webkit-scrollbar {
-                display: flex;
-                width: 10px;
-              }
-              
-            .container_Content::-webkit-scrollbar-thumb {
-                background-color: #52005f;
-                border-radius: 10px;
-              }
-              
-            .container_Content::-webkit-scrollbar-track {
-                background-color: #2B1B33;
-                border-radius: 10px;
-              }
+          h5 {
+            font-size: 1.1rem;
+          }
         }
+      }
+
+      .container_Content {
+        overflow-x: hidden;
+
+        a {
+          img {
+            width: 120px;
+            height: 120px;
+            border-radius: 1rem;
+          }
+
+          h5 {
+            color: white;
+            text-align: center;
+            font-size: 1.1rem;
+          }
+        }
+
+        .contentTopTrack {
+          background-color: transparent;
+          padding: 0.9rem;
+          margin-bottom: 1rem;
+
+          .icon {
+            font-size: 2rem;
+            margin: 1rem;
+          }
+        }
+      }
+
+      .container_Content::-webkit-scrollbar {
+        display: flex;
+        width: 10px;
+      }
+
+      .container_Content::-webkit-scrollbar-thumb {
+        background-color: #52005f;
+        border-radius: 10px;
+      }
+
+      .container_Content::-webkit-scrollbar-track {
+        background-color: #2b1b33;
+        border-radius: 10px;
+      }
     }
+  }
 }
