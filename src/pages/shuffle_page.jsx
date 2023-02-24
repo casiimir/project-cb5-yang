@@ -86,7 +86,11 @@ const ShufflePage = ({ data }) => {
                       ? `${shuffle.title_short.substring(0, 10)}...`
                       : shuffle.title_short}
                   </h2>
-                  <h3>{shuffle?.artist?.name}</h3>
+                  <h3>
+                    {shuffle.artist.name.length > 10
+                      ? `${shuffle.artist.name.substring(0, 10)}...`
+                      : shuffle.artist.name}
+                  </h3>
                   <h4>{shuffle?.album?.type}</h4>
                 </div>
               </div>

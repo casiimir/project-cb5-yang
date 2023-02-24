@@ -60,13 +60,13 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1023.9px) {
   .TopArtist {
-    /*  margin-left: 6rem; */
-
+    width: 87%;
     .Content {
       flex-direction: row;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 2rem;
       height: 70vh;
       box-shadow: none;
@@ -158,9 +158,8 @@
       }
     }
 
-    .Content::-webkit-scrollbar{
+    .Content::-webkit-scrollbar {
       display: none;
     }
   }
 }
-
