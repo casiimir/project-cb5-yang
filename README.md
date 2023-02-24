@@ -45,14 +45,16 @@
 
       
       
-      <div>
-        <h3 align="left">Routing</h3>
-        <p align="left">L'uso di <span style='color: rgb(255, 0, 230);'> Next.js</span> fornisce un'esperienza di navigazione fluida e veloce. Per garantire un caricamento rapido delle pagine e una migliore indicizzazione sui motori di ricerca, è stato utilizzato il <span style='color: rgb(255, 0, 230);'> server-side rendering</span>, che permette di generare le pagine HTML lato server prima di inviarle al client.  </p>
-        <div style="display: flex; gap: 10px;  justify-content: center;">
-      <!-- <img src='./src/images/cart.jpg'  style="height: 300px; padding: 20px 0;" />
-      <img src='./src/images/login.jpg'  style="height: 300px; padding: 20px 0;" /> -->
-    </div>
-    </div>
+      
+      
+<div>
+    <h3 align="left">Routing</h3>
+  <p align="left">L'uso di <span style='color: rgb(255, 0, 230);'> Next.js</span> fornisce un'esperienza di navigazione fluida e veloce. Per garantire un caricamento rapido delle pagine e una migliore indicizzazione sui motori di ricerca, è stato utilizzato il <span style='color: rgb(255, 0, 230);'> server-side rendering</span>, che permette di generare le pagine HTML lato server prima di inviarle al client.  </p>
+  <div style="display: flex; gap: 10px;  justify-content: center;">
+  <!-- <img src='./src/images/cart.jpg'  style="height: 300px; padding: 20px 0;" />
+  <img src='./src/images/login.jpg'  style="height: 300px; padding: 20px 0;" /> -->
+</div>
+</div>
 
 <hr>
 
