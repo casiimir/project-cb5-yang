@@ -68,8 +68,8 @@
     <h3 align="left">Struttura</h3>
   <p align="left">L'applicazione presenta una pagina di login per accedere all'account dell'utente e una homepage che mostra i migliori artisti, le migliori tracce e i migliori album del momento. Cliccando su ogni singolo elemento, si aprirà una pagina dinamica con le informazioni dettagliate e la possibilità di ascoltare la traccia audio. </p>
   <div style="display: flex; gap: 10px;  justify-content: center;">
-  <!-- <img src='./src/images/cart.jpg'  style="height: 300px; padding: 20px 0;" />
-  <img src='./src/images/login.jpg'  style="height: 300px; padding: 20px 0;" />-->
+   <img src='https://i.postimg.cc/zGZwW5DK/Schermata-2023-02-24-alle-14-46-53-removebg-preview.png'  style="height: 300px; padding: 20px 0;" />
+  <img src='https://i.postimg.cc/ZR2HMNmD/Schermata-2023-02-24-alle-14-47-04-removebg-preview.png'  style="height: 300px; padding: 20px 0;" />
 </div> 
 </div>
 <div style='display: flex; flex-direction: column; align-items: flex-start;'>
