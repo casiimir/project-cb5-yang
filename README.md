@@ -10,9 +10,34 @@
     >
       <h1  align="center" style="color: white;"><span style="color: rgb(255, 0, 234);">YANG</span> IFY</h1>
       <!-- <img align="center" src="./src/images/logotype_colorful.png" style="width: 350px;" /> -->
-  
-      
-      
+     
+      <p align="center">
+        Yangify rappresenta un'opportunità per gli amanti della musica di accedere a una vasta gamma di contenuti <br> e di gestire facilmente le proprie canzoni preferite, il tutto con un'esperienza utente coinvolgente e personalizzata.
+      </p>
+      <div />
+      <div align="center">
+        <h3 align="left">Descrizione</h3>
+        <p align="left" >Yangify è una web App basata su l'API di <a style='color: rgb(255, 0, 230); text-decoration: none'href='https://developers.deezer.com/login?redirect=/api' target='_blank' >DEEZER</a> con focus sul front-end, sviluppata utilizzando il framework Next.js e il preprocessore CSS SASS. <br>
+            L'idea alla base di questo progetto è stata quella di creare un ibrido tra Spotify e Deezer, garantendo una vasta selezione di contenuti audio da cui scegliere.
+        </p>
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+          " >
+         
+         <h4 >Home in versione mobile e desktop</h4>
+          <div style="display: flex; gap: 20px; align-items: flex-end">
+          <!-- <img src="./src/images/home_mobile.png" style="width: 200px; padding: 20px 0;" />
+          <img src="./src/images/home_desktop.png" style="height: 200px; padding: 20px 0;" /> -->
+        </div>
+      </div>
+      <hr>
+      <h3 align="left">Routing</h3>
+      <p align="left">L'uso di <span style='color: rgb(255, 0, 230);'> Next.js</span> fornisce un'esperienza di navigazione fluida e veloce. Per garantire un caricamento rapido delle pagine e una migliore indicizzazione sui motori di ricerca, è stato utilizzato il <span style='color: rgb(255, 0, 230);'> server-side rendering</span>, che permette di generare le pagine HTML lato server prima di inviarle al client.  
+ </p>
 <div style="display: flex; gap: 20px;  justify-content: center;">
       <!-- <img src='./src/images/gifWenderer.gif' style="width: 200px; padding: 20px 0;" />
 <img src='./src/images/gifWenderer2.gif' style="width: 200px; padding: 20px 0;" /> -->
