@@ -20,6 +20,7 @@ export default function Home({ dataArtist, dataTracks, dataAlbums }) {
         setLogged(true);
       }
     }, []);
+
     useEffect(() => {
       if (router.asPath === "/#") {
         dispatch({ type: "active", payload: router.asPath });
