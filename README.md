@@ -1,36 +1,19 @@
-<body
-  >
-    <div
-      style="
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;"
->
+<body>
+<div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
       
-<div style="display: flex; gap: 10px;  flex-direction: column;
-        align-items: center; justify-content: center;">
-      <h1  align="left" style="color: white;"> <strong>YANG</strong>IFY</h1>
-     <img align="center" src="https://i.postimg.cc/qRtkcPjH/logo.png" style="width: 150px;" /> 
-
+<div style="display: flex; gap: 10px;  flex-direction: column; align-items: center; justify-content: center;">
+  <h1  align="center" style="color: white;"> <strong>YANG</strong>IFY
+  <p align="center"><img src="https://i.postimg.cc/qRtkcPjH/logo.png" style="width: 150px;"></p></h1>  
 </div> 
-  
-<br>
-  
-<p  align="left"> Yangify rappresenta un'opportunità per gli amanti della musica di accedere a una vasta gamma di contenuti <br> e di gestire facilmente le proprie canzoni preferite, il tutto con un'esperienza utente coinvolgente e personalizzata.</p>
-
-<hr>
 
 <div>
-    <h3 align="left">Descrizione</h3>
-   <p align="left" > Yangify è una web App basata su l'API di <a style='color: rgb(255, 0, 230); text-decoration: none'href='https://developers.deezer.com/login?redirect=/api' target='_blank' >DEEZER</a> con focus sul front-end, sviluppata utilizzando il framework Next.js e il preprocessore CSS SASS. <br>
-            L'idea alla base di questo progetto è stata quella di creare un ibrido tra Spotify e Deezer, garantendo una vasta selezione di contenuti audio da cui scegliere.
-        </p>
-</div>       
-      
-      
-      
-     
+  <h3 align="left">Descrizione</h3>
+    <p  align="left"> Yangify rappresenta un'opportunità per gli amanti della musica di accedere a una vasta gamma di contenuti e di gestire facilmente le proprie canzoni preferite, il tutto con un'esperienza utente coinvolgente e personalizzata.</p>
+   <p align="left" > È una web App basata su l'API di <a style='color: rgb(255, 0, 230); text-decoration: none'href='https://developers.deezer.com/login?redirect=/api'     target='_blank' >DEEZER</a> con focus sul front-end, sviluppata utilizzando il framework Next.js e il preprocessore CSS SASS. 
+   <br>
+    L'idea alla base di questo progetto è stata quella di creare un ibrido tra Spotify e Deezer, garantendo una vasta selezione di contenuti audio da cui scegliere.
+    </p>
+</div>          
 <hr>
 
 <div>
