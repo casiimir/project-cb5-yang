@@ -10,7 +10,7 @@ const Top_Album = ({ data }) => {
   return (
       <div className={styles.TopAlbum}>
         <Link className={styles.Back} href={"/#"}>
-        <MdArrowBackIos /> ALL ALBUMS
+        <MdArrowBackIos /> TOP ALBUMS
         </Link>
         <div className={styles.container_Content}>
         {data?.data.map((album) => (

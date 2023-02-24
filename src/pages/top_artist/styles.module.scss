@@ -140,3 +140,27 @@
     }
   }
 }
+
+@media screen and (min-width: 1500px) {
+  .TopArtist {
+    margin-left: 10rem;
+
+    .Content {
+      height: fit-content;
+
+      .container_Content {
+        width: 20%;
+
+        img {
+          width: 120px;
+          height: 120px;
+        }
+      }
+    }
+
+    .Content::-webkit-scrollbar{
+      display: none;
+    }
+  }
+}
+
