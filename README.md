@@ -13,7 +13,7 @@
      
       
 
-    <div >
+  
        <p> Yangify rappresenta un'opportunità per gli amanti della musica di accedere a una vasta gamma di contenuti <br> e di gestire facilmente le proprie canzoni preferite, il tutto con un'esperienza utente coinvolgente e personalizzata.</p>
     
      <div >
@@ -40,7 +40,7 @@
       <hr>
       <h3 align="left">Routing</h3>
       <p align="left">L'uso di <span style='color: rgb(255, 0, 230);'> Next.js</span> fornisce un'esperienza di navigazione fluida e veloce. Per garantire un caricamento rapido delle pagine e una migliore indicizzazione sui motori di ricerca, è stato utilizzato il <span style='color: rgb(255, 0, 230);'> server-side rendering</span>, che permette di generare le pagine HTML lato server prima di inviarle al client.  
-    </div>
+  
 
 
 <div style="display: flex; gap: 20px;  justify-content: center;">
