@@ -104,19 +104,19 @@
   
   .main{
       margin-left: 8rem;
-      flex-direction: column;
       
       .containerMain{
         display: flex;
         justify-content: space-evenly;
         gap: 5rem;
+        align-items: center;
 
         .track{
           position: static;
           top: 0;
           left: 0;
           transform: translate(0%, 0%);
-
+        
           .containerImage{
             img {
               width: 280px;
@@ -125,53 +125,20 @@
           }
           
           .containerSong {
-    
             .sub_containerSong {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content:center;
-              gap: 1rem;
               
               h2 {
                 font-size: 1.4rem;
               }
-    
-              span{
-                font-size: 1.2rem;
-              }
-    
-              button {
-                background-color: transparent;
-                border: none;
-                cursor: pointer;
-            
-                .Like {
-                  color: white;
-                  font-size: 2rem;
-                }
-              
-                .Like:hover {
-                  color:  #DB00FF;
-                  filter: drop-shadow(0px 0px 15px #DB00FF);
-                }
-            
-                .Like_pieno {
-                  color:  #DB00FF;
-                  filter: drop-shadow(0px 0px 15px #DB00FF);
-                }
             }
           }
         }
-      }
       
       .infoTrack {
         height: 100%;
-        width: fit-content;
         padding: 3rem;
         display: flex;
         align-items: center;
-        justify-content: center;
         gap: 1.2rem;
         background-color: rgba(0, 0, 0, 0.276);
         border-radius: 1rem;
@@ -200,6 +167,25 @@
             font-weight: 600;
           }
         }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  
+  .main{
+      margin-left: 10rem;
+
+      .containerMain{
+        width: 75%;
+        margin: auto;
+        justify-content: space-between;
+        align-items: center;
+      
+        .infoTrack {
+          height: 100%;
+          padding: 3rem 5rem;
       }
     }
   }
