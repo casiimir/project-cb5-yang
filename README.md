@@ -44,7 +44,7 @@
   <p align="left">L'uso di <span style='color: rgb(255, 0, 230);'> Next.js</span> fornisce un'esperienza di navigazione fluida e veloce. Per garantire un caricamento rapido delle pagine e una migliore indicizzazione sui motori di ricerca, è stato utilizzato il <span style='color: rgb(255, 0, 230);'> server-side rendering</span>, che permette di generare le pagine HTML lato server prima di inviarle al client.  </p>
   <div style="display: flex; gap: 10px; flex-direction: row;
         align-items: center; justify-content: center;">
- <img src='https://i.postimg.cc/pdjgCPKv/Schermata-2023-02-24-alle-14-46-09-removebg-preview.png'  style="height: 300px; padding: 20px 0;" />
+ <img src='https://i.postimg.cc/cJ9jm6br/Schermata-2023-02-24-alle-14-46-09-removebg-preview.png'  style="height: 300px; padding: 20px 0;" />
   <img src='https://i.postimg.cc/B6qMF3gM/Schermata-2023-02-24-alle-14-45-58-removebg-preview.png'  style="height: 300px; padding: 20px 0;" /> 
 </div>
 </div>
@@ -67,7 +67,7 @@
   <p align="left">L'applicazione presenta una pagina di login per accedere all'account dell'utente e una homepage che mostra i migliori artisti, le migliori tracce e i migliori album del momento. Cliccando su ogni singolo elemento, si aprirà una pagina dinamica con le informazioni dettagliate e la possibilità di ascoltare la traccia audio. </p>
   <div style="display: flex; flex-direction: row;
         align-items: center; gap: 10px;  justify-content: center;">
-   <img src='https://i.postimg.cc/zGZwW5DK/Schermata-2023-02-24-alle-14-46-53-removebg-preview.png'  style="height: 300px; padding: 20px 0;" />
+   <img src='https://i.postimg.cc/QdVc7t16/Schermata-2023-02-24-alle-14-46-53-removebg-preview.png'  style="height: 300px; padding: 20px 0;" />
   <img src='https://i.postimg.cc/ZR2HMNmD/Schermata-2023-02-24-alle-14-47-04-removebg-preview.png'  style="height: 300px; padding: 20px 0;" />
 </div> 
 </div>
