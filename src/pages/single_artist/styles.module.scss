@@ -113,21 +113,6 @@
           }
         }
       }
-
-      .Content::-webkit-scrollbar {
-        display: flex;
-        width: 10px;
-      }
-      
-      .Content::-webkit-scrollbar-thumb {
-        background-color: #52005f;
-        border-radius: 10px;
-      }
-      
-      .Content::-webkit-scrollbar-track {
-        background-color: #2B1B33;
-        border-radius: 10px;
-      }
     }
   }
 }
