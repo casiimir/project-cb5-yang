@@ -7,7 +7,7 @@
         justify-content: center;
         flex-direction: column;"
 >
-      <h1  align="center" style="color: white;"><span style="color: rgb(255, 0, 234);">YANG</span> IFY</h1>
+      <h1  align="center" style="color: white;"> <strong>YANG</strong>IFY</h1>
       <!-- <img align="center" src="./src/images/logotype_colorful.png" style="width: 350px;" /> -->
      
     
