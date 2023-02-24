@@ -12,6 +12,13 @@ export default function SingleTrack({ trackData }) {
   const { state, dispatch } = useContext(applicationContext);
   const router = useRouter();
 
+  useEffect(() => {
+    const favoriteTracks = JSON.parse(localStorage.getItem("favoriteTrack"));
+    favoriteTracks ? favoriteTracks : undefined;
+
+    dispatch({ type: "favorite", payload: favoriteTracks });
+  }, []);
+
   // cerco l'artista corrente e il relativo valore di favorite
   const currentArtist = state.favorite.find(
     (item) => item.titleTrack === trackData.title
