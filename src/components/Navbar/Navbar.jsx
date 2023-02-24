@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { applicationContext } from "@/store/state";
 
 const Navbar = () => {
-  const { state, dispatch } = useContext(applicationContext);
+  const { state } = useContext(applicationContext);
 
   return (
     <div className={styles.Navbar}>

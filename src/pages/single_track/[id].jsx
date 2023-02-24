@@ -2,35 +2,30 @@ import Link from "next/link";
 import Image from "next/image";
 import { MdArrowBackIos } from "react-icons/md";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { useRouter } from "next/router";
 
 import styles from "./styles.module.scss";
 import { applicationContext } from "@/store/state";
 
 export default function SingleTrack({ trackData }) {
   const { state, dispatch } = useContext(applicationContext);
+  const router = useRouter();
 
   // cerco l'artista corrente e il relativo valore di favorite
   const currentArtist = state.favorite.find(
     (item) => item.titleTrack === trackData.title
   );
-  console.log(currentArtist?.favorite);
-
-  console.log(trackData.title);
-  console.log(state);
 
   let seconds = trackData.duration;
-
   let minutes = 0;
   while (seconds > 59) {
     seconds = seconds - 60;
     minutes++;
   }
-
   if (seconds < 10) {
     seconds = "0" + seconds;
   }
-
   let updateDate = trackData.album.release_date.substring(0, 10);
   updateDate = updateDate?.split("-").reverse().join("-");
 
@@ -42,16 +37,14 @@ export default function SingleTrack({ trackData }) {
         artistName: "",
         artistImage: "",
         trackPreview: "",
+        id: router.query.id,
       },
     ];
     const favoriteTracks = favoriteTrackJSON
       ? JSON.parse(favoriteTrackJSON)
       : undefined;
 
-    // favoriteTracks.push(favoriteTrack);
-
     const updatedFavoriteTrackJSON = favoriteTracks;
-    console.log(updatedFavoriteTrackJSON);
 
     if (
       !favoriteTracks?.some((track) => track.titleTrack === trackData.title)
@@ -64,6 +57,7 @@ export default function SingleTrack({ trackData }) {
             artistImage: trackData.album.cover_medium,
             trackPreview: trackData.preview,
             favorite: true,
+            id: router.query.id,
           },
         ];
         localStorage.setItem("favoriteTrack", JSON.stringify(struttura));
