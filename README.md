@@ -8,7 +8,7 @@
         flex-direction: column;"
 >
       <h1  align="center" style="color: white;"> <strong>YANG</strong>IFY</h1>
-      <!-- <img align="center" src="./src/images/logotype_colorful.png" style="width: 350px;" /> -->
+     <img align="center" src="https://i.postimg.cc/qRtkcPjH/logo.png" style="width: 350px;" /> 
      
     
   
