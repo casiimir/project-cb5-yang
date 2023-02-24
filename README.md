@@ -86,14 +86,15 @@
  
 
    <hr>
+      
    <div style="display: flex; flex-direction: column;  align-items: center;">
       <h3>Team Yang - coding bootcamp 5 <span style='color:rgb(255, 0, 238);'>Edgemony</span> :</h3>
       <ul style="list-style-type: none; padding: 0px; text-align: center;">
-        <li>Giulio Simone Floresta</li>
-        <li>Jessica Vitanza</li>
-        <li>Dario Purpi</li>
-        <li>Anastasia Tyurikova</li>
-        <li>Anna Sardone</li>
+        <li>Giulio Simone Floresta:  <a href="https://www.linkedin.com/in/giuliosimonefloresta/">LinkedIn</a>,  <a href="https://github.com/flgisimone">GitHub</a></li>
+        <li>Jessica Vitanza:  <a href="https://www.linkedin.com/in/jessica-vitanza/">LinkedIn</a>,  <a href="https://github.com/JessicaVitanza">GitHub</a></li>
+        <li>Dario Purpi:  <a href="https://www.linkedin.com/in/dario-purpi/">LinkedIn</a>,  <a href="https://github.com/Dariopurpi">GitHub</a></li>
+        <li>Anastasia Tyurikova:  <a href="https://www.linkedin.com/in/anastasia-tyurikova/">LinkedIn</a>,  <a href="https://github.com/momonastia">GitHub</a></li>
+        <li>Anna Sardone:  <a href="https://www.linkedin.com/in/anna-sardone-7416ba2b/">LinkedIn</a></li>
       </ul>
     </div>
   </body>
