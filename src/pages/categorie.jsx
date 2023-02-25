@@ -24,7 +24,7 @@ export default function GenreList({ data }) {
 
       <div className={styles.Categories}>
       <Link className={styles.Back} href={"/#"}>
-        <MdArrowBackIos /> CATEGORIES
+        <MdArrowBackIos /> GENRES
       </Link>
         <ul className={styles.wrapper}>
           {data.data.slice(1, data.length).map((genre) => (
