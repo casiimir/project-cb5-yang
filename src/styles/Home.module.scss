@@ -6,6 +6,7 @@
   color: white;
   gap: 0.5rem;
   height: 65vh;
+  overflow-y: scroll;
 
   .topContent {
     display: flex;
@@ -35,7 +36,6 @@
       display: flex;
       gap: 1rem;
       overflow: hidden;
-      overflow: scroll;
 
       a {
         display: flex;
@@ -118,6 +118,7 @@
 @media screen and (min-width: 1024px) {
   .Homepage {
     margin-left: 7rem;
+    overflow-y: scroll;
 
     .topContent {
       width: 100%;

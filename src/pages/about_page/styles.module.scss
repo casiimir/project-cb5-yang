@@ -19,6 +19,7 @@
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
+    overflow-x: hidden;
     height: 65vh;
     box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 1);
     gap: 1rem;
@@ -85,21 +86,6 @@
       }
     }
   }
-  
-  .containerContent::-webkit-scrollbar {
-    display: flex;
-    width: 10px;
-  }
-  
-  .containerContent::-webkit-scrollbar-thumb {
-      background-color: #52005f;
-      border-radius: 10px;
-    }
-  
-  .containerContent::-webkit-scrollbar-track {
-      background-color: #2B1B33;
-      border-radius: 10px;
-    }
 
   }
 
