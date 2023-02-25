@@ -19,7 +19,7 @@ const About = () => {
   return (
     <div className={styles.About}>
       <Link className={styles.Back} href={"/"}>
-        <MdArrowBackIos /> SVILUPPATA DA
+        <MdArrowBackIos /> DEVELOPED BY
       </Link>
       <div className={styles.containerContent}>
       {data.map((item) => (

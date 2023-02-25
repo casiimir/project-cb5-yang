@@ -38,7 +38,7 @@ const ModalMenu = ({ onHandleModal }) => {
               className={styles.MenuItem}
               onClick={handleLinkClick}
             >
-              <div className={styles.MenuTitle}>Preferiti</div>
+              <div className={styles.MenuTitle}>Favourite</div>
             </Link>
           </li>
           <li>
@@ -47,7 +47,7 @@ const ModalMenu = ({ onHandleModal }) => {
               className={styles.MenuItem}
               onClick={handleLinkClick}
             >
-              <div className={styles.MenuTitle}>shuffle</div>
+              <div className={styles.MenuTitle}>Shuffle</div>
             </Link>
           </li>
           <li>
@@ -56,7 +56,7 @@ const ModalMenu = ({ onHandleModal }) => {
               className={styles.MenuItem}
               onClick={handleLinkClick}
             >
-              <div className={styles.MenuTitle}>Categorie</div>
+              <div className={styles.MenuTitle}>Genres</div>
             </Link>
           </li>
           <li>
