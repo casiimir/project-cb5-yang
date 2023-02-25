@@ -103,6 +103,11 @@
         width: 100%;
         padding-right: 1rem;
         height: 75vh;
+        justify-content: flex-start;
+
+        .Content{
+          width: 12rem;
+        }
       }
 
       .wrapper::-webkit-scrollbar {
