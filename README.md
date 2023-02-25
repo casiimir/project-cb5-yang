@@ -13,6 +13,15 @@
    <br>
     L'idea alla base di questo progetto è stata quella di creare un ibrido tra Spotify e Deezer, garantendo una vasta selezione di contenuti audio da cui scegliere.
     </p>
+    <br>
+    <p><b>Credenziali Login</b></p>
+    <ul>
+    <li><b>user</b>: simone | <b>pass</b>: simone1</li>
+    <li><b>user</b>: dario | <b>pass</b>: dario1</li>
+    <li><b>user</b>: jessica | <b>pass</b>: jessica1</li>
+    <li><b>user</b>: anastasia | <b>pass</b>: anastasia1</li>
+    <li><b>user</b>: anna | <b>pass</b>: anna1</li>
+    </ul>
 </div>          
 <hr>
 
