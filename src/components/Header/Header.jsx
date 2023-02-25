@@ -25,7 +25,7 @@ const Header = () => {
             <Image src={"/deezerlogo.png"} alt="logo.png" width={20} height={20} />
           </Link>
           <div className={styles.User}>
-            Ciao, <span>{profileName.slice(1, -1)}</span>
+            Hi, <span>{profileName.slice(1, -1)}</span>
           </div>
         </div>
         <Image
