@@ -36,7 +36,7 @@
     .container_Content {
       display: flex;
       gap: 1rem;
-      overflow: hidden;
+      overflow-x: scroll;
 
       a {
         display: flex;
