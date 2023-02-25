@@ -100,7 +100,7 @@ export default function SingleTrack({ trackData }) {
     <div className={styles.main}>
       <Link className={styles.Back} href={`/top_track`}>
         <MdArrowBackIos />
-        Tracks
+        TRACK
       </Link>
       <div className={styles.containerMain}>
         <div className={styles.track}>

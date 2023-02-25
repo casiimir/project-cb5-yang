@@ -8,7 +8,7 @@ export default function SigleAlbum({ albumData }) {
   return (
       <div className={styles.Album}>
         <Link className={styles.linkAlbum} href={"/top_album"}>
-          <MdArrowBackIos /> ALBUMS
+          <MdArrowBackIos /> ALBUM
         </Link>
         <div className={styles.divIframe}>
           <iframe

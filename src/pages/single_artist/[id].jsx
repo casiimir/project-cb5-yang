@@ -9,7 +9,7 @@ const SingleArtist = ({ artistAlbum, artistData }) => {
     <div className={styles.SingleArtist}>
       <Link className={styles.Back} href={`/top_artist`}>
         <MdArrowBackIos />
-        Artists
+        ARTIST
       </Link>
       <div className={styles.containerSingleArtist}>
         <div className={styles.mainArtist}>
