@@ -68,7 +68,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px){
   .Navbar {
     width: fit-content;
     border-radius: 1rem;
@@ -87,9 +87,10 @@
   .Navbar {
     width: fit-content;
     position: fixed;
-    top: -5%;
+     top: -5%;
     left: 4%;
     border-radius: 1rem;
+    margin-top: 11%;
 
     ul {
       display: flex;
